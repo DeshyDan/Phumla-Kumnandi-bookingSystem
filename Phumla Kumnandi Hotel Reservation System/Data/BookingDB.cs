@@ -16,7 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private string bookingTable = "bookings";
         private string sqlLocal1 = "SELECT * FROM bookings";
         private Collection<Booking> bookings;
-
+        #endregion
 
         #region constructor 
         public BookingDB(): base()
