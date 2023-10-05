@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 {
@@ -16,7 +17,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private string bookingTable = "bookings";
         private string sqlLocal1 = "SELECT * FROM bookings";
         private Collection<Booking> bookings;
-
+        #endregion
 
         #region constructor 
         public BookingDB(): base()
