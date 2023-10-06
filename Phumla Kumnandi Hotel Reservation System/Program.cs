@@ -16,7 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

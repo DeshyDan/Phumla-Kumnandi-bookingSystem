@@ -52,40 +52,52 @@
     <Compile Include="Data\GuestDB.cs" />
     <Compile Include="Data\PromotionsDB.cs" />
     <Compile Include="Data\RoomDB.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Guest.cs">
+    <Compile Include="Presentation\BookingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Guest.designer.cs">
-      <DependentUpon>Guest.cs</DependentUpon>
+    <Compile Include="Presentation\BookingsForm.Designer.cs">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Promotions.cs">
+    <Compile Include="Presentation\GuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Promotions.Designer.cs">
-      <DependentUpon>Promotions.cs</DependentUpon>
+    <Compile Include="Presentation\GuestForm.designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Rooms.cs">
+    <Compile Include="Presentation\PromotionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Rooms.Designer.cs">
-      <DependentUpon>Rooms.cs</DependentUpon>
+    <Compile Include="Presentation\PromotionsForm.Designer.cs">
+      <DependentUpon>PromotionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\RoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\RoomsForm.Designer.cs">
+      <DependentUpon>RoomsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\Guest.resx">
-      <DependentUpon>Guest.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Promotions.resx">
-      <DependentUpon>Promotions.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\BookingsForm.resx">
+      <DependentUpon>BookingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Rooms.resx">
-      <DependentUpon>Rooms.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\GuestForm.resx">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\PromotionsForm.resx">
+      <DependentUpon>PromotionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\RoomsForm.resx">
+      <DependentUpon>RoomsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
