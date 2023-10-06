@@ -182,13 +182,21 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         private void Create_UPDATE_Parameters(Booking booking)
         {
-            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET roomId = @roomId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id @originalId ", connection);
+            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET roomId = @roomId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id = @originalId ", connection);
 
             Build_UPDATE_Parameters(booking);
         }
         private void Build_UPDATE_Parameters(Booking booking)
         {
+
             SqlParameter param = default(SqlParameter);
+
+            param = new SqlParameter("@originalId", SqlDbType.Int);
+            param.Value = booking.Id;
+            param.SourceVersion = DataRowVersion.Original;
+            dataAdapter.UpdateCommand.Parameters.Add(param);
+
+
             param = new SqlParameter("@roomId", SqlDbType.Int);
             param.Value = booking.RoomId;
             param.SourceVersion = DataRowVersion.Original;
@@ -196,33 +204,32 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             param = new SqlParameter("@bookingStatusId", SqlDbType.Int);
             param.Value = booking.BookingStatusId;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@checkInDate", SqlDbType.DateTime);
             param.Value = booking.CheckInDate;
-            param.SourceVersion = DataRowVersion.Original;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@checkOutDate", SqlDbType.DateTime);
             param.Value = booking.CheckOutDate;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@numberOfGuests", SqlDbType.Int);
             param.Value = booking.NumberOfGuests;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@deposit", SqlDbType.Int);
             param.Value = booking.Deposit;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
             param = new SqlParameter("@totalAmount", SqlDbType.Int);
             param.Value = booking.TotalAmount;
-            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
         }
