@@ -1,6 +1,6 @@
 ﻿namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    partial class Guest
+    partial class GuestForm
     {
         /// <summary>
         /// Required designer variable.

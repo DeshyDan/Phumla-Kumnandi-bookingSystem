@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class Rooms : Form
+    public partial class RoomsForm : Form
     {
-        public Rooms()
+        public RoomsForm()
         {
             InitializeComponent();
+        }
+
+        private void Rooms_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

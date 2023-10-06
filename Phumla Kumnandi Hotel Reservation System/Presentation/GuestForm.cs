@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class Guest : Form
+    public partial class GuestForm : Form
     {
-        public Guest()
+        public GuestForm()
         {
             InitializeComponent();
         }
