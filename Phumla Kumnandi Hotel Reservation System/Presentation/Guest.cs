@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class Form1 : Form
+    public partial class Guest : Form
     {
-        public Form1()
+        public Guest()
         {
             InitializeComponent();
         }
@@ -28,6 +28,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guest_Load(object sender, EventArgs e)
         {
 
         }

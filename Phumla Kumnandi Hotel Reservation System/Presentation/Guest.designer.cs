@@ -1,6 +1,6 @@
 ﻿namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    partial class Form1
+    partial class Guest
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 605);
+            this.panel1.Size = new System.Drawing.Size(305, 730);
             this.panel1.TabIndex = 0;
             // 
             // logoutButton
@@ -64,7 +64,7 @@
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(58, 545);
+            this.logoutButton.Location = new System.Drawing.Point(47, 655);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(177, 44);
             this.logoutButton.TabIndex = 1;
@@ -132,7 +132,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.textBox1.Location = new System.Drawing.Point(670, 61);
+            this.textBox1.Location = new System.Drawing.Point(894, 62);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(262, 39);
             this.textBox1.TabIndex = 2;
@@ -144,7 +144,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(333, 203);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(599, 386);
+            this.dataGridView1.Size = new System.Drawing.Size(823, 489);
             this.dataGridView1.TabIndex = 3;
             // 
             // guestSelectionLabel
@@ -161,27 +161,28 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(840, 156);
+            this.label6.Location = new System.Drawing.Point(1064, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 15);
             this.label6.TabIndex = 4;
             this.label6.Text = "Filter";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // Form1
+            // Guest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(944, 601);
+            this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.guestSelectionLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "Guest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Guest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
