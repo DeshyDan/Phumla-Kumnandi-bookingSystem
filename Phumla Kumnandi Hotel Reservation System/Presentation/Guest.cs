@@ -36,5 +36,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
