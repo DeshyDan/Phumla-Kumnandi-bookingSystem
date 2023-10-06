@@ -108,6 +108,12 @@
     <Compile Include="Presentation\PromotionsForm.Designer.cs">
       <DependentUpon>PromotionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\RoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PromotionsForm.resx">
       <DependentUpon>PromotionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
