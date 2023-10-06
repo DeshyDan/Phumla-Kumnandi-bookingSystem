@@ -38,7 +38,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void AddToCollection(string table)
         {
             DataRow myRow = null;
-            GuestDB guest;
+            Guest guest;
 
             foreach (DataRow row in dataSet.Tables[table].Rows)
             {
