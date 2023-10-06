@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class HomeForm : Form
+    public partial class EditBooking : Form
     {
-        public HomeForm()
+        public EditBooking()
         {
             InitializeComponent();
         }
@@ -22,7 +22,22 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditBooking_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

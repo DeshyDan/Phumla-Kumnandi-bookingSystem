@@ -220,7 +220,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
 
         #region getters and setters
-        public Collection<Guests> AllGuests
+        public Collection<Guest> AllGuests
         {
             get
             {

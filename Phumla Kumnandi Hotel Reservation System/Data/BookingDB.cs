@@ -16,13 +16,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #region data members
         private string bookingTable = "bookings";
         private string sqlLocal1 = "SELECT * FROM bookings";
-        private Collection<Booking> bookings;
+        private Collection<BookingController> bookings;
         #endregion
 
         #region constructor 
         public BookingDB(): base()
         {
-            bookings = new Collection<Booking> ();
+            bookings = new Collection<BookingController> ();
             FillDataSet(sqlLocal1, bookingTable);
             AddToCollection(bookingTable); 
 
@@ -40,13 +40,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void AddToCollection(string table)
         {
             DataRow myRow = null;
-            Booking booking; 
+            BookingController booking; 
             foreach(DataRow row in dataSet.Tables[table].Rows)
             {
                 myRow = row; 
                 if(!(myRow.RowState == DataRowState.Deleted))
                 {
-                    booking = new Booking();
+                    booking = new BookingController();
                     booking.Id = Convert.ToInt32(myRow["id"]);
                     booking.RoomId = Convert.ToInt32(myRow["roomId"]);
                     booking.BookingStatusId = Convert.ToString(myRow["bookingStatusId"]).TrimEnd();
@@ -61,7 +61,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
            
         }
 
-        private void FillRow(DataRow row, Booking booking, DB.DBOperation operation)
+        private void FillRow(DataRow row, BookingController booking, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
@@ -77,7 +77,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             row["telephone"] = booking.Telephone;
             row["address"] = booking.Address;
         }
-        private int FindRow(Booking booking, string table)
+        private int FindRow(BookingController booking, string table)
         {
             int rowIndex = 0;
             DataRow myRow;
@@ -101,7 +101,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion
 
         #region CRUD operataions
-        public void DataSetChange(Booking booking, DB.DBOperation operation)
+        public void DataSetChange(BookingController booking, DB.DBOperation operation)
         {
 
             DataRow row = null;
@@ -131,7 +131,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         #endregion
         #region build parameters, create commands and update database
-        private void insert(Booking booking)
+        private void insert(BookingController booking)
         {
             SqlParameter param = default(SqlParameter);
             param = new SqlParameter("@id", SqlDbType.Int, 50, "id");
@@ -203,7 +203,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             dataAdapter.UpdateCommand.Parameters.Add(param);
         }
 
-        private void Insert(Booking booking)
+        private void Insert(BookingController booking)
         {
             dataAdapter.InsertCommand = new SqlCommand(
                 "INSERT INTO booking(roomId, guestId, bookingStatusId, arrivalDate, totalAmount, deposit, numberOfGuest, specialRequest) values(@roomId, @guestId, @bookingStatusId, @arrivalDate, @totalAmount, @deposit, @numberOfGuest, @specialRequest)"
@@ -212,7 +212,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             insert(booking);
         }
 
-        public bool UpdateDataSource(Booking booking)
+        public bool UpdateDataSource(BookingController booking)
         {
             bool sucess = true;
             insert(booking);
@@ -225,7 +225,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         }
         #endregion
         #region getters and setters
-        public Collection<Booking> AllBookings
+        public Collection<BookingController> AllBookings
         {
             get
             {
