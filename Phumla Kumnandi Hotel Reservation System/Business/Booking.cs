@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Phumla_Kumnandi_Hotel_Reservation_system.BuisnessLayer
+namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 {
     public class Booking
     {
