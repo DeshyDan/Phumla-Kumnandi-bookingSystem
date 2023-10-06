@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Phumla_Kumnandi_Hotel_Reservation_system.BuisnessLayer
+namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 {
     public class Booking
     {
@@ -26,6 +26,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_system.BuisnessLayer
         public int deposit;
         public int totalAmount;
         #endregion
+
         #region Constructor
         public Booking(int bookingId, int guestId, int roomID, DateTime checkin, DateTime checkout, string description, int noOfGuests, int deposit, int totalAmount)
         {
@@ -72,12 +73,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_system.BuisnessLayer
             get { return deposit; }
             set { deposit = value; }
         }
-       public int TotalAmount
+        public int TotalAmount
         {
             get { return totalAmount; }
             set { totalAmount = value; }
         }
         #endregion
-       
+
     }
 }
