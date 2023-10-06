@@ -147,11 +147,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         }
 
 
-        private void update(Guest guest)
-        {
-            SqlParameter param = default(SqlParameter);
-
-        }
+      
 
       
 
@@ -159,7 +155,6 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         {
             bool sucess = true;
          
-            update(room);
 
 
             UpdateDataSource(sqlLocal1, guestTable);
