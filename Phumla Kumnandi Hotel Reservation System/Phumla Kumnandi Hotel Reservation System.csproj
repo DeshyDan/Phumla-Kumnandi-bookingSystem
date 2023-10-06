@@ -70,11 +70,11 @@
     <Compile Include="Presentation\GuestForm.designer.cs">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\HomeForm.cs">
+    <Compile Include="Presentation\HomeForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <Compile Include="Presentation\HomeForm1.Designer.cs">
+      <DependentUpon>HomeForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PromotionsForm.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="Presentation\GuestForm.resx">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\HomeForm1.resx">
+      <DependentUpon>HomeForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PromotionsForm.resx">
       <DependentUpon>PromotionsForm.cs</DependentUpon>
