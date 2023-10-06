@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Booking.cs" />
+    <Compile Include="Business\BookingController.cs" />
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Data\BookingDB.cs" />
     <Compile Include="Data\DB.cs" />
@@ -64,23 +66,53 @@
     <Compile Include="Presentation\BookingsForm.Designer.cs">
       <DependentUpon>BookingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\confirmBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\confirmBooking.Designer.cs">
+      <DependentUpon>confirmBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\CreateGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\CreateGuest.Designer.cs">
+      <DependentUpon>CreateGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DeleteBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DeleteBooking.Designer.cs">
+      <DependentUpon>DeleteBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EditBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\EditBooking.Designer.cs">
+      <DependentUpon>EditBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\GuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\GuestForm.designer.cs">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\HomeForm.cs">
+    <Compile Include="Presentation\HomeForm1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <Compile Include="Presentation\HomeForm1.Designer.cs">
+      <DependentUpon>HomeForm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\PromotionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\PromotionsForm.Designer.cs">
       <DependentUpon>PromotionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\RoomsForm.cs">
       <SubType>Form</SubType>
@@ -96,14 +128,29 @@
     <EmbeddedResource Include="Presentation\BookingsForm.resx">
       <DependentUpon>BookingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\confirmBooking.resx">
+      <DependentUpon>confirmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\CreateGuest.resx">
+      <DependentUpon>CreateGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DeleteBooking.resx">
+      <DependentUpon>DeleteBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\EditBooking.resx">
+      <DependentUpon>EditBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\GuestForm.resx">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\HomeForm1.resx">
+      <DependentUpon>HomeForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\PromotionsForm.resx">
       <DependentUpon>PromotionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>

@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class BookingsForm : Form
+    public partial class HomeForm1 : Form
     {
-        public BookingsForm()
+        public HomeForm1()
         {
             InitializeComponent();
         }
 
-        private void homeNavLabel_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -35,7 +35,10 @@
             this.guestNavLabel = new System.Windows.Forms.Label();
             this.bookingNavLabel = new System.Windows.Forms.Label();
             this.homeNavLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.searchBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -120,6 +123,27 @@
             this.homeNavLabel.Size = new System.Drawing.Size(117, 42);
             this.homeNavLabel.TabIndex = 0;
             this.homeNavLabel.Text = "Home";
+            this.homeNavLabel.Click += new System.EventHandler(this.homeNavLabel_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(338, 203);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(823, 489);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // searchBox
+            // 
+            this.searchBox.BackColor = System.Drawing.Color.White;
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.searchBox.Location = new System.Drawing.Point(899, 62);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(262, 39);
+            this.searchBox.TabIndex = 11;
+            this.searchBox.Text = "Search by Id";
             // 
             // BookingsForm
             // 
@@ -127,13 +151,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1184, 711);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.panel1);
             this.Name = "BookingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingsForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,5 +174,7 @@
         private System.Windows.Forms.Label guestNavLabel;
         private System.Windows.Forms.Label bookingNavLabel;
         private System.Windows.Forms.Label homeNavLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox searchBox;
     }
 }

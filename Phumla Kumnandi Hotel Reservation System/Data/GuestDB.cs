@@ -38,7 +38,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void AddToCollection(string table)
         {
             DataRow myRow = null;
-            GuestDB guest;
+            Guest guest;
 
             foreach (DataRow row in dataSet.Tables[table].Rows)
             {
@@ -220,7 +220,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
 
         #region getters and setters
-        public Collection<Guests> AllGuests
+        public Collection<Guest> AllGuests
         {
             get
             {
