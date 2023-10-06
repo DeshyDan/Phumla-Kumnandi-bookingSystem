@@ -71,5 +71,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
 
         }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
