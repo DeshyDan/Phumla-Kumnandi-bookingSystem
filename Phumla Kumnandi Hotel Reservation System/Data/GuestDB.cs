@@ -130,6 +130,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion
 
         #region build parameters, create commands and update database
+
+        private void Create_INSERT_Parameters(Guest guest)
+        {
+            dataAdapter.InsertCommand = new SqlCommand(
+                "INSERT INTO guests (idNumber, firstName, lastName, email, telephone , address) values(@idNumber, @firstName, @lastName ,@email, @telephone, @address"
+                );
+
+            Build_INSERT_Parameters(guest);
+        }
         private void Build_INSERT_Parameters(Guest guest)
         {
             SqlParameter param = default(SqlParameter);
@@ -156,7 +165,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             dataAdapter.InsertCommand.Parameters.Add(param);
         }
 
+        private void Create_UPDATE_Parameters(Guest guest)
+        {
+            dataAdapter.UpdateCommand = new SqlCommand("UPDATE guests SET idNumber = @idNumber, firstName = @firstName, lastName = @lastName , email = @email, telephone = @telephone, address = @address WHERE id = @originalId", connection);
 
+            Build_UPDATE_Parameters(guest);
+        }
         private void Build_UPDATE_Parameters(Guest guest)
         {
             SqlParameter param = default(SqlParameter);
@@ -165,7 +179,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@originalIdNumber", SqlDbType.NChar, 13, "idNumber");
+            param = new SqlParameter("@idNumber", SqlDbType.NChar, 13, "idNumber");
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
@@ -194,21 +208,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             dataAdapter.UpdateCommand.Parameters.Add(param);
         }
 
-        private void Create_INSERT_Parameters(Guest guest)
-        {
-            dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO guests (idNumber, firstName, lastName, email, telephone , address) values(@idNumber, @firstName, @lastName ,@email, @telephone, @address"
-                );
+        
 
-            Build_INSERT_Parameters(guest);
-        }
-
-        public bool UpdateDataSource(GuestDB guest)
+        public bool UpdateDataSource(Guest guest)
         {
             bool sucess = true;
-            insert(guest);
-            update(guest);
-
+            Create_INSERT_Parameters(guest);
+            Create_UPDATE_Parameters(guest);       
 
             UpdateDataSource(sqlLocal1, guestTable);
 
