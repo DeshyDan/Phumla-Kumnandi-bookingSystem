@@ -48,9 +48,8 @@
             this.panel1.Controls.Add(this.bookingNavLabel);
             this.panel1.Controls.Add(this.homeNavLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(458, 1123);
+            this.panel1.Size = new System.Drawing.Size(305, 730);
             this.panel1.TabIndex = 1;
             // 
             // logoutButton
@@ -60,10 +59,9 @@
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(70, 1008);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logoutButton.Location = new System.Drawing.Point(47, 655);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(266, 68);
+            this.logoutButton.Size = new System.Drawing.Size(177, 44);
             this.logoutButton.TabIndex = 1;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -73,10 +71,9 @@
             this.promotionNavLabel.AutoSize = true;
             this.promotionNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.promotionNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.promotionNavLabel.Location = new System.Drawing.Point(130, 672);
-            this.promotionNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.promotionNavLabel.Location = new System.Drawing.Point(87, 437);
             this.promotionNavLabel.Name = "promotionNavLabel";
-            this.promotionNavLabel.Size = new System.Drawing.Size(312, 65);
+            this.promotionNavLabel.Size = new System.Drawing.Size(205, 42);
             this.promotionNavLabel.TabIndex = 0;
             this.promotionNavLabel.Text = "Promotions";
             // 
@@ -85,10 +82,9 @@
             this.roomNavLabel.AutoSize = true;
             this.roomNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.roomNavLabel.Location = new System.Drawing.Point(132, 555);
-            this.roomNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.roomNavLabel.Location = new System.Drawing.Point(88, 361);
             this.roomNavLabel.Name = "roomNavLabel";
-            this.roomNavLabel.Size = new System.Drawing.Size(205, 65);
+            this.roomNavLabel.Size = new System.Drawing.Size(136, 42);
             this.roomNavLabel.TabIndex = 0;
             this.roomNavLabel.Text = "Rooms";
             // 
@@ -97,10 +93,9 @@
             this.guestNavLabel.AutoSize = true;
             this.guestNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.guestNavLabel.Location = new System.Drawing.Point(132, 431);
-            this.guestNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.guestNavLabel.Location = new System.Drawing.Point(88, 280);
             this.guestNavLabel.Name = "guestNavLabel";
-            this.guestNavLabel.Size = new System.Drawing.Size(206, 65);
+            this.guestNavLabel.Size = new System.Drawing.Size(134, 42);
             this.guestNavLabel.TabIndex = 0;
             this.guestNavLabel.Text = "Guests";
             // 
@@ -109,10 +104,9 @@
             this.bookingNavLabel.AutoSize = true;
             this.bookingNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookingNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.bookingNavLabel.Location = new System.Drawing.Point(132, 312);
-            this.bookingNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bookingNavLabel.Location = new System.Drawing.Point(88, 203);
             this.bookingNavLabel.Name = "bookingNavLabel";
-            this.bookingNavLabel.Size = new System.Drawing.Size(282, 65);
+            this.bookingNavLabel.Size = new System.Drawing.Size(190, 44);
             this.bookingNavLabel.TabIndex = 0;
             this.bookingNavLabel.Text = "Bookings";
             // 
@@ -121,22 +115,20 @@
             this.homeNavLabel.AutoSize = true;
             this.homeNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.homeNavLabel.Location = new System.Drawing.Point(132, 198);
-            this.homeNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.homeNavLabel.Location = new System.Drawing.Point(88, 129);
             this.homeNavLabel.Name = "homeNavLabel";
-            this.homeNavLabel.Size = new System.Drawing.Size(177, 65);
+            this.homeNavLabel.Size = new System.Drawing.Size(117, 42);
             this.homeNavLabel.TabIndex = 0;
             this.homeNavLabel.Text = "Home";
             this.homeNavLabel.Click += new System.EventHandler(this.homeNavLabel_Click);
             // 
             // BookingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1776, 1050);
+            this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BookingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookingsForm";
