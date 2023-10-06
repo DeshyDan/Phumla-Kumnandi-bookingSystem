@@ -141,89 +141,101 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Create_INSERT_Parameters(Booking booking)
         {
             dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO bookings (roomId, bookingStatusId, checkInDate, checkOutDate, numberOfGuest, deposit , totalAmount) values (@roomId, @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuest, @deposit , @totalAmount)"
+                "INSERT INTO bookings (roomId, bookingStatusId, checkInDate, checkOutDate, numberOfGuests, deposit , totalAmount) values (@roomId, @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuests, @deposit , @totalAmount)"
                 );
 
             Build_INSERT_Parameters(booking);
         }
-        private void Build_INSERT_Parameters(Guest guest)
+        private void Build_INSERT_Parameters(Booking booking)
         {
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@idNumber", SqlDbType.NChar, 13, "idNumber");
+            param = new SqlParameter("@roomId", SqlDbType.Int);
+            param.Value = booking.RoomId;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@title", SqlDbType.NChar, 5, "title");
+            param = new SqlParameter("@bookingStatusId", SqlDbType.Int);
+            param.Value = booking.BookingStatusId;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@firstName", SqlDbType.NVarChar, 50, "firstName");
+            param = new SqlParameter("@checkInDate", SqlDbType.DateTime);
+            param.Value = booking.CheckInDate;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@lastName", SqlDbType.NVarChar, 50, "lastName");
+            param = new SqlParameter("@checkOutDate", SqlDbType.DateTime);
+            param.Value = booking.CheckOutDate;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@email", SqlDbType.NVarChar, 255, "email");
+            param = new SqlParameter("@numberOfGuests", SqlDbType.Int);
+            param.Value = booking.NumberOfGuests;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@telephone", SqlDbType.NChar, 10, "telephone");
+            param = new SqlParameter("@deposit", SqlDbType.Int);
+            param.Value = booking.Deposit;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@address", SqlDbType.NVarChar, 255, "address");
+            param = new SqlParameter("@totalAmount", SqlDbType.Int);
+            param.Value = booking.TotalAmount;
             dataAdapter.InsertCommand.Parameters.Add(param);
+
         }
 
-        private void Create_UPDATE_Parameters(Guest guest)
+        private void Create_UPDATE_Parameters(Booking booking)
         {
-            dataAdapter.UpdateCommand = new SqlCommand("UPDATE guests SET idNumber = @idNumber, firstName = @firstName, lastName = @lastName , email = @email, telephone = @telephone, address = @address WHERE id = @originalId", connection);
+            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET roomId = @roomId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id @originalId ", connection);
 
-            Build_UPDATE_Parameters(guest);
+            Build_UPDATE_Parameters(booking);
         }
-        private void Build_UPDATE_Parameters(Guest guest)
+        private void Build_UPDATE_Parameters(Booking booking)
         {
             SqlParameter param = default(SqlParameter);
-
-            param = new SqlParameter("@originalId", SqlDbType.Int, 50, "id");
+            param = new SqlParameter("@roomId", SqlDbType.Int);
+            param.Value = booking.RoomId;
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@idNumber", SqlDbType.NChar, 13, "idNumber");
+            param = new SqlParameter("@bookingStatusId", SqlDbType.Int);
+            param.Value = booking.BookingStatusId;
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@title", SqlDbType.NChar, 5, "title");
-            param.SourceVersion = DataRowVersion.Current;
+            param = new SqlParameter("@checkInDate", SqlDbType.DateTime);
+            param.Value = booking.CheckInDate;
+            param.SourceVersion = DataRowVersion.Original;
+            param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@firstName", SqlDbType.NVarChar, 50, "firstName");
-            param.SourceVersion = DataRowVersion.Current;
+            param = new SqlParameter("@checkOutDate", SqlDbType.DateTime);
+            param.Value = booking.CheckOutDate;
+            param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@lastName", SqlDbType.NVarChar, 50, "lastName");
-            param.SourceVersion = DataRowVersion.Current;
+            param = new SqlParameter("@numberOfGuests", SqlDbType.Int);
+            param.Value = booking.NumberOfGuests;
+            param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@email", SqlDbType.NVarChar, 255, "email");
-            param.SourceVersion = DataRowVersion.Current;
+            param = new SqlParameter("@deposit", SqlDbType.Int);
+            param.Value = booking.Deposit;
+            param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@telephone", SqlDbType.NChar, 10, "telephone");
-            param.SourceVersion = DataRowVersion.Current;
+            param = new SqlParameter("@totalAmount", SqlDbType.Int);
+            param.Value = booking.TotalAmount;
+            param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@address", SqlDbType.NVarChar, 255, "address");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
         }
 
 
 
-        public bool UpdateDataSource(Guest guest)
+        public bool UpdateDataSource(Booking booking)
         {
             bool sucess = true;
-            Create_INSERT_Parameters(guest);
-            Create_UPDATE_Parameters(guest);
+            Create_INSERT_Parameters(booking);
+            Create_UPDATE_Parameters(booking);
 
-            UpdateDataSource(sqlLocal1, guestTable);
+            UpdateDataSource(sqlLocal1, bookingTable);
 
             return sucess;
         }
