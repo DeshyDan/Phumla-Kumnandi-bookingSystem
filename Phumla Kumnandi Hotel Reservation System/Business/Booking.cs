@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +41,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             this.deposit = deposit;
             this.totalAmount = totalAmount;
         }
+        public Booking()
+        {
+
+        }
         #endregion region
         #region Methods
         public int Id
@@ -63,7 +68,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return specialRequest; }
             set { specialRequest = value; }
         }
-        public int NoOfGuests
+        public int NumberOfGuests
         {
             get { return noOfGuests; }
             set { noOfGuests = value; }
@@ -77,6 +82,32 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         {
             get { return totalAmount; }
             set { totalAmount = value; }
+        }
+        public int RoomId
+        {
+            get { return roomId; }
+            set { roomId = value; }
+        }
+
+        public int BookingStatusId
+        {
+            get { return (int)status; }
+            set
+            {
+                switch (value)
+                {
+                    case 0:
+                        status = BookingStatus.Pending;
+                        break;
+                    case 1:
+                        status = BookingStatus.Confirmed;
+                        break;
+                    case 2:
+                        status = BookingStatus.Cancelled;
+                        break;
+                }
+
+            }
         }
         #endregion
 
