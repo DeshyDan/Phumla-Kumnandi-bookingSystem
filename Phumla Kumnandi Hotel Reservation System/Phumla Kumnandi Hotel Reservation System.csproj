@@ -64,6 +64,12 @@
     <Compile Include="Presentation\Guest.designer.cs">
       <DependentUpon>Guest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Promotions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Promotions.Designer.cs">
+      <DependentUpon>Promotions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Rooms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\Guest.resx">
       <DependentUpon>Guest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Promotions.resx">
+      <DependentUpon>Promotions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
