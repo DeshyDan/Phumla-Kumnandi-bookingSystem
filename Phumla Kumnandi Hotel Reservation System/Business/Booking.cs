@@ -15,75 +15,69 @@ namespace Phumla_Kumnandi_Hotel_Reservation_system.BuisnessLayer
             Cancelled = 2
         }
         #region DataMembers
-        public int BookingID;
-        public BookingStatus Status;
-        public string Checkin;
-        public string Checkout;
-        public int GuestID;
-        public static int count = 0;
-        public int RoomId;
-        public string Description;
-        public int NoOfGuests;
-        public int Deposit;
-        public decimal TotalAmount;
+        public int id;
+        public BookingStatus status;
+        public DateTime checkInDate;
+        public DateTime checkOutDate;
+        public int guestId;
+        public int roomId;
+        public string specialRequest;
+        public int noOfGuests;
+        public int deposit;
+        public int totalAmount;
         #endregion
         #region Constructor
-        public Booking(int bookingId, int guestId, int roomID, string checkin, string checkout, string description, int noOfGuests, int deposit, decimal totalAmount)
+        public Booking(int bookingId, int guestId, int roomID, DateTime checkin, DateTime checkout, string description, int noOfGuests, int deposit, int totalAmount)
         {
-            this.BookingID = bookingId;
-            this.Checkin = checkin;
-            this.Checkout = checkout;
-            this.GuestID = guestId;
-            this.RoomId = roomID;
-            this.Description = description;
-            this.NoOfGuests = noOfGuests;
-            this.Deposit = deposit;
-            this.TotalAmount = totalAmount;
+            this.id = bookingId;
+            this.checkInDate = checkin;
+            this.checkOutDate = checkout;
+            this.guestId = guestId;
+            this.roomId = roomID;
+            this.specialRequest = description;
+            this.noOfGuests = noOfGuests;
+            this.deposit = deposit;
+            this.totalAmount = totalAmount;
         }
         #endregion region
         #region Methods
-        public int bookingID
+        public int Id
         {
-            get { return BookingID; }
-            set { BookingID = value; }
+            get { return id; }
+            set { id = value; }
 
         }
-        public string checkin
+        public DateTime CheckInDate
         {
-            get { return Checkin; }
-            set { Checkin = value; }
+            get { return checkInDate; }
+            set { checkInDate = value; }
         }
-        public string checkout
+        public DateTime CheckOutDate
         {
-            get { return Checkout; }
-            set { Checkout = value; }
+            get { return checkOutDate; }
+            set { checkOutDate = value; }
         }
-        public string description
+        public string SpecialRequest
         {
-            get { return Description; }
-            set { Description = value; }
+            get { return specialRequest; }
+            set { specialRequest = value; }
         }
-        public int noOfGuests
+        public int NoOfGuests
         {
-            get { return NoOfGuests; }
-            set { NoOfGuests = value; }
+            get { return noOfGuests; }
+            set { noOfGuests = value; }
         }
-        public int deposit
+        public int Deposit
         {
-            get { return Deposit; }
-            set { Deposit = value; }
+            get { return deposit; }
+            set { deposit = value; }
         }
-        decimal totalAmount
+       public int TotalAmount
         {
-            get { return TotalAmount; }
-            set { TotalAmount = value; }
-        }
-        #endregion
-        #region Booking Generator
-        public int GetBookingID()
-        {
-            return this.bookingID;
+            get { return totalAmount; }
+            set { totalAmount = value; }
         }
         #endregion
+       
     }
 }
