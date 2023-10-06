@@ -34,85 +34,68 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             }
             #endregion
             #region Database Communication
-            public void DataMaintenance(Promotion aPromos, DB.DBOperation operation)
+            public void DataMaintenance(Promotion aPromotions, DB.DBOperation operation)
             {
                 Debug.WriteLine("Inside DataMaintence");
                 int index = 0;
-                promosDB.DataSetChange(aPromos, operation);
+                promotionsDB.GetDataSet();
 
                 switch (operation)
                 {
                     case DB.DBOperation.Add:
                         Debug.WriteLine("operation is Added");
-                        guest.Add(aPromoa);
+                        promotions.Add(aPromotions);
                         break;
                     case DB.DBOperation.Edit:
-                        index = FindIndex(aGuest);
-                        guest[index] = aGuest;
+                        index = FindIndex(aPromotions);
+                        promotions[index] = aPromotions;
                         break;
                     case DB.DBOperation.Delete:
-                        index = FindIndex(aGuest);
-                        guest[index] = aGuest;
+                        index = FindIndex(aPromotions);
+                        promotions[index] = aPromotions;
                         break;
 
                 }
             }
             #endregion
             #region     Database Commuincation
-            public void DataMaintenacne(Guest aGuest, DB.DBOperation operation)
+            public void DataMaintenacne(Promotion aPromotion, DB.DBOperation operation)
             {
                 Debug.WriteLine("Inside Data Maintenance");
                 int index = 0;
-                guestDB.DataSetChange(aGuest, operation);
+                promotionsDB.DataSetChange(aPromotion, operation);
 
                 switch (operation)
                 {
                     case DB.DBOperation.Add:
                         Debug.WriteLine("operation is added");
-                        guest.Add(aGuest);
+                        promotions.Add(aPromotion);
                         break;
-                    case DB.DBOperation.Edit:
-                        index = FindIndex(aGuest);
-                        guest[index] = aGuest;
-                        break;
-                    case DB.DBOperation.Delete:
-                        index = FindIndex(aGuest);
-                        guest.RemoveAt(index);
-                        break;
+                   
+               
 
                 }
             }
-            public bool FinlizeChanges(Guest guest, DB.DBOperation operation)
+            public bool FinalizeChanges(Promotion promotion, DB.DBOperation operation)
             {
                 Debug.WriteLine("Inside FinalizeChange");
-                return guestDB.UpdateDataSource(guest, operation);
+                return promotionsDB.UpdateDataSource(promotion, operation);
 
             }
             #endregion
             #region Searching through a collection
-            /*  public Collection<Guest> FindByGuest(Collection<Guest> aGuest)
-              {
-                  Collection<Guest> matches = new Collection<Guest>();
-                  foreach (Guest guest in aGuest)
-                  {
-                      if (guest.IdNumber.Equals(Guest(), StringComparison.OrdinalIgnoreCase))
-                      {
-                          matches.Add(guest);
-                      }
-                  }
-                  return matches;
-              }*/
-            public Guest Find(String ID)
+      
+            public Promotion Find(string ID)
             {
                 int index = 0;
-                bool found = (guest[index].Id.Equals(ID));
-                int count = guest.Count;
-                while (!(found) && (index < guest.Count - 1))
+                bool found = (promotions[index].ID.Equals(ID));
+                int count = promotions.Count;
+                while (!(found) && (index < promotions.Count - 1))
                 {
                     index = index + 1;
-                    found = (guest[index].Id.Equals(ID));
+                    found = (promotions[index].Id.Equals(ID));
                 }
-                return guest[index];
+                return promotions[index];
 
             }
             public int FindIndex(Guest aGuest)

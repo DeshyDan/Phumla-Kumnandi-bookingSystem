@@ -52,6 +52,8 @@
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\GuestController.cs" />
     <Compile Include="Business\PromotionsController.cs" />
+    <Compile Include="Business\Room.cs" />
+    <Compile Include="Business\RoomAccount.cs" />
     <Compile Include="Data\BookingDB.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\GuestDB.cs" />
