@@ -130,16 +130,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion
 
         #region build parameters, create commands and update database
-        private void insert(Guest guest)
+        private void Build_INSERT_Parameters(Guest guest)
         {
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@id", SqlDbType.Int, 50, "id");
-            dataAdapter.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@idNumber", SqlDbType.NChar, 13, "idNumber");
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@title", SqlDbType.NChar, 13, "title");
+            param = new SqlParameter("@title", SqlDbType.NChar, 5, "title");
             dataAdapter.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@firstName", SqlDbType.NVarChar, 50, "firstName");
@@ -159,7 +157,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         }
 
 
-        private void update(Guest guest)
+        private void Build_UPDATE_Parameters(Guest guest)
         {
             SqlParameter param = default(SqlParameter);
 
@@ -171,7 +169,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@title", SqlDbType.NChar, 13, "title");
+            param = new SqlParameter("@title", SqlDbType.NChar, 5, "title");
             param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
@@ -196,13 +194,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             dataAdapter.UpdateCommand.Parameters.Add(param);
         }
 
-        private void Insert(Guest guest)
+        private void Create_INSERT_Parameters(Guest guest)
         {
             dataAdapter.InsertCommand = new SqlCommand(
                 "INSERT INTO guests (idNumber, firstName, lastName, email, telephone , address) values(@idNumber, @firstName, @lastName ,@email, @telephone, @address"
                 );
 
-            insert(guest);
+            Build_INSERT_Parameters(guest);
         }
 
         public bool UpdateDataSource(GuestDB guest)
