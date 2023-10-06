@@ -1,6 +1,6 @@
 ﻿namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    partial class HomeForm
+    partial class HomeForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoutButton = new System.Windows.Forms.Button();
             this.promotionNavLabel = new System.Windows.Forms.Label();
