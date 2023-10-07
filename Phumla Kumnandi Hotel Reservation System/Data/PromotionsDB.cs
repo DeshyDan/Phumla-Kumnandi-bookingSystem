@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 {
@@ -24,7 +25,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #region constructor
         public PromotionsDB() : base()
         {
-            promotions = new Collection<Promotions>();
+            promotions = new Collection<Promotion>();
             FillDataSet(sqlLocal1, promotionsTable);
             AddToCollection(promotionsTable);
         }
@@ -162,7 +163,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             insert(promotion);
         }
 
-        public bool UpdateDataSource(Promotion promotion, DB.DBOperation)
+        public bool UpdateDataSource(Promotion promotion, DB.DBOperation operation)
         {
             bool sucess = true;
             insert(promotion);
@@ -177,7 +178,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
 
         #region getters and setters
-        public Collection<Promotion> AllGuests
+        public Collection<Promotion> AllPromotions
         {
             get
             {

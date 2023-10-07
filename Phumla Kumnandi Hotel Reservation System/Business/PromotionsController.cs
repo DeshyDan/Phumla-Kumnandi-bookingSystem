@@ -65,13 +65,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
                 return promotionsDB.UpdateDataSource(promotion, operation);
 
             }
-            #endregion
-            #region Searching through a collection
+          #region Searching through a collection
       
             public Promotion Find(string ID)
             {
                 int index = 0;
-                bool found = (promotions[index].ID.Equals(ID));
+                bool found = (promotions[index].Id.Equals(ID));
                 int count = promotions.Count;
                 while (!(found) && (index < promotions.Count - 1))
                 {
