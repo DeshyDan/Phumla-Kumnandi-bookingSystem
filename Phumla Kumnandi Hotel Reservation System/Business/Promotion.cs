@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 {
-    internal class Promotion
+    public class Promotion
     {
 
         public enum Season

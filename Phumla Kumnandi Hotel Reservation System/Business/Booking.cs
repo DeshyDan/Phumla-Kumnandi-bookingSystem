@@ -21,8 +21,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public int GuestID;
         public static int count = 0;
         public int RoomId;
-        public string Description;
-        public int NoOfGuests;
+        public string SpecialRequest;
+        public int NumberOfGuests;
         public int Deposit;
         public decimal TotalAmount;
         #endregion
@@ -34,8 +34,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             this.Checkout = checkout;
             this.GuestID = guestId;
             this.RoomId = roomID;
-            this.Description = description;
-            this.NoOfGuests = noOfGuests;
+            this.SpecialRequest = description;
+            this.NumberOfGuests = noOfGuests;
             this.Deposit = deposit;
             this.TotalAmount = totalAmount;
         }
@@ -57,15 +57,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return Checkout; }
             set { Checkout = value; }
         }
-        public string description
+        public string specialRequest
         {
-            get { return Description; }
-            set { Description = value; }
+            get { return SpecialRequest; }
+            set { SpecialRequest = value; }
         }
-        public int noOfGuests
+        public int numberOfGuests
         {
-            get { return NoOfGuests; }
-            set { NoOfGuests = value; }
+            get { return NumberOfGuests; }
+            set { numberOfGuests = value; }
         }
         public int deposit
         {

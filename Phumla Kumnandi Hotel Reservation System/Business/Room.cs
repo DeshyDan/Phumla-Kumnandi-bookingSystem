@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 {
-    internal class Room
+    public class Room
     {
         #region Data Members
-        private int RoomNumber;
-        private string RoomType;
-        private decimal RoomRate;
-        private string RoomOfferings;
-        private bool RoomAvailibility=false;
+     
+        public int RoomNumber;
+        public string RoomType;
+        public decimal RoomRate;
+        public string RoomOfferings;
+        public bool RoomAvailibility=false;
         #endregion
         #region Property Methods
         public int roomNumber

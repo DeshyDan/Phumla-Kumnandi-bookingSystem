@@ -58,24 +58,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
                 }
             }
             #endregion
-            #region     Database Commuincation
-            public void DataMaintenacne(Promotion aPromotion, DB.DBOperation operation)
-            {
-                Debug.WriteLine("Inside Data Maintenance");
-                int index = 0;
-                promotionsDB.DataSetChange(aPromotion, operation);
-
-                switch (operation)
-                {
-                    case DB.DBOperation.Add:
-                        Debug.WriteLine("operation is added");
-                        promotions.Add(aPromotion);
-                        break;
-                   
-               
-
-                }
-            }
+            
             public bool FinalizeChanges(Promotion promotion, DB.DBOperation operation)
             {
                 Debug.WriteLine("Inside FinalizeChange");
@@ -98,15 +81,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
                 return promotions[index];
 
             }
-            public int FindIndex(Guest aGuest)
+            public int FindIndex(Promotion aPromotion)
             {
                 int counter = 0;
                 bool found = false;
-                found = (aGuest.Id.Equals(aGuest.Id));
-                while (!(found) && counter < guest.Count - 1)
+                found = (aPromotion.Id.Equals(aPromotion.Id));
+                while (!(found) && counter < promotions.Count - 1)
                 {
                     counter++;
-                    found = (aGuest.Id == aGuest.Id);
+                    found = (aPromotion.Id == aPromotion.Id);
 
                 }
                 if (found)
@@ -123,5 +106,3 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 
         }
     }
-}
-}

@@ -16,7 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #region data members
         private string bookingTable = "bookings";
         private string sqlLocal1 = "SELECT * FROM bookings";
-        private Collection<Booking> bookings;
+        private Collection<BookingController> bookings;
         #endregion
 
         #region constructor 
@@ -101,7 +101,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion
 
         #region CRUD operataions
-        public void DataSetChange(Booking booking, DB.DBOperation operation)
+        public void DataSetChange(BookingController booking, DB.DBOperation operation)
         {
 
             DataRow row = null;
@@ -212,25 +212,20 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             insert(booking);
         }
 
-        public bool UpdateDataSource( DB.DBOperation operation)
+        public bool UpdateDataSource(BookingController booking)
         {
-            switch (operation)
-            {
-                case DBOperation.Add:
-                    insert();
-                    break;
-                case DBOperation.Edit:
-                    update();
-                    break;
-              
-            }
-            return UpdateDataSource(sqlLocal1, bookingTable);
+            bool sucess = true;
+            insert(booking);
+            update(booking);
 
-            
+
+            UpdateDataSource(sqlLocal1, bookingTable);
+
+            return sucess;
         }
         #endregion
         #region getters and setters
-        public Collection<Booking> AllBookings
+        public Collection<BookingController> AllBookings
         {
             get
             {

@@ -57,9 +57,9 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 
             }
         }
-        public bool FinalizeChanges(Booking aBooking, DB.DBOperation operation)
+        public bool FinalizeChanges(Booking aBooking,DB.DBOperation operation)
         {
-            return bookingDB.UpdateDataSource(operation);
+            return bookingDB.UpdateDataSource(aBooking);
         }
         #endregion
         #region Search Method
