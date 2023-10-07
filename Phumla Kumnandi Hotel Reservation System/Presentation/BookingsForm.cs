@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Phumla_Kumnandi_Hotel_Reservation_System.Business;
+using Phumla_Kumnandi_Hotel_Reservation_System.Data;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -21,5 +24,24 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
 
         }
+
+        private void Filter_Click(object sender, EventArgs e)
+        {
+ 
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+    
+     
+        private void bookingNavLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void BookingsForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
+    
 }
