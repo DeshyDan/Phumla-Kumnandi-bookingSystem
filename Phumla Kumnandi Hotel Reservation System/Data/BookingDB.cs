@@ -234,6 +234,18 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         }
 
+        private void Create_DELETE_Parameters(Booking booking)
+        {
+            dataAdapter.DeleteCommand = new SqlCommand("DELETE from bookings WHERE id = @id", connection);
+            Build_DELETE_Parameters(booking);
+
+        }
+    private void Build_DELETE_Parameters(Booking booking){
+        
+          dataAdapter.DeleteCommand.Parameters.AddWithValue("@id", booking.Id);
+    }
+
+
 
 
         public bool UpdateDataSource(Booking booking)
@@ -241,6 +253,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             bool sucess = true;
             Create_INSERT_Parameters(booking);
             Create_UPDATE_Parameters(booking);
+            Create_DELETE_Parameters(booking);
 
             UpdateDataSource(sqlLocal1, bookingTable);
 
