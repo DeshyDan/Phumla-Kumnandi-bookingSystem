@@ -162,7 +162,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             insert(promotion);
         }
 
-        public bool UpdateDataSource(Promotion promotion)
+        public bool UpdateDataSource(Promotion promotion, DB.DBOperation)
         {
             bool sucess = true;
             insert(promotion);

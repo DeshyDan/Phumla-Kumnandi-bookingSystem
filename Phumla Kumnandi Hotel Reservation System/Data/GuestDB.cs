@@ -211,7 +211,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         
 
-        public bool UpdateDataSource(Guest guest)
+        public bool UpdateDataSource(Guest guest, DBOperation operation)
         {
             bool sucess = true;
             Create_INSERT_Parameters(guest);
