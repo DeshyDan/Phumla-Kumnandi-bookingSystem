@@ -67,9 +67,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             {
 
                 row["id"] = guest.Id;
-                row["idNumber"] = guest.IdNumber;
+               
 
-            }
+            } 
+            row["idNumber"] = guest.IdNumber;
             row["title"] = guest.Title;
             row["firstName"] = guest.FirstName;
             row["LastName"] = guest.LastName;
