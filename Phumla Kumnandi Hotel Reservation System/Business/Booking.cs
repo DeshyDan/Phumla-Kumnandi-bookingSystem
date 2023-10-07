@@ -16,6 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             Cancelled = 2
         }
         #region DataMembers
+
         public int id;
         public BookingStatus status;
         public DateTime checkInDate;
@@ -26,11 +27,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public int noOfGuests;
         public int deposit;
         public int totalAmount;
+
         #endregion
 
         #region Constructor
         public Booking(int bookingId, int guestId, int roomID, DateTime checkin, DateTime checkout, string description, int noOfGuests, int deposit, int totalAmount)
         {
+
             this.id = bookingId;
             this.checkInDate = checkin;
             this.checkOutDate = checkout;
@@ -43,6 +46,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         public Booking()
         {
+
 
         }
         #endregion region
@@ -63,6 +67,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return checkOutDate; }
             set { checkOutDate = value; }
         }
+
+
         public string SpecialRequest
         {
             get { return specialRequest; }
@@ -72,6 +78,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         {
             get { return noOfGuests; }
             set { noOfGuests = value; }
+
         }
         public int Deposit
         {

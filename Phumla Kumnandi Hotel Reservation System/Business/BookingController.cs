@@ -15,10 +15,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         {
             #region Data Members
             BookingDB bookingDB;
-            Collection<BookingController> bookings;
+            Collection<Booking> bookings;
         #endregion
             #region Properties
-        public Collection<Business.BookingController> AllBookings
+        public Collection<Booking> AllBookings
         {
             get { return bookings; }
 
@@ -30,6 +30,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         {
             bookingDB = new BookingDB();
             bookings = bookingDB.AllBookings;
+
         }
         #endregion
         #region Database Communication
@@ -44,48 +45,48 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
                     bookings.Add(aBooking);
                     break;
                 case DB.DBOperation.Edit:
-                    index = FindIndex(aBooking.ToString());
+                    index = FindIndex(aBooking);
                     bookings.RemoveAt(index);
                     bookings.Insert(index, aBooking);
 
                     break;
                 case DB.DBOperation.Delete:
-                    index = FindIndex(aBooking.ToString());
+                    index = FindIndex(aBooking);
                     bookings.RemoveAt(index);
                     break;
 
             }
         }
-        public bool FinalizeChanges(DB.DBOperation operation)
+        public bool FinalizeChanges(Booking aBooking,DB.DBOperation operation)
         {
-            return bookingDB.UpdateDataSource(operation);
+            return bookingDB.UpdateDataSource(aBooking);
         }
         #endregion
         #region Search Method
-        public Business.BookingController Find(string ID)
+        public Booking Find(string ID)
         {
             int index = 0;
-            bool found = false;
+            bool found = (bookings[index].BookingID == Convert.ToInt32(ID));
             int count = bookings.Count;
             while (!(found) && (index < bookings.Count - 1))
             {
-                    if(bookings[index].BookingID==ID)
-                    {
-                        found= true;
-                        return bookings[index];
-                    }
-                     index++;
-                
 
+                index = index + 1;
+               
+                found = (bookings[index].BookingID == Convert.ToInt32(ID));
             }
+            return bookings[index];
         }
-        public int FindIndex(string id)
+        public int FindIndex(Booking aBooking)
         {
             int counter = 0;
             bool found = false;
+            found = (aBooking.BookingID == bookings[counter].BookingID);
             while (!(found) && counter < bookings.Count - 1)
             {
-                
+
+                counter++;
+                found = (aBooking.BookingID == bookings[counter].BookingID);
 
 
             }
