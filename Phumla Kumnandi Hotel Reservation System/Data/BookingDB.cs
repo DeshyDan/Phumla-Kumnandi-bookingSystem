@@ -261,7 +261,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         }
         #endregion
         #region getters and setters
-        public Collection<BookingController> AllBookings
+        public Collection<Booking> AllBookings
         {
             get
             {

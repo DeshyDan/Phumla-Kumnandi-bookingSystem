@@ -47,7 +47,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     room = new Room();
-                    room.Id = Convert.ToString(myRow["id"]).TrimEnd();
+                    room.Id = Convert.ToInt32(myRow["id"]);
                    
                     rooms.Add(room);
 
@@ -64,9 +64,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
              
 
             }
-            row["roomTypeId"] = room.roomTypeId;
-            row["roomStatusId"] = room.RoomStatusId;
-            row["promotionId"] = room.PromotionId;
+            row["roomDescription"] = room.RoomDescription;
+            row["roomAvailaibility"] = room.RoomAvailability;
             row["roomNumber"] = room.RoomNumber;
             row["rate"] = room.Rate;
            
@@ -81,7 +80,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
                 myRow = row;
                 if (myRow.RowState != DataRowState.Deleted)
                 {
-                    if (room.Id == Convert.ToString(dataSet.Tables[table].Rows[rowIndex]["id"]))
+                    if (room.Id == Convert.ToInt32(dataSet.Tables[table].Rows[rowIndex]["id"]))
                     {
                         returnValue = rowIndex;
                     }
