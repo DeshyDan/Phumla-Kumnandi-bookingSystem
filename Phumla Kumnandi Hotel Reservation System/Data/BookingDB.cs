@@ -94,7 +94,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
                 myRow = row;
                 if (myRow.RowState != DataRowState.Deleted)
                 {
-                    if (booking.Id == Convert.ToInt32(dataSet.Tables[table].Rows[rowIndex]["id"]))
+                    if (booking.Id == Convert.ToString(dataSet.Tables[table].Rows[rowIndex]["id"]))
                     {
                         returnValue = rowIndex;
                     }
@@ -142,7 +142,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Create_INSERT_Parameters(Booking booking)
         {
             dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO bookings (numberOfRooms,guestId, bookingStatusId, checkInDate, checkOutDate, numberOfGuests, deposit , totalAmount) values (@numberOfRooms,@guestId ,  @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuests, @deposit , @totalAmount)"
+                "INSERT INTO bookings (id,numberOfRooms,guestId, bookingStatusId, checkInDate, checkOutDate, numberOfGuests, deposit , totalAmount, specialRequest) values (@id , @numberOfRooms,@guestId ,  @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuests, @deposit , @totalAmount, specialRequest)"
                 );
 
             Build_INSERT_Parameters(booking);
@@ -150,6 +150,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Build_INSERT_Parameters(Booking booking)
         {
             SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@id", SqlDbType.NVarChar, 25);
+            dataAdapter.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@numberOfRooms", SqlDbType.Int);
             param.Value = booking.NumberOfRooms;
@@ -183,11 +185,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             param.Value = booking.TotalAmount;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
+            param = new SqlParameter("@specialRequest", SqlDbType.NVarChar, 256);
+            dataAdapter.InsertCommand.Parameters.Add(param);
+
         }
 
         private void Create_UPDATE_Parameters(Booking booking)
         {
-            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET numberOfRooms = @numberOfRooms, guestId = @guestId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id = @originalId ", connection);
+            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET numberOfRooms = @numberOfRooms, guestId = @guestId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount , specialRequest = @specialRequest WHERE id = @originalId ", connection);
 
             Build_UPDATE_Parameters(booking);
         }
@@ -196,7 +201,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@originalId", SqlDbType.NVarChar,50 ,"id" );
+            param = new SqlParameter("@originalId", SqlDbType.NVarChar,25 ,"id" );
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
@@ -240,6 +245,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             param.Value = booking.TotalAmount;
             param.SourceVersion = DataRowVersion.Current;
             dataAdapter.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@specialRequest", SqlDbType.NVarChar, 256);
+            param.SourceVersion = DataRowVersion.Current;
+            dataAdapter.UpdateCommand.Parameters.Add(param);
+
 
         }
 
