@@ -51,6 +51,7 @@
             this.cancelButton.TabIndex = 33;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // createBookingButton
             // 
@@ -66,6 +67,7 @@
             this.createBookingButton.TabIndex = 34;
             this.createBookingButton.Text = "Create Booking";
             this.createBookingButton.UseVisualStyleBackColor = false;
+            this.createBookingButton.Click += new System.EventHandler(this.createBookingButton_Click);
             // 
             // label1
             // 
@@ -76,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(377, 27);
             this.label1.TabIndex = 35;
             this.label1.Text = "The Deluxe Suite is available for ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -87,7 +88,6 @@
             this.label2.Size = new System.Drawing.Size(221, 27);
             this.label2.TabIndex = 35;
             this.label2.Text = "the selected dates ";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -95,10 +95,9 @@
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(58, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 34);
+            this.label3.Size = new System.Drawing.Size(160, 27);
             this.label3.TabIndex = 35;
             this.label3.Text = "Total Price: R";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // bookingPriceLabel
             // 
@@ -109,13 +108,12 @@
             this.bookingPriceLabel.Size = new System.Drawing.Size(51, 27);
             this.bookingPriceLabel.TabIndex = 35;
             this.bookingPriceLabel.Text = "950";
-            this.bookingPriceLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // RoomAvailableBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 259);
+            this.ClientSize = new System.Drawing.Size(458, 331);
             this.Controls.Add(this.bookingPriceLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -126,6 +124,7 @@
             this.Name = "RoomAvailableBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomAvailableBox";
+            this.Load += new System.EventHandler(this.RoomAvailableBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

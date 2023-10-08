@@ -211,13 +211,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         
 
-        public bool UpdateDataSource(Guest guest, DBOperation operation)
+        public bool UpdateDataSource(Guest guest)
         {
             bool sucess = true;
             Create_INSERT_Parameters(guest);
-            Create_UPDATE_Parameters(guest);       
+               
 
-            UpdateDataSource(sqlLocal1, guestTable);
+           sucess = UpdateDataSource(sqlLocal1, guestTable);
 
             return sucess;
         }

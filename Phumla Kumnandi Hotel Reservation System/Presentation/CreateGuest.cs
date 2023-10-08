@@ -7,59 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class CreateGuest : Form
     {
-        public CreateGuest()
+        private Booking booking;
+        private Guest guest;
+        private GuestController guestController;
+        public CreateGuest(Booking booking, GuestController guestController)
         {
             InitializeComponent();
+            this.booking = booking;
+            this.guestController = guestController;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void PopulateObject()
         {
+            guest = new Guest();
+            guest.Title = titlePicker.Text;
+            guest.FirstName = firstNameInput.Text;  
+            guest.LastName = LastNameInput.Text;
+            guest.Email = emailInput.Text;
+            guest.Telephone = telephoneInput.Text;
+            guest.IdNumber = idNumberInput.Text;
+            guest.Address = addressInput.Text;
 
+            guest = guestController.findGuest(guest);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void submitButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Last_Name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateGuest_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Email__TextChanged(object sender, EventArgs e)
-        {
-
+            PopulateObject();
+            guestController.FinalizeChanges(guest);
+            confirmBooking confirmBooking = new confirmBooking();
+            confirmBooking.ShowDialog();
+            this.Close();
         }
     }
 }

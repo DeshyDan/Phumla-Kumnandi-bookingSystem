@@ -13,12 +13,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
     {
         #region Data Members
         GuestDB guestDB;
-        Collection<Guest> guest;
+        Collection<Guest> guests;
         #endregion
         #region properties
         public Collection<Guest> AllGuest
         {
-            get { return guest; }
+            get { return guests; }
 
         }
         #endregion
@@ -26,7 +26,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public GuestController()
         {
             guestDB = new GuestDB();
-            guest = guestDB.AllGuests;
+            guests = guestDB.AllGuests;
 
 
         }
@@ -42,15 +42,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             {
                 case DB.DBOperation.Add:
                     Debug.WriteLine("operation is Added");
-                    guest.Add(aGuest);
+                    guests.Add(aGuest);
                     break;
                 case DB.DBOperation.Edit:
                     index = FindIndex(aGuest);
-                    guest[index] = aGuest;
+                    guests[index] = aGuest;
                     break;
                 case DB.DBOperation.Delete:
                     index = FindIndex(aGuest);
-                    guest[index] = aGuest;
+                    guests[index] = aGuest;
                     break;
 
             }
@@ -67,23 +67,37 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             {
                 case DB.DBOperation.Add:
                     Debug.WriteLine("operation is added");
-                    guest.Add(aGuest);
+                    guests.Add(aGuest);
                     break;
                 case DB.DBOperation.Edit:
                     index = FindIndex(aGuest);
-                    guest[index] = aGuest;
+                    guests[index] = aGuest;
                     break;
                 case DB.DBOperation.Delete:
                     index = FindIndex(aGuest);
-                    guest.RemoveAt(index);
+                    guests.RemoveAt(index);
                     break;
 
             }
         }
-        public bool FinlizeChanges(Guest guest, DB.DBOperation operation)
+        public Guest findGuest(Guest guestToFind)
+        {
+            foreach (Guest existingGuest in guests)
+            {
+                if (existingGuest.Email == guestToFind.Email)
+                {
+                
+                    return existingGuest;
+                }
+            }
+
+         
+            return guestToFind;
+        }
+        public bool FinalizeChanges(Guest guest)
         {
             Debug.WriteLine("Inside FinalizeChange");
-            return guestDB.UpdateDataSource(guest, operation);
+            return guestDB.UpdateDataSource(guest);
 
         }
         #endregion
@@ -103,14 +117,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public Guest Find(String ID)
         {
             int index = 0;
-            bool found = (guest[index].Id.Equals(ID));
-            int count = guest.Count;
-            while (!(found) && (index < guest.Count - 1))
+            bool found = (guests[index].Id.Equals(ID));
+            int count = guests.Count;
+            while (!(found) && (index < guests.Count - 1))
             {
                 index = index + 1;
-                found = (guest[index].Id.Equals(ID));
+                found = (guests[index].Id.Equals(ID));
             }
-            return guest[index];
+            return guests[index];
 
         }
         public int FindIndex(Guest aGuest)
@@ -118,7 +132,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             int counter = 0;
             bool found = false;
             found = (aGuest.Id.Equals(aGuest.Id));
-            while (!(found) && counter < guest.Count - 1)
+            while (!(found) && counter < guests.Count - 1)
             {
                 counter++;
                 found = (aGuest.Id == aGuest.Id);
