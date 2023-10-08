@@ -1,6 +1,6 @@
 ﻿namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    partial class HomeForm1
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.logoutButton = new System.Windows.Forms.Button();
-            this.promotionNavLabel = new System.Windows.Forms.Label();
-            this.roomNavLabel = new System.Windows.Forms.Label();
-            this.guestNavLabel = new System.Windows.Forms.Label();
-            this.bookingNavLabel = new System.Windows.Forms.Label();
-            this.homeNavLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataLanel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -63,111 +56,16 @@
             this.numberOfGuestPicker = new System.Windows.Forms.NumericUpDown();
             this.checkAvailabilityButton = new System.Windows.Forms.Button();
             this.notAvailableLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.panel1.Controls.Add(this.logoutButton);
-            this.panel1.Controls.Add(this.promotionNavLabel);
-            this.panel1.Controls.Add(this.roomNavLabel);
-            this.panel1.Controls.Add(this.guestNavLabel);
-            this.panel1.Controls.Add(this.bookingNavLabel);
-            this.panel1.Controls.Add(this.homeNavLabel);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 898);
-            this.panel1.TabIndex = 2;
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(137)))), ((int)(((byte)(165)))));
-            this.logoutButton.FlatAppearance.BorderSize = 0;
-            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(63, 806);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(236, 54);
-            this.logoutButton.TabIndex = 1;
-            this.logoutButton.Text = "Logout";
-            this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // promotionNavLabel
-            // 
-            this.promotionNavLabel.AutoSize = true;
-            this.promotionNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.promotionNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.promotionNavLabel.Location = new System.Drawing.Point(116, 538);
-            this.promotionNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.promotionNavLabel.Name = "promotionNavLabel";
-            this.promotionNavLabel.Size = new System.Drawing.Size(259, 53);
-            this.promotionNavLabel.TabIndex = 0;
-            this.promotionNavLabel.Text = "Promotions";
-            // 
-            // roomNavLabel
-            // 
-            this.roomNavLabel.AutoSize = true;
-            this.roomNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.roomNavLabel.Location = new System.Drawing.Point(117, 444);
-            this.roomNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.roomNavLabel.Name = "roomNavLabel";
-            this.roomNavLabel.Size = new System.Drawing.Size(171, 53);
-            this.roomNavLabel.TabIndex = 0;
-            this.roomNavLabel.Text = "Rooms";
-            this.roomNavLabel.Click += new System.EventHandler(this.roomNavLabel_Click);
-            // 
-            // guestNavLabel
-            // 
-            this.guestNavLabel.AutoSize = true;
-            this.guestNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.guestNavLabel.Location = new System.Drawing.Point(117, 345);
-            this.guestNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.guestNavLabel.Name = "guestNavLabel";
-            this.guestNavLabel.Size = new System.Drawing.Size(173, 53);
-            this.guestNavLabel.TabIndex = 0;
-            this.guestNavLabel.Text = "Guests";
-            this.guestNavLabel.Click += new System.EventHandler(this.guestNavLabel_Click);
-            // 
-            // bookingNavLabel
-            // 
-            this.bookingNavLabel.AutoSize = true;
-            this.bookingNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.bookingNavLabel.Location = new System.Drawing.Point(117, 250);
-            this.bookingNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bookingNavLabel.Name = "bookingNavLabel";
-            this.bookingNavLabel.Size = new System.Drawing.Size(215, 53);
-            this.bookingNavLabel.TabIndex = 0;
-            this.bookingNavLabel.Text = "Bookings";
-            this.bookingNavLabel.Click += new System.EventHandler(this.bookingNavLabel_Click);
-            // 
-            // homeNavLabel
-            // 
-            this.homeNavLabel.AutoSize = true;
-            this.homeNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.homeNavLabel.Location = new System.Drawing.Point(117, 159);
-            this.homeNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.homeNavLabel.Name = "homeNavLabel";
-            this.homeNavLabel.Size = new System.Drawing.Size(154, 55);
-            this.homeNavLabel.TabIndex = 0;
-            this.homeNavLabel.Text = "Home";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dataLanel);
-            this.panel2.Location = new System.Drawing.Point(415, 15);
+            this.panel2.Location = new System.Drawing.Point(24, 15);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1148, 151);
@@ -206,7 +104,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.checkOutLabel);
             this.panel3.Controls.Add(this.checkInLabel);
-            this.panel3.Location = new System.Drawing.Point(415, 209);
+            this.panel3.Location = new System.Drawing.Point(24, 209);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1148, 154);
@@ -424,7 +322,7 @@
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(647, 457);
+            this.label16.Location = new System.Drawing.Point(256, 457);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(157, 40);
@@ -435,7 +333,7 @@
             // 
             this.checkInDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkInDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInDateTimePicker.Location = new System.Drawing.Point(506, 522);
+            this.checkInDateTimePicker.Location = new System.Drawing.Point(115, 522);
             this.checkInDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.checkInDateTimePicker.Name = "checkInDateTimePicker";
             this.checkInDateTimePicker.Size = new System.Drawing.Size(457, 39);
@@ -449,7 +347,7 @@
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(1177, 452);
+            this.label17.Location = new System.Drawing.Point(786, 452);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(185, 40);
@@ -460,7 +358,7 @@
             // 
             this.checkOutDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOutDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutDateTimePicker.Location = new System.Drawing.Point(1056, 522);
+            this.checkOutDateTimePicker.Location = new System.Drawing.Point(665, 522);
             this.checkOutDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.checkOutDateTimePicker.Name = "checkOutDateTimePicker";
             this.checkOutDateTimePicker.Size = new System.Drawing.Size(450, 39);
@@ -474,7 +372,7 @@
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(607, 645);
+            this.label18.Location = new System.Drawing.Point(216, 645);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(250, 32);
@@ -485,7 +383,7 @@
             // 
             this.numberOfGuestPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfGuestPicker.Location = new System.Drawing.Point(907, 620);
+            this.numberOfGuestPicker.Location = new System.Drawing.Point(516, 620);
             this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
@@ -498,7 +396,7 @@
             this.checkAvailabilityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkAvailabilityButton.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAvailabilityButton.ForeColor = System.Drawing.Color.White;
-            this.checkAvailabilityButton.Location = new System.Drawing.Point(799, 727);
+            this.checkAvailabilityButton.Location = new System.Drawing.Point(408, 727);
             this.checkAvailabilityButton.Margin = new System.Windows.Forms.Padding(4);
             this.checkAvailabilityButton.Name = "checkAvailabilityButton";
             this.checkAvailabilityButton.Size = new System.Drawing.Size(437, 54);
@@ -514,18 +412,18 @@
             this.notAvailableLabel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.notAvailableLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notAvailableLabel.ForeColor = System.Drawing.Color.Red;
-            this.notAvailableLabel.Location = new System.Drawing.Point(915, 806);
+            this.notAvailableLabel.Location = new System.Drawing.Point(524, 806);
             this.notAvailableLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.notAvailableLabel.Name = "notAvailableLabel";
             this.notAvailableLabel.Size = new System.Drawing.Size(212, 24);
             this.notAvailableLabel.TabIndex = 0;
             this.notAvailableLabel.Text = "Room is not available";
             // 
-            // HomeForm1
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 891);
+            this.ClientSize = new System.Drawing.Size(1202, 860);
             this.Controls.Add(this.checkAvailabilityButton);
             this.Controls.Add(this.numberOfGuestPicker);
             this.Controls.Add(this.checkOutDateTimePicker);
@@ -533,17 +431,16 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.notAvailableLabel);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label16);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "HomeForm1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "HomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Phumla Kundandi Hotels";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeForm_FormClosed);
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -555,14 +452,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.Label promotionNavLabel;
-        private System.Windows.Forms.Label roomNavLabel;
-        private System.Windows.Forms.Label guestNavLabel;
-        private System.Windows.Forms.Label bookingNavLabel;
-        private System.Windows.Forms.Label homeNavLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label dataLanel;
         private System.Windows.Forms.Panel panel3;

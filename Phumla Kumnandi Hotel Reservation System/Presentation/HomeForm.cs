@@ -12,23 +12,25 @@ using System.Windows.Forms;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    public partial class HomeForm1 : Form
+    public partial class HomeForm : Form
     {
-
+        
         #region data members
         private Guest guest;
         private Booking booking;
         private GuestController guestController;
         private BookingController bookingController;
+        public bool listFormClosed;
 
 
 
         #endregion
-        public HomeForm1()
+        public HomeForm()
         {
             InitializeComponent();
             this.dataLanel.Text = DateTime.Now.Date.ToString("dddd, MMMM dd, yyyy");
             this.notAvailableLabel.Visible = false;
+          
         }
         #region utility methods
 
@@ -137,6 +139,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             this.Hide();
             Login login = new Login();
             login.ShowDialog();
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            listFormClosed = true;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class RoomsForm : Form
     {
+        public bool listFormClosed;
         public RoomsForm()
         {
             InitializeComponent();
@@ -84,6 +85,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RoomsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            listFormClosed = true;
         }
     }
 }

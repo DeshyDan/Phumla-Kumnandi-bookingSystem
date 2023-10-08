@@ -16,6 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     public partial class GuestForm : Form
     {
         private BindingList<Guest> guest;
+        public bool listFormClosed;
         public GuestForm()
         {
             InitializeComponent();
@@ -118,6 +119,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
                 MessageBox.Show($"An Error occured while listing all guests{ex.Message}","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void GuestForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            listFormClosed = true;
         }
     }
 }
