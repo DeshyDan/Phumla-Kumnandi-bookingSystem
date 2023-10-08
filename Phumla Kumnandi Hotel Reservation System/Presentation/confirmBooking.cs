@@ -13,9 +13,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class ConfirmBooking : Form
     {
+        #region instance variables
 
         private Booking booking;
         private BookingController bookingController;
+
+        #endregion
+        #region constructor
         public ConfirmBooking(Guest guest, Booking booking, BookingController bookingController)
         {
             InitializeComponent();
@@ -32,13 +36,38 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             numberOfGuestPicker.Enabled = false;
 
         }
+        #endregion
         private void PopulateObject()
         {
             booking.SpecialRequest = specialRequestInput.Text;
+            booking.Id = GenerateUniqueId();
         }
 
+        #region Utility function
+        private const string AllowedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        private Random random = new Random();
+        private string GenerateUniqueId()
+        {
+            // Get the current timestamp in milliseconds
+            long timestamp = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
+            // Generate a random part of the ID
+            StringBuilder randomPart = new StringBuilder();
+            for (int i = 0; i < 10; i++) // You can adjust the length as needed
+            {
+                int index = random.Next(AllowedChars.Length);
+                randomPart.Append(AllowedChars[index]);
+            }
 
+            // Combine the timestamp and random part to create a unique ID
+            string uniqueId = $"{timestamp}{randomPart.ToString().PadRight(15)}";
+
+            // Ensure the ID is exactly 25 characters long
+            uniqueId = uniqueId.Substring(0, 25);
+
+            return uniqueId;
+        }
+        #endregion
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             PopulateObject();

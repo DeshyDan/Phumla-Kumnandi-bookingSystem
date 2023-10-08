@@ -22,10 +22,23 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             this.bookingController = bookingController;
             nameLabel.Text = booking.GuestId;
             bookingIdLabel.Text = booking.Id.ToString();
+            specialRequestInput.Text = booking.SpecialRequest;
+            numberOfGuestPicker.Value = booking.NumberOfGuests;
+            checkInDateTimePicker.Value = booking.CheckInDate;
+            checkOutDateTimePicker.Value = booking.CheckOutDate;
+
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            bookingController.DataMaintenance(booking, Data.DB.DBOperation.Edit);
+            bookingController.FinalizeChanges(booking);
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }

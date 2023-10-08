@@ -49,7 +49,7 @@
             // 
             this.specialRequestInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.specialRequestInput.Location = new System.Drawing.Point(27, 474);
-            this.specialRequestInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.specialRequestInput.Margin = new System.Windows.Forms.Padding(4);
             this.specialRequestInput.Name = "specialRequestInput";
             this.specialRequestInput.Size = new System.Drawing.Size(1081, 118);
             this.specialRequestInput.TabIndex = 44;
@@ -60,7 +60,7 @@
             this.numberOfGuestPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfGuestPicker.Location = new System.Drawing.Point(431, 304);
-            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 39;
@@ -130,12 +130,13 @@
             this.cancelButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Black;
             this.cancelButton.Location = new System.Drawing.Point(621, 617);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(236, 54);
             this.cancelButton.TabIndex = 31;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // saveButton
             // 
@@ -145,7 +146,7 @@
             this.saveButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.White;
             this.saveButton.Location = new System.Drawing.Point(872, 617);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(236, 54);
             this.saveButton.TabIndex = 32;
@@ -204,7 +205,7 @@
             this.label3.Location = new System.Drawing.Point(55, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 49);
+            this.label3.Size = new System.Drawing.Size(173, 39);
             this.label3.TabIndex = 48;
             this.label3.Text = "Booking Id";
             // 
@@ -242,7 +243,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EditBooking";
             this.Text = "EditBooking";
-            this.Load += new System.EventHandler(this.EditBooking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
