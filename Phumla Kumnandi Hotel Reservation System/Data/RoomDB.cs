@@ -14,7 +14,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
     {
 
         #region instance variables 
-        private string guestTable = "room";
+        private string guestTable = "rooms";
         private string sqlLocal1 = "SELECT * FROM room";
         private Collection<Room> rooms;
 
@@ -67,7 +67,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             row["roomDescription"] = room.RoomDescription;
             row["roomAvailaibility"] = room.RoomAvailability;
             row["roomNumber"] = room.RoomNumber;
-            row["rate"] = room.Rate;
+        
            
         }
         private int FindRow(Room room, string table)
@@ -123,26 +123,26 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion
 
         #region build parameters, create commands and update database
+        private void Create_INSERT_Parameters(Room room)
+        {
+            dataAdapter.InsertCommand = new SqlCommand("INSERT INTO rooms(")
+        }
         private void insert(Room room)
         {
             SqlParameter param = default(SqlParameter);
             param = new SqlParameter("@id", SqlDbType.Int, 50, "id");
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@roomTypeId", SqlDbType.NChar, 13, "roomTypeId");
-            dataAdapter.InsertCommand.Parameters.Add(param);
+            
 
             param = new SqlParameter("roomStatusId", SqlDbType.NChar, 13, "roomStatusId");
             dataAdapter.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@promotionId", SqlDbType.NVarChar, 50, "promotionId");
-            dataAdapter.InsertCommand.Parameters.Add(param);
-
+            
             param = new SqlParameter("@roomNumber", SqlDbType.NVarChar, 50, "roomNumber");
             dataAdapter.InsertCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@rate", SqlDbType.NVarChar, 255, "rate");
-            dataAdapter.InsertCommand.Parameters.Add(param);
+            
+            param =
 
         }
 

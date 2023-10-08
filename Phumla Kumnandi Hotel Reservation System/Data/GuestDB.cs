@@ -67,9 +67,9 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             {
 
                 row["id"] = guest.Id;
-               
 
-            } 
+
+            }
             row["idNumber"] = guest.IdNumber;
             row["title"] = guest.Title;
             row["firstName"] = guest.FirstName;
@@ -135,7 +135,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Create_INSERT_Parameters(Guest guest)
         {
             dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO guests (idNumber, firstName, lastName, email, telephone , address) values(@idNumber, @firstName, @lastName ,@email, @telephone, @address"
+                "INSERT INTO guests (idNumber,title firstName, lastName, email, telephone , address) values(@idNumber,@title,  @firstName, @lastName ,@email, @telephone, @address"
                 );
 
             Build_INSERT_Parameters(guest);
@@ -166,58 +166,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             dataAdapter.InsertCommand.Parameters.Add(param);
         }
 
-        private void Create_UPDATE_Parameters(Guest guest)
-        {
-            dataAdapter.UpdateCommand = new SqlCommand("UPDATE guests SET idNumber = @idNumber, firstName = @firstName, lastName = @lastName , email = @email, telephone = @telephone, address = @address WHERE id = @originalId", connection);
 
-            Build_UPDATE_Parameters(guest);
-        }
-        private void Build_UPDATE_Parameters(Guest guest)
-        {
-            SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@originalId", SqlDbType.Int, 50, "id");
-            param.SourceVersion = DataRowVersion.Original;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@idNumber", SqlDbType.NChar, 13, "idNumber");
-            param.SourceVersion = DataRowVersion.Original;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@title", SqlDbType.NChar, 5, "title");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@firstName", SqlDbType.NVarChar, 50, "firstName");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@lastName", SqlDbType.NVarChar, 50, "lastName");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@email", SqlDbType.NVarChar, 255, "email");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@telephone", SqlDbType.NChar, 10, "telephone");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-
-            param = new SqlParameter("@address", SqlDbType.NVarChar, 255, "address");
-            param.SourceVersion = DataRowVersion.Current;
-            dataAdapter.UpdateCommand.Parameters.Add(param);
-        }
-
-        
 
         public bool UpdateDataSource(Guest guest)
         {
             bool sucess = true;
             Create_INSERT_Parameters(guest);
-               
 
-           sucess = UpdateDataSource(sqlLocal1, guestTable);
+
+            sucess = UpdateDataSource(sqlLocal1, guestTable);
 
             return sucess;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,16 +18,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #region DataMembers
 
-        public int id;
-        public BookingStatus status;
-        public DateTime checkInDate;
-        public DateTime checkOutDate;
-        public int guestId;
-        public int numberOfRoom;
-        public string specialRequest;
-        public int noOfGuests;
-        public int deposit;
-        public int totalAmount;
+        private int id;
+        private BookingStatus status;
+        private DateTime checkInDate;
+        private DateTime checkOutDate;
+        private int guestId;
+        private int numberOfRoom;
+        private string specialRequest;
+        private int noOfGuests;
+        private int deposit;
+        private int totalAmount;
 
         #endregion
 
@@ -56,6 +57,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return id; }
             set { id = value; }
 
+        }
+        public int GuestId
+        {
+            get { return guestId; }
+            set { guestId = value; }
         }
         public DateTime CheckInDate
         {

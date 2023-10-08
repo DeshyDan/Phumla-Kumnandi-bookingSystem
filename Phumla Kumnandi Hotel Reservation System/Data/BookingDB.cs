@@ -48,6 +48,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
                 {
                     booking = new Booking();
                     booking.Id = Convert.ToInt32(myRow["id"]);
+                    booking.GuestId = Convert.ToInt32(myRow["guestId"]);
                     booking.NumberOfRooms = Convert.ToInt32(myRow["numberOfRooms"]);
                     booking.BookingStatusId = Convert.ToInt32(myRow["bookingStatusId"]);
                     booking.CheckInDate = Convert.ToDateTime(myRow["checkInlDate"]);
@@ -73,6 +74,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             }
             row["checkInDate"] = booking.CheckInDate;
+            row["guestId"] = booking.GuestId;
             row["checkOutDate"] = booking.CheckOutDate;
             row["bookingStatusId"] = booking.BookingStatusId;
             row["numberOfRooms"] = booking.NumberOfRooms;
@@ -141,7 +143,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Create_INSERT_Parameters(Booking booking)
         {
             dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO bookings (numberOfRooms, bookingStatusId, checkInDate, checkOutDate, numberOfGuests, deposit , totalAmount) values (@numberOfRooms, @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuests, @deposit , @totalAmount)"
+                "INSERT INTO bookings (numberOfRooms,guestId, bookingStatusId, checkInDate, checkOutDate, numberOfGuests, deposit , totalAmount) values (@numberOfRooms,@guestId ,  @bookingStatusId, @checkInDate, @checkOutDate, @numberOfGuests, @deposit , @totalAmount)"
                 );
 
             Build_INSERT_Parameters(booking);
@@ -152,6 +154,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             param = new SqlParameter("@numberOfRooms", SqlDbType.Int);
             param.Value = booking.NumberOfRooms;
+            dataAdapter.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@guestId", SqlDbType.Int);
+            param.Value = booking.GuestId;
             dataAdapter.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@bookingStatusId", SqlDbType.Int);
@@ -182,7 +188,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
         private void Create_UPDATE_Parameters(Booking booking)
         {
-            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET numberOfRooms = @numberOfRooms, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id = @originalId ", connection);
+            dataAdapter.UpdateCommand = new SqlCommand("UPDATE bookings SET numberOfRooms = @numberOfRooms, guestId = @guestId, bookigStatusId = @bookingStatusId, checkInDate = @checkInDate, checkInDate = @checkOutDate,numberOfGuests = @numberOfGuests, deposit = @deposit , totalAmount = @totalAmount WHERE id = @originalId ", connection);
 
             Build_UPDATE_Parameters(booking);
         }
@@ -199,6 +205,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             param = new SqlParameter("@numberOfRooms", SqlDbType.Int);
             param.Value = booking.NumberOfRooms;
+            param.SourceVersion = DataRowVersion.Current;
+            dataAdapter.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@guestId", SqlDbType.Int);
+            param.Value = booking.GuestId;
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 
@@ -240,10 +251,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             Build_DELETE_Parameters(booking);
 
         }
-    private void Build_DELETE_Parameters(Booking booking){
-        
-          dataAdapter.DeleteCommand.Parameters.AddWithValue("@id", booking.Id);
-    }
+        private void Build_DELETE_Parameters(Booking booking)
+        {
+
+            dataAdapter.DeleteCommand.Parameters.AddWithValue("@id", booking.Id);
+        }
 
 
 

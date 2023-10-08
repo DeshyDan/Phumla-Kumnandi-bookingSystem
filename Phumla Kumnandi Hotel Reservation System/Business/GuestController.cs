@@ -31,31 +31,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
 
         }
         #endregion
-        #region Database Communication
-        public void DataMaintenance(Guest aGuest, DB.DBOperation operation)
-        {
-            Debug.WriteLine("Inside DataMaintence");
-            int index = 0;
-            guestDB.DataSetChange(aGuest, operation);
 
-            switch (operation)
-            {
-                case DB.DBOperation.Add:
-                    Debug.WriteLine("operation is Added");
-                    guests.Add(aGuest);
-                    break;
-                case DB.DBOperation.Edit:
-                    index = FindIndex(aGuest);
-                    guests[index] = aGuest;
-                    break;
-                case DB.DBOperation.Delete:
-                    index = FindIndex(aGuest);
-                    guests[index] = aGuest;
-                    break;
-
-            }
-        }
-        #endregion
         #region     Database Commuincation
         public void DataMaintenacne(Guest aGuest, DB.DBOperation operation)
         {
@@ -86,12 +62,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             {
                 if (existingGuest.Email == guestToFind.Email)
                 {
-                
+
                     return existingGuest;
                 }
             }
 
-         
+
             return guestToFind;
         }
         public bool FinalizeChanges(Guest guest)
@@ -102,18 +78,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #endregion
         #region Searching through a collection
-      /*  public Collection<Guest> FindByGuest(Collection<Guest> aGuest)
-        {
-            Collection<Guest> matches = new Collection<Guest>();
-            foreach (Guest guest in aGuest)
-            {
-                if (guest.IdNumber.Equals(Guest(), StringComparison.OrdinalIgnoreCase))
-                {
-                    matches.Add(guest);
-                }
-            }
-            return matches;
-        }*/
+     
         public Guest Find(String ID)
         {
             int index = 0;
@@ -130,8 +95,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public int FindIndex(Guest aGuest)
         {
             int counter = 0;
-            bool found = false;
-            found = (aGuest.Id.Equals(aGuest.Id));
+            bool found = (aGuest.Id.Equals(aGuest.Id));
             while (!(found) && counter < guests.Count - 1)
             {
                 counter++;
