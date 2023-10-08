@@ -28,12 +28,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             try
             {
-                string roomID = searchBox.Text;
+                string stringRoomID = searchBox.Text;
+                int roomId = int.Parse(stringRoomID);
                 RoomController roomcontroller = new RoomController();
+                 
+                Room aRoom = roomcontroller.Find(roomId);
 
-                Room aRoom = roomcontroller.Find(roomID);
-
-                if (string.IsNullOrEmpty(roomID))
+                if (string.IsNullOrEmpty(stringRoomID))
                 {
                     MessageBox.Show("Please enter a GuestID to searc", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

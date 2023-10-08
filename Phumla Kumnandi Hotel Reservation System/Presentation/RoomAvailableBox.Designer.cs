@@ -103,7 +103,7 @@
             // 
             this.bookingPriceLabel.AutoSize = true;
             this.bookingPriceLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookingPriceLabel.Location = new System.Drawing.Point(218, 105);
+            this.bookingPriceLabel.Location = new System.Drawing.Point(236, 105);
             this.bookingPriceLabel.Name = "bookingPriceLabel";
             this.bookingPriceLabel.Size = new System.Drawing.Size(51, 27);
             this.bookingPriceLabel.TabIndex = 35;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 331);
+            this.ClientSize = new System.Drawing.Size(469, 331);
             this.Controls.Add(this.bookingPriceLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

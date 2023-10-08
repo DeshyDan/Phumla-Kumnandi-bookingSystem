@@ -27,6 +27,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         public HomeForm1()
         {
             InitializeComponent();
+            this.dataLanel.Text = DateTime.Now.Date.ToString("dddd, MMMM dd, yyyy");
+            this.notAvailableLabel.Visible = false; 
         }
         #region utility methods
 
@@ -82,6 +84,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             PopulateObject(); 
             RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
             roomAvailableBox.Show();
+
+        }
+
+        private void dataLanel_Click(object sender, EventArgs e)
+        {
 
         }
     }
