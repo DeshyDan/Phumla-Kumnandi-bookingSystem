@@ -17,7 +17,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         #region data members
         private Guest guest;
-        private Booking booking; 
+        private Booking booking;
         private GuestController guestController;
         private BookingController bookingController;
 
@@ -28,68 +28,115 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             InitializeComponent();
             this.dataLanel.Text = DateTime.Now.Date.ToString("dddd, MMMM dd, yyyy");
-            this.notAvailableLabel.Visible = false; 
+            this.notAvailableLabel.Visible = false;
         }
         #region utility methods
 
         private void ClearAll()
         {
-            checkInDateTimePicker.Text= string.Empty;
-            checkOutDateTimePicker.Text= string.Empty;
-            numberOfGuestPicker.Text= string.Empty;
+            checkInDateTimePicker.Text = string.Empty;
+            checkOutDateTimePicker.Text = string.Empty;
+            numberOfGuestPicker.Text = string.Empty;
 
-            
+
         }
         private void PopulateObject()
         {
             booking = new Booking();
             booking.CheckInDate = checkInDateTimePicker.Value;
             booking.CheckOutDate = checkOutDateTimePicker.Value;
-            booking.NumberOfGuests = (int)numberOfGuestPicker.Value;
+            booking.NumberOfGuests = (int)numberOfGuestPicker.Value + 1;
             booking.NumberOfRooms = calcNumberOfRooms(booking.NumberOfGuests);
-            booking.TotalAmount = calcBookingPrice(booking);
+            booking.TotalAmount = booking.NumberOfRooms * calcBookingPrice(booking);
             booking.BookingStatusId = 0;
             booking.Deposit = 0;
         }
         public int calcNumberOfRooms(int numberOfGuests)
         {
-           
-            int numberOfRooms = (int)Math.Ceiling((double)numberOfGuests / 5);
 
+            int guestsPerRoom = 2;
+            int numberOfRooms = (int)Math.Ceiling((double)numberOfGuests / guestsPerRoom);
             return numberOfRooms;
         }
 
         private int calcBookingPrice(Booking booking)
         {
             int totalDays = (booking.CheckOutDate - booking.CheckInDate).Days;
-            int priceRange1Days = Math.Min(7, totalDays);
+            DateTime currentDate = booking.CheckInDate;
+            int totalPrice = 0;
 
-            int priceRange2Days = Math.Min(8, totalDays - priceRange1Days);
-            int priceRange3Days = totalDays - priceRange1Days - priceRange2Days;
-            double range1Price = priceRange1Days * 550;
-            double range2Price = priceRange2Days * 750;
-            double range3Price = priceRange3Days * 995;
-            return (int)(range1Price + range2Price + range3Price);
+            while (totalDays > 0)
+            {
+                int daysInCurrentRange = 0;
+                int pricePerNight = 0;
+
+
+                if (currentDate.Day >= 1 && currentDate.Day <= 7)
+                {
+                    daysInCurrentRange = Math.Min(7, totalDays);
+                    pricePerNight = 550;
+                }
+                else if (currentDate.Day >= 8 && currentDate.Day <= 15)
+                {
+                    daysInCurrentRange = Math.Min(8, totalDays);
+                    pricePerNight = 750;
+                }
+                else
+                {
+                    daysInCurrentRange = totalDays;
+                    pricePerNight = 995;
+                }
+
+                totalPrice += daysInCurrentRange * pricePerNight;
+                currentDate = currentDate.AddDays(daysInCurrentRange);
+                totalDays -= daysInCurrentRange;
+            }
+
+            return totalPrice;
         }
+
 
         #endregion
 
-        private void notAvailableLabel_Click(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void checkAvailabilityButton_Click(object sender, EventArgs e)
         {
-            PopulateObject(); 
+            PopulateObject();
             RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
-            roomAvailableBox.Show();
+            roomAvailableBox.ShowDialog();
 
         }
 
-        private void dataLanel_Click(object sender, EventArgs e)
+        private void bookingNavLabel_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            BookingsForm bookingsForm = new BookingsForm();
+            bookingsForm.ShowDialog();
+            
+        }
 
+        private void guestNavLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GuestForm guestForm = new GuestForm();
+            guestForm.ShowDialog();
+        }
+
+        private void roomNavLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RoomsForm roomForms = new RoomsForm();
+            roomForms.ShowDialog();
+
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }

@@ -28,10 +28,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         }
 
         private void createBookingButton_Click(object sender, EventArgs e)
-        {
-            CreateGuest createGuest = new CreateGuest(booking, new GuestController());
-            createGuest.ShowDialog();
+        {   
             this.Close();
+     
+            CreateGuest createGuest = new CreateGuest(booking);
+            createGuest.ShowDialog();
+            
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

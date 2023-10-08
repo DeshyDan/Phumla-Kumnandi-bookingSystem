@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.bookingNavLabel);
             this.panel1.Controls.Add(this.homeNavLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(407, 898);
             this.panel1.TabIndex = 2;
@@ -92,12 +92,13 @@
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.White;
             this.logoutButton.Location = new System.Drawing.Point(63, 806);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(236, 54);
             this.logoutButton.TabIndex = 1;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // promotionNavLabel
             // 
@@ -122,6 +123,7 @@
             this.roomNavLabel.Size = new System.Drawing.Size(171, 53);
             this.roomNavLabel.TabIndex = 0;
             this.roomNavLabel.Text = "Rooms";
+            this.roomNavLabel.Click += new System.EventHandler(this.roomNavLabel_Click);
             // 
             // guestNavLabel
             // 
@@ -134,6 +136,7 @@
             this.guestNavLabel.Size = new System.Drawing.Size(173, 53);
             this.guestNavLabel.TabIndex = 0;
             this.guestNavLabel.Text = "Guests";
+            this.guestNavLabel.Click += new System.EventHandler(this.guestNavLabel_Click);
             // 
             // bookingNavLabel
             // 
@@ -146,6 +149,7 @@
             this.bookingNavLabel.Size = new System.Drawing.Size(215, 53);
             this.bookingNavLabel.TabIndex = 0;
             this.bookingNavLabel.Text = "Bookings";
+            this.bookingNavLabel.Click += new System.EventHandler(this.bookingNavLabel_Click);
             // 
             // homeNavLabel
             // 
@@ -164,7 +168,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dataLanel);
             this.panel2.Location = new System.Drawing.Point(415, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1148, 151);
             this.panel2.TabIndex = 3;
@@ -181,7 +185,6 @@
             this.dataLanel.Size = new System.Drawing.Size(624, 55);
             this.dataLanel.TabIndex = 0;
             this.dataLanel.Text = "Friday, November 18 , 2023";
-            this.dataLanel.Click += new System.EventHandler(this.dataLanel_Click);
             // 
             // panel3
             // 
@@ -204,7 +207,7 @@
             this.panel3.Controls.Add(this.checkOutLabel);
             this.panel3.Controls.Add(this.checkInLabel);
             this.panel3.Location = new System.Drawing.Point(415, 209);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1148, 154);
             this.panel3.TabIndex = 4;
@@ -433,10 +436,11 @@
             this.checkInDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkInDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkInDateTimePicker.Location = new System.Drawing.Point(506, 522);
-            this.checkInDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkInDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.checkInDateTimePicker.Name = "checkInDateTimePicker";
             this.checkInDateTimePicker.Size = new System.Drawing.Size(457, 39);
             this.checkInDateTimePicker.TabIndex = 5;
+            this.checkInDateTimePicker.Value = new System.DateTime(2023, 12, 1, 0, 0, 0, 0);
             // 
             // label17
             // 
@@ -457,10 +461,11 @@
             this.checkOutDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOutDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOutDateTimePicker.Location = new System.Drawing.Point(1056, 522);
-            this.checkOutDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkOutDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.checkOutDateTimePicker.Name = "checkOutDateTimePicker";
             this.checkOutDateTimePicker.Size = new System.Drawing.Size(450, 39);
             this.checkOutDateTimePicker.TabIndex = 5;
+            this.checkOutDateTimePicker.Value = new System.DateTime(2023, 12, 1, 0, 0, 0, 0);
             // 
             // label18
             // 
@@ -481,7 +486,7 @@
             this.numberOfGuestPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfGuestPicker.Location = new System.Drawing.Point(907, 620);
-            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 6;
@@ -494,7 +499,7 @@
             this.checkAvailabilityButton.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkAvailabilityButton.ForeColor = System.Drawing.Color.White;
             this.checkAvailabilityButton.Location = new System.Drawing.Point(799, 727);
-            this.checkAvailabilityButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkAvailabilityButton.Margin = new System.Windows.Forms.Padding(4);
             this.checkAvailabilityButton.Name = "checkAvailabilityButton";
             this.checkAvailabilityButton.Size = new System.Drawing.Size(437, 54);
             this.checkAvailabilityButton.TabIndex = 1;
@@ -515,7 +520,6 @@
             this.notAvailableLabel.Size = new System.Drawing.Size(212, 24);
             this.notAvailableLabel.TabIndex = 0;
             this.notAvailableLabel.Text = "Room is not available";
-            this.notAvailableLabel.Click += new System.EventHandler(this.notAvailableLabel_Click);
             // 
             // HomeForm1
             // 
@@ -534,7 +538,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label16);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomeForm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phumla Kundandi Hotels";
