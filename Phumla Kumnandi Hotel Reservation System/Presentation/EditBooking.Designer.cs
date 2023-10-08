@@ -29,95 +29,41 @@
         private void InitializeComponent()
         {
             this.specialRequestInput = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LastNameInput = new System.Windows.Forms.TextBox();
-            this.firstNameInput = new System.Windows.Forms.TextBox();
             this.numberOfGuestPicker = new System.Windows.Forms.NumericUpDown();
-            this.checkOutdateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.checkIndateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.checkInDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.checkOutDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bookingIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).BeginInit();
             this.SuspendLayout();
             // 
             // specialRequestInput
             // 
             this.specialRequestInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.specialRequestInput.Location = new System.Drawing.Point(20, 385);
+            this.specialRequestInput.Location = new System.Drawing.Point(27, 474);
+            this.specialRequestInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.specialRequestInput.Name = "specialRequestInput";
-            this.specialRequestInput.Size = new System.Drawing.Size(811, 96);
+            this.specialRequestInput.Size = new System.Drawing.Size(1081, 118);
             this.specialRequestInput.TabIndex = 44;
             this.specialRequestInput.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(431, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 32);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Last Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 32);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "First Name";
-            // 
-            // LastNameInput
-            // 
-            this.LastNameInput.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameInput.Location = new System.Drawing.Point(585, 28);
-            this.LastNameInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LastNameInput.Name = "LastNameInput";
-            this.LastNameInput.Size = new System.Drawing.Size(246, 39);
-            this.LastNameInput.TabIndex = 40;
-            // 
-            // firstNameInput
-            // 
-            this.firstNameInput.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameInput.Location = new System.Drawing.Point(168, 28);
-            this.firstNameInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.firstNameInput.Name = "firstNameInput";
-            this.firstNameInput.Size = new System.Drawing.Size(246, 39);
-            this.firstNameInput.TabIndex = 41;
             // 
             // numberOfGuestPicker
             // 
             this.numberOfGuestPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfGuestPicker.Location = new System.Drawing.Point(323, 247);
+            this.numberOfGuestPicker.Location = new System.Drawing.Point(431, 304);
+            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
-            this.numberOfGuestPicker.Size = new System.Drawing.Size(80, 44);
+            this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 39;
-            // 
-            // checkOutdateTimePicker
-            // 
-            this.checkOutdateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutdateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutdateTimePicker.Location = new System.Drawing.Point(451, 161);
-            this.checkOutdateTimePicker.Name = "checkOutdateTimePicker";
-            this.checkOutdateTimePicker.Size = new System.Drawing.Size(320, 41);
-            this.checkOutdateTimePicker.TabIndex = 37;
-            // 
-            // checkIndateTimePicker
-            // 
-            this.checkIndateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkIndateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkIndateTimePicker.Location = new System.Drawing.Point(55, 163);
-            this.checkIndateTimePicker.Name = "checkIndateTimePicker";
-            this.checkIndateTimePicker.Size = new System.Drawing.Size(320, 41);
-            this.checkIndateTimePicker.TabIndex = 38;
             // 
             // label17
             // 
@@ -126,9 +72,10 @@
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label17.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(526, 110);
+            this.label17.Location = new System.Drawing.Point(701, 166);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(151, 32);
+            this.label17.Size = new System.Drawing.Size(185, 40);
             this.label17.TabIndex = 33;
             this.label17.Text = "Check Out";
             // 
@@ -139,9 +86,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(16, 346);
+            this.label1.Location = new System.Drawing.Point(21, 426);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 24);
+            this.label1.Size = new System.Drawing.Size(241, 32);
             this.label1.TabIndex = 34;
             this.label1.Text = "Special Requests";
             // 
@@ -152,9 +100,10 @@
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label18.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(98, 267);
+            this.label18.Location = new System.Drawing.Point(131, 329);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(190, 24);
+            this.label18.Size = new System.Drawing.Size(250, 32);
             this.label18.TabIndex = 35;
             this.label18.Text = "Number of guests";
             // 
@@ -165,9 +114,10 @@
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(142, 112);
+            this.label16.Location = new System.Drawing.Point(189, 169);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 32);
+            this.label16.Size = new System.Drawing.Size(157, 40);
             this.label16.TabIndex = 36;
             this.label16.Text = "Check In";
             // 
@@ -179,9 +129,10 @@
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Black;
-            this.cancelButton.Location = new System.Drawing.Point(466, 501);
+            this.cancelButton.Location = new System.Drawing.Point(621, 617);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(177, 44);
+            this.cancelButton.Size = new System.Drawing.Size(236, 54);
             this.cancelButton.TabIndex = 31;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -193,34 +144,102 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.White;
-            this.saveButton.Location = new System.Drawing.Point(654, 501);
+            this.saveButton.Location = new System.Drawing.Point(872, 617);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(177, 44);
+            this.saveButton.Size = new System.Drawing.Size(236, 54);
             this.saveButton.TabIndex = 32;
             this.saveButton.Text = "Save Changes";
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // checkInDateTimePicker
+            // 
+            this.checkInDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInDateTimePicker.Location = new System.Drawing.Point(53, 237);
+            this.checkInDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.checkInDateTimePicker.Name = "checkInDateTimePicker";
+            this.checkInDateTimePicker.Size = new System.Drawing.Size(457, 39);
+            this.checkInDateTimePicker.TabIndex = 45;
+            this.checkInDateTimePicker.Value = new System.DateTime(2023, 12, 1, 0, 0, 0, 0);
+            // 
+            // checkOutDateTimePicker
+            // 
+            this.checkOutDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutDateTimePicker.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutDateTimePicker.Location = new System.Drawing.Point(592, 237);
+            this.checkOutDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.checkOutDateTimePicker.Name = "checkOutDateTimePicker";
+            this.checkOutDateTimePicker.Size = new System.Drawing.Size(450, 39);
+            this.checkOutDateTimePicker.TabIndex = 46;
+            this.checkOutDateTimePicker.Value = new System.DateTime(2023, 12, 1, 0, 0, 0, 0);
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(276, 38);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(105, 39);
+            this.nameLabel.TabIndex = 47;
+            this.nameLabel.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(55, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 39);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Guest Id";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(55, 99);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(216, 49);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Booking Id";
+            // 
+            // bookingIdLabel
+            // 
+            this.bookingIdLabel.AutoSize = true;
+            this.bookingIdLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookingIdLabel.Location = new System.Drawing.Point(275, 99);
+            this.bookingIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bookingIdLabel.Name = "bookingIdLabel";
+            this.bookingIdLabel.Size = new System.Drawing.Size(105, 39);
+            this.bookingIdLabel.TabIndex = 47;
+            this.bookingIdLabel.Text = "Name";
             // 
             // EditBooking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(842, 592);
-            this.Controls.Add(this.specialRequestInput);
+            this.ClientSize = new System.Drawing.Size(1123, 729);
+            this.Controls.Add(this.bookingIdLabel);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.LastNameInput);
-            this.Controls.Add(this.firstNameInput);
+            this.Controls.Add(this.checkOutDateTimePicker);
+            this.Controls.Add(this.checkInDateTimePicker);
+            this.Controls.Add(this.specialRequestInput);
             this.Controls.Add(this.numberOfGuestPicker);
-            this.Controls.Add(this.checkOutdateTimePicker);
-            this.Controls.Add(this.checkIndateTimePicker);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EditBooking";
             this.Text = "EditBooking";
             this.Load += new System.EventHandler(this.EditBooking_Load);
@@ -233,18 +252,18 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox specialRequestInput;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox LastNameInput;
-        private System.Windows.Forms.TextBox firstNameInput;
         private System.Windows.Forms.NumericUpDown numberOfGuestPicker;
-        private System.Windows.Forms.DateTimePicker checkOutdateTimePicker;
-        private System.Windows.Forms.DateTimePicker checkIndateTimePicker;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.DateTimePicker checkInDateTimePicker;
+        private System.Windows.Forms.DateTimePicker checkOutDateTimePicker;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label bookingIdLabel;
     }
 }

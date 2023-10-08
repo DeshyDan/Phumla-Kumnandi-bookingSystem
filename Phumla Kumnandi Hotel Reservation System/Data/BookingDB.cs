@@ -196,8 +196,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
 
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@originalId", SqlDbType.Int);
-            param.Value = booking.Id;
+            param = new SqlParameter("@originalId", SqlDbType.NVarChar,50 ,"id" );
             param.SourceVersion = DataRowVersion.Original;
             dataAdapter.UpdateCommand.Parameters.Add(param);
 

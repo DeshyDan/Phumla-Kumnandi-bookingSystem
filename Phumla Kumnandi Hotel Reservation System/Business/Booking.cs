@@ -18,7 +18,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #region DataMembers
 
-        private int id;
+        private string id;
         private BookingStatus status;
         private DateTime checkInDate;
         private DateTime checkOutDate;
@@ -32,7 +32,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         #endregion
 
         #region Constructor
-        public Booking(int bookingId, string guestId, int roomID, DateTime checkin, DateTime checkout, string description, int noOfGuests, int deposit, int totalAmount)
+        public Booking(string bookingId, string guestId, int roomID, DateTime checkin, DateTime checkout, string description, int noOfGuests, int deposit, int totalAmount)
         {
 
             this.id = bookingId;
@@ -53,7 +53,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #endregion region
         #region Methods
-        public int Id
+        public string Id
         {
             get { return id; }
             set { id = value; }

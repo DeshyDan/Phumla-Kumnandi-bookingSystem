@@ -129,16 +129,19 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
                 if (columnIndex == 6) // Edit
                 {
+                    EditBooking editBooking = new EditBooking(booking, bookingController);
+                    editBooking.ShowDialog();
                 }
                 else if (columnIndex == 7) // Delete
                 {
-                    DeleteBooking deleteBooking = new DeleteBooking(booking);
+                    DeleteBooking deleteBooking = new DeleteBooking(booking, bookingController);
                     deleteBooking.ShowDialog();
                 }
                 else if (columnIndex == 8) // Pay
                 {
 
                 }
+                setUpBookingListView();
 
             }
         }

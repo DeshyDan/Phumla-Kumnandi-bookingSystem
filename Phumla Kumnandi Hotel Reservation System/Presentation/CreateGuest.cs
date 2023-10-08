@@ -31,6 +31,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void PopulateObject()
         {
             guest = new Guest();
+        
             guest.Title = titlePicker.Text;
             guest.FirstName = firstNameInput.Text;
             guest.LastName = LastNameInput.Text;
