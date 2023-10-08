@@ -44,11 +44,19 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             booking.CheckInDate = checkInDateTimePicker.Value;
             booking.CheckOutDate = checkOutDateTimePicker.Value;
             booking.NumberOfGuests = (int)numberOfGuestPicker.Value;
-
-            
-            booking.TotalAmount = calcBookingPrice(booking); 
-
+            booking.NumberOfRooms = calcNumberOfRooms(booking.NumberOfGuests);
+            booking.TotalAmount = calcBookingPrice(booking);
+            booking.BookingStatusId = 0;
+            booking.Deposit = 0;
         }
+        public int calcNumberOfRooms(int numberOfGuests)
+        {
+           
+            int numberOfRooms = (int)Math.Ceiling((double)numberOfGuests / 5);
+
+            return numberOfRooms;
+        }
+
         private int calcBookingPrice(Booking booking)
         {
             int totalDays = (booking.CheckOutDate - booking.CheckInDate).Days;

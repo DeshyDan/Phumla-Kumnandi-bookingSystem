@@ -22,7 +22,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public DateTime checkInDate;
         public DateTime checkOutDate;
         public int guestId;
-        public int roomId;
+        public int numberOfRoom;
         public string specialRequest;
         public int noOfGuests;
         public int deposit;
@@ -38,7 +38,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             this.checkInDate = checkin;
             this.checkOutDate = checkout;
             this.guestId = guestId;
-            this.roomId = roomID;
+            this.numberOfRoom = roomID;
             this.specialRequest = description;
             this.noOfGuests = noOfGuests;
             this.deposit = deposit;
@@ -90,10 +90,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return totalAmount; }
             set { totalAmount = value; }
         }
-        public int RoomId
+        public int NumberOfRooms
         {
-            get { return roomId; }
-            set { roomId = value; }
+            get { return numberOfRoom; }
+            set { numberOfRoom = value; }
         }
 
         public int BookingStatusId

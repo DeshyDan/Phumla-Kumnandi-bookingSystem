@@ -117,6 +117,12 @@
     <Compile Include="Presentation\ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\RoomAvailableBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\RoomAvailableBox.Designer.cs">
+      <DependentUpon>RoomAvailableBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\RoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\RoomAvailableBox.resx">
+      <DependentUpon>RoomAvailableBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
