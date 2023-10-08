@@ -44,6 +44,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             this.noOfGuests = noOfGuests;
             this.deposit = deposit;
             this.totalAmount = totalAmount;
+            this.status = BookingStatus.Pending;
         }
         public Booking()
         {

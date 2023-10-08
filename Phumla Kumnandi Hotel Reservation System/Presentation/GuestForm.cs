@@ -17,12 +17,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     {
         private BindingList<Guest> guest;
         public bool listFormClosed;
-        public GuestForm()
+        private GuestController guestController;
+        public GuestForm(GuestController guestController)
         {
             InitializeComponent();
-            guest=new BindingList<Guest>();
+            guest = new BindingList<Guest>();
             GuestDB db = new GuestDB();
-            dataGridView1.DataSource= guest;
+            this.guestController = guestController;
+            dataGridView1.DataSource = guest;
 
         }
 
@@ -38,7 +40,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-          
+
 
 
         }
@@ -58,7 +60,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         }
 
-     
+
 
         private void Filter_Click(object sender, EventArgs e)
         {
@@ -102,7 +104,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
                 Collection<Guest> allGuests = guestcontroller.AllGuest;
                 dataGridView1.Rows.Clear();
 
-                foreach(Guest guest in allGuests)
+                foreach (Guest guest in allGuests)
                 {
                     dataGridView1.Rows.Add(
                         guest.Title
@@ -117,7 +119,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An Error occured while listing all guests{ex.Message}","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An Error occured while listing all guests{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -125,7 +125,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #region build parameters, create commands and update database
         private void Create_INSERT_Parameters(Room room)
         {
-            dataAdapter.InsertCommand = new SqlCommand("INSERT INTO rooms(")
+            dataAdapter.InsertCommand = new SqlCommand("INSERT INTO rooms()");
         }
         private void insert(Room room)
         {
@@ -142,7 +142,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             param = new SqlParameter("@roomNumber", SqlDbType.NVarChar, 50, "roomNumber");
             dataAdapter.InsertCommand.Parameters.Add(param);
             
-            param =
+           
 
         }
 

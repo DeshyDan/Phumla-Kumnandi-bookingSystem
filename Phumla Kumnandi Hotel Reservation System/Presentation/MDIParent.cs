@@ -82,7 +82,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void CreateBookingForm()
         {
             closeMDIS();
-            bookingsForm = new BookingsForm(bookingController);
+            bookingsForm = new BookingsForm(guestController , bookingController);
             bookingsForm.MdiParent = this;
             bookingsForm.Location = new Point(300, 0);
         }
@@ -119,6 +119,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
                 CreateBookingForm();
             }
+            bookingsForm.setUpBookingListView();
             bookingsForm.Show();
         }
 

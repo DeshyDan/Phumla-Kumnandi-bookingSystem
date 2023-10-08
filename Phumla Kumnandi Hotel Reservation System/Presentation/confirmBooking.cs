@@ -15,16 +15,17 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     {
 
         private Booking booking;
-        public ConfirmBooking(Booking booking, Guest guest)
+        private BookingController bookingController;
+        public ConfirmBooking(Guest guest, Booking booking, BookingController bookingController)
         {
             InitializeComponent();
             this.booking = booking;
-            firstNameInput.Text = guest.FirstName; 
+            firstNameInput.Text = guest.FirstName;
             LastNameInput.Text = guest.LastName;
-            checkInDateTimePicker.Value = booking.checkInDate; 
-            checkOutDateTimePicker.Value = booking.checkOutDate;
+            checkInDateTimePicker.Value = booking.CheckInDate;
+            checkOutDateTimePicker.Value = booking.CheckOutDate;
             numberOfGuestPicker.Value = booking.NumberOfGuests;
-            firstNameInput.Enabled = false; 
+            firstNameInput.Enabled = false;
             LastNameInput.Enabled = false;
             checkInDateTimePicker.Enabled = false;
             checkOutDateTimePicker.Enabled = false;
@@ -35,12 +36,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             booking.SpecialRequest = specialRequestInput.Text;
         }
-      
 
-       
+
+
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             PopulateObject();
+            bookingController.FinalizeChanges(booking);
+            MessageBox.Show("Booking has been sucessfully made");
             this.Close();
 
 
