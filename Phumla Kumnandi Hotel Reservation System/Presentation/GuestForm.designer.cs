@@ -38,7 +38,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.guestSelectionLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Filter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,8 +53,9 @@
             this.panel1.Controls.Add(this.bookingNavLabel);
             this.panel1.Controls.Add(this.homeNavLabel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 730);
+            this.panel1.Size = new System.Drawing.Size(458, 1123);
             this.panel1.TabIndex = 0;
             // 
             // logoutButton
@@ -64,9 +65,10 @@
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutButton.ForeColor = System.Drawing.Color.White;
-            this.logoutButton.Location = new System.Drawing.Point(47, 655);
+            this.logoutButton.Location = new System.Drawing.Point(70, 1008);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(177, 44);
+            this.logoutButton.Size = new System.Drawing.Size(266, 68);
             this.logoutButton.TabIndex = 1;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             this.promotionNavLabel.AutoSize = true;
             this.promotionNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.promotionNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.promotionNavLabel.Location = new System.Drawing.Point(87, 437);
+            this.promotionNavLabel.Location = new System.Drawing.Point(130, 672);
+            this.promotionNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.promotionNavLabel.Name = "promotionNavLabel";
-            this.promotionNavLabel.Size = new System.Drawing.Size(205, 42);
+            this.promotionNavLabel.Size = new System.Drawing.Size(312, 65);
             this.promotionNavLabel.TabIndex = 0;
             this.promotionNavLabel.Text = "Promotions";
             // 
@@ -87,9 +90,10 @@
             this.roomNavLabel.AutoSize = true;
             this.roomNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.roomNavLabel.Location = new System.Drawing.Point(88, 361);
+            this.roomNavLabel.Location = new System.Drawing.Point(132, 555);
+            this.roomNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.roomNavLabel.Name = "roomNavLabel";
-            this.roomNavLabel.Size = new System.Drawing.Size(136, 42);
+            this.roomNavLabel.Size = new System.Drawing.Size(205, 65);
             this.roomNavLabel.TabIndex = 0;
             this.roomNavLabel.Text = "Rooms";
             // 
@@ -98,9 +102,10 @@
             this.guestNavLabel.AutoSize = true;
             this.guestNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guestNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.guestNavLabel.Location = new System.Drawing.Point(88, 280);
+            this.guestNavLabel.Location = new System.Drawing.Point(132, 431);
+            this.guestNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.guestNavLabel.Name = "guestNavLabel";
-            this.guestNavLabel.Size = new System.Drawing.Size(146, 44);
+            this.guestNavLabel.Size = new System.Drawing.Size(218, 65);
             this.guestNavLabel.TabIndex = 0;
             this.guestNavLabel.Text = "Guests";
             this.guestNavLabel.Click += new System.EventHandler(this.label3_Click);
@@ -110,9 +115,10 @@
             this.bookingNavLabel.AutoSize = true;
             this.bookingNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookingNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.bookingNavLabel.Location = new System.Drawing.Point(88, 203);
+            this.bookingNavLabel.Location = new System.Drawing.Point(132, 312);
+            this.bookingNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bookingNavLabel.Name = "bookingNavLabel";
-            this.bookingNavLabel.Size = new System.Drawing.Size(171, 42);
+            this.bookingNavLabel.Size = new System.Drawing.Size(258, 65);
             this.bookingNavLabel.TabIndex = 0;
             this.bookingNavLabel.Text = "Bookings";
             // 
@@ -121,9 +127,10 @@
             this.homeNavLabel.AutoSize = true;
             this.homeNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.homeNavLabel.Location = new System.Drawing.Point(88, 129);
+            this.homeNavLabel.Location = new System.Drawing.Point(132, 198);
+            this.homeNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.homeNavLabel.Name = "homeNavLabel";
-            this.homeNavLabel.Size = new System.Drawing.Size(117, 42);
+            this.homeNavLabel.Size = new System.Drawing.Size(177, 65);
             this.homeNavLabel.TabIndex = 0;
             this.homeNavLabel.Text = "Home";
             // 
@@ -133,9 +140,10 @@
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBox.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.searchBox.Location = new System.Drawing.Point(895, 65);
+            this.searchBox.Location = new System.Drawing.Point(1028, 151);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(262, 39);
+            this.searchBox.Size = new System.Drawing.Size(392, 54);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search by id";
             this.searchBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -143,44 +151,48 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 206);
+            this.dataGridView1.Location = new System.Drawing.Point(501, 317);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(823, 488);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(1234, 751);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // guestSelectionLabel
             // 
             this.guestSelectionLabel.AutoSize = true;
             this.guestSelectionLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guestSelectionLabel.Location = new System.Drawing.Point(329, 145);
+            this.guestSelectionLabel.Location = new System.Drawing.Point(494, 223);
+            this.guestSelectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.guestSelectionLabel.Name = "guestSelectionLabel";
-            this.guestSelectionLabel.Size = new System.Drawing.Size(132, 29);
+            this.guestSelectionLabel.Size = new System.Drawing.Size(194, 43);
             this.guestSelectionLabel.TabIndex = 4;
             this.guestSelectionLabel.Text = "All Rooms";
             // 
-            // label6
+            // Filter
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1065, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Filter";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.Filter.Location = new System.Drawing.Point(1520, 151);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(191, 54);
+            this.Filter.TabIndex = 5;
+            this.Filter.Text = "Filter";
+            this.Filter.UseVisualStyleBackColor = true;
+            this.Filter.Click += new System.EventHandler(this.Filter_Click);
             // 
-            // Guest
+            // GuestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1184, 711);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(1776, 1050);
+            this.Controls.Add(this.Filter);
             this.Controls.Add(this.guestSelectionLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.panel1);
-            this.Name = "Guest";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "GuestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Guest_Load);
@@ -204,7 +216,7 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label guestSelectionLabel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Filter;
     }
 }
 

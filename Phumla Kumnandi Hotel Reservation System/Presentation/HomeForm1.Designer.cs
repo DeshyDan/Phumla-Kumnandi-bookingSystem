@@ -38,31 +38,31 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataLanel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.totalInHotelLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.occupiedRoomLabel = new System.Windows.Forms.Label();
             this.availableRoomLabel = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkOutLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.checkInLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.checkIndateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.checkInDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.checkOutdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.checkOutDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.numberOfGuestPicker = new System.Windows.Forms.NumericUpDown();
             this.checkAvailabilityButton = new System.Windows.Forms.Button();
             this.notAvailableLabel = new System.Windows.Forms.Label();
-            this.occupiedRoomLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -198,6 +198,19 @@
             this.panel3.Size = new System.Drawing.Size(861, 125);
             this.panel3.TabIndex = 4;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label20.Location = new System.Drawing.Point(695, 76);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(104, 16);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Occupied room";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -210,7 +223,19 @@
             this.label15.Size = new System.Drawing.Size(121, 19);
             this.label15.TabIndex = 0;
             this.label15.Text = "Available room";
-            this.label15.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label11.Location = new System.Drawing.Point(695, 53);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Total";
             // 
             // label14
             // 
@@ -224,7 +249,6 @@
             this.label14.Size = new System.Drawing.Size(34, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "Total";
-            this.label14.Click += new System.EventHandler(this.label1_Click);
             // 
             // label12
             // 
@@ -246,7 +270,6 @@
             this.label9.Size = new System.Drawing.Size(84, 24);
             this.label9.TabIndex = 0;
             this.label9.Text = "in hotel";
-            this.label9.Click += new System.EventHandler(this.label1_Click);
             // 
             // label8
             // 
@@ -259,7 +282,6 @@
             this.label8.Size = new System.Drawing.Size(34, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Total";
-            this.label8.Click += new System.EventHandler(this.label1_Click);
             // 
             // totalInHotelLabel
             // 
@@ -273,7 +295,6 @@
             this.totalInHotelLabel.Size = new System.Drawing.Size(53, 37);
             this.totalInHotelLabel.TabIndex = 0;
             this.totalInHotelLabel.Text = "12";
-            this.totalInHotelLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -287,7 +308,18 @@
             this.label6.Size = new System.Drawing.Size(113, 24);
             this.label6.TabIndex = 0;
             this.label6.Text = "Check out";
-            this.label6.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // occupiedRoomLabel
+            // 
+            this.occupiedRoomLabel.AutoSize = true;
+            this.occupiedRoomLabel.BackColor = System.Drawing.Color.Transparent;
+            this.occupiedRoomLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.occupiedRoomLabel.ForeColor = System.Drawing.Color.Black;
+            this.occupiedRoomLabel.Location = new System.Drawing.Point(805, 53);
+            this.occupiedRoomLabel.Name = "occupiedRoomLabel";
+            this.occupiedRoomLabel.Size = new System.Drawing.Size(53, 37);
+            this.occupiedRoomLabel.TabIndex = 0;
+            this.occupiedRoomLabel.Text = "12";
             // 
             // availableRoomLabel
             // 
@@ -300,7 +332,19 @@
             this.availableRoomLabel.Size = new System.Drawing.Size(53, 37);
             this.availableRoomLabel.TabIndex = 0;
             this.availableRoomLabel.Text = "12";
-            this.availableRoomLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label21.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(3, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(135, 32);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Overview";
             // 
             // label5
             // 
@@ -314,34 +358,6 @@
             this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Today\'s";
-            this.label5.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label3.Location = new System.Drawing.Point(5, 71);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Check in";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // checkOutLabel
-            // 
-            this.checkOutLabel.AutoSize = true;
-            this.checkOutLabel.BackColor = System.Drawing.Color.Transparent;
-            this.checkOutLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutLabel.ForeColor = System.Drawing.Color.Black;
-            this.checkOutLabel.Location = new System.Drawing.Point(281, 62);
-            this.checkOutLabel.Name = "checkOutLabel";
-            this.checkOutLabel.Size = new System.Drawing.Size(53, 37);
-            this.checkOutLabel.TabIndex = 0;
-            this.checkOutLabel.Text = "12";
-            this.checkOutLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -355,7 +371,31 @@
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Today\'s";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label3.Location = new System.Drawing.Point(5, 71);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Check in";
+            // 
+            // checkOutLabel
+            // 
+            this.checkOutLabel.AutoSize = true;
+            this.checkOutLabel.BackColor = System.Drawing.Color.Transparent;
+            this.checkOutLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutLabel.ForeColor = System.Drawing.Color.Black;
+            this.checkOutLabel.Location = new System.Drawing.Point(281, 62);
+            this.checkOutLabel.Name = "checkOutLabel";
+            this.checkOutLabel.Size = new System.Drawing.Size(53, 37);
+            this.checkOutLabel.TabIndex = 0;
+            this.checkOutLabel.Text = "12";
             // 
             // checkInLabel
             // 
@@ -369,7 +409,6 @@
             this.checkInLabel.Size = new System.Drawing.Size(53, 37);
             this.checkInLabel.TabIndex = 0;
             this.checkInLabel.Text = "12";
-            this.checkInLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // label16
             // 
@@ -383,16 +422,15 @@
             this.label16.Size = new System.Drawing.Size(129, 32);
             this.label16.TabIndex = 0;
             this.label16.Text = "Check In";
-            this.label16.Click += new System.EventHandler(this.label1_Click);
             // 
-            // checkIndateTimePicker
+            // checkInDateTimePicker
             // 
-            this.checkIndateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkIndateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkIndateTimePicker.Location = new System.Drawing.Point(412, 420);
-            this.checkIndateTimePicker.Name = "checkIndateTimePicker";
-            this.checkIndateTimePicker.Size = new System.Drawing.Size(320, 41);
-            this.checkIndateTimePicker.TabIndex = 5;
+            this.checkInDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInDateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkInDateTimePicker.Location = new System.Drawing.Point(412, 420);
+            this.checkInDateTimePicker.Name = "checkInDateTimePicker";
+            this.checkInDateTimePicker.Size = new System.Drawing.Size(320, 41);
+            this.checkInDateTimePicker.TabIndex = 5;
             // 
             // label17
             // 
@@ -406,16 +444,15 @@
             this.label17.Size = new System.Drawing.Size(151, 32);
             this.label17.TabIndex = 0;
             this.label17.Text = "Check Out";
-            this.label17.Click += new System.EventHandler(this.label1_Click);
             // 
-            // checkOutdateTimePicker
+            // checkOutDateTimePicker
             // 
-            this.checkOutdateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutdateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutdateTimePicker.Location = new System.Drawing.Point(796, 418);
-            this.checkOutdateTimePicker.Name = "checkOutdateTimePicker";
-            this.checkOutdateTimePicker.Size = new System.Drawing.Size(320, 41);
-            this.checkOutdateTimePicker.TabIndex = 5;
+            this.checkOutDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutDateTimePicker.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOutDateTimePicker.Location = new System.Drawing.Point(796, 418);
+            this.checkOutDateTimePicker.Name = "checkOutDateTimePicker";
+            this.checkOutDateTimePicker.Size = new System.Drawing.Size(320, 41);
+            this.checkOutDateTimePicker.TabIndex = 5;
             // 
             // label18
             // 
@@ -429,7 +466,6 @@
             this.label18.Size = new System.Drawing.Size(190, 24);
             this.label18.TabIndex = 0;
             this.label18.Text = "Number of guests";
-            this.label18.Click += new System.EventHandler(this.label1_Click);
             // 
             // numberOfGuestPicker
             // 
@@ -453,7 +489,7 @@
             this.checkAvailabilityButton.TabIndex = 1;
             this.checkAvailabilityButton.Text = "Check availability";
             this.checkAvailabilityButton.UseVisualStyleBackColor = false;
-            this.checkAvailabilityButton.Click += new System.EventHandler(this.button1_Click);
+            this.checkAvailabilityButton.Click += new System.EventHandler(this.checkAvailabilityButton_Click);
             // 
             // notAvailableLabel
             // 
@@ -467,62 +503,7 @@
             this.notAvailableLabel.Size = new System.Drawing.Size(172, 19);
             this.notAvailableLabel.TabIndex = 0;
             this.notAvailableLabel.Text = "Room is not available";
-            this.notAvailableLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // occupiedRoomLabel
-            // 
-            this.occupiedRoomLabel.AutoSize = true;
-            this.occupiedRoomLabel.BackColor = System.Drawing.Color.Transparent;
-            this.occupiedRoomLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.occupiedRoomLabel.ForeColor = System.Drawing.Color.Black;
-            this.occupiedRoomLabel.Location = new System.Drawing.Point(805, 53);
-            this.occupiedRoomLabel.Name = "occupiedRoomLabel";
-            this.occupiedRoomLabel.Size = new System.Drawing.Size(53, 37);
-            this.occupiedRoomLabel.TabIndex = 0;
-            this.occupiedRoomLabel.Text = "12";
-            this.occupiedRoomLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label11.Location = new System.Drawing.Point(695, 53);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 16);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Total";
-            this.label11.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label20.Location = new System.Drawing.Point(695, 76);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 16);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Occupied room";
-            this.label20.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label21.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(3, 11);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(135, 32);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Overview";
-            this.label21.Click += new System.EventHandler(this.label1_Click);
+            this.notAvailableLabel.Click += new System.EventHandler(this.notAvailableLabel_Click);
             // 
             // HomeForm1
             // 
@@ -531,8 +512,8 @@
             this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.checkAvailabilityButton);
             this.Controls.Add(this.numberOfGuestPicker);
-            this.Controls.Add(this.checkOutdateTimePicker);
-            this.Controls.Add(this.checkIndateTimePicker);
+            this.Controls.Add(this.checkOutDateTimePicker);
+            this.Controls.Add(this.checkInDateTimePicker);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label17);
@@ -580,9 +561,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label checkOutLabel;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker checkIndateTimePicker;
+        private System.Windows.Forms.DateTimePicker checkInDateTimePicker;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker checkOutdateTimePicker;
+        private System.Windows.Forms.DateTimePicker checkOutDateTimePicker;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown numberOfGuestPicker;
         private System.Windows.Forms.Button checkAvailabilityButton;

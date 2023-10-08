@@ -48,22 +48,19 @@
   <ItemGroup>
     <Compile Include="Business\Booking.cs" />
     <Compile Include="Business\BookingController.cs" />
-    <Compile Include="Business\Promotion.cs" />
     <Compile Include="Business\Guest.cs" />
     <Compile Include="Business\GuestController.cs" />
-    <Compile Include="Business\PromotionsController.cs" />
     <Compile Include="Business\Room.cs" />
     <Compile Include="Business\RoomAccount.cs" />
     <Compile Include="Business\RoomController.cs" />
     <Compile Include="Data\BookingDB.cs" />
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\GuestDB.cs" />
-    <Compile Include="Data\PromotionsDB.cs" />
     <Compile Include="Data\RoomDB.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Presentation\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Presentation\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\BookingsForm.cs">
@@ -128,7 +125,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Presentation\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\BookingsForm.resx">

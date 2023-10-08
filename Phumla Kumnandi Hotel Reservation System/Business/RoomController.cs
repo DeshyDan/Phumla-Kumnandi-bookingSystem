@@ -60,12 +60,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public Room Find(int roomNumber)
         {
             int index = 0;
-            bool found = (rooms[index].RoomNumber == roomNumber);
+            bool found = (rooms[index].Id == roomNumber);
 
             while (!found && index < rooms.Count - 1)
             {
                 index = index + 1;
-                found = (rooms[index].RoomNumber == roomNumber);
+                found = (rooms[index].Id == roomNumber);
             }
 
             return found ? rooms[index] : null;
@@ -75,7 +75,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         {
             int counter = 0;
             bool found = false;
-            found = (aRoom.RoomNumber == rooms[counter].RoomNumber);
+            found = (aRoom.Id == rooms[counter].Id);
             while (!found && counter < rooms.Count - 1)
             {
                 counter++;
