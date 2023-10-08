@@ -7,24 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class MDIParent : Form
     {
         #region instance variables
         private int childFormNumber = 0;
-        BookingsForm bookingsForm;
-        RoomsForm roomsForm;
-        GuestForm guestForm;
-        HomeForm homeForm;
+        private BookingsForm bookingsForm;
+        private RoomsForm roomsForm;
+        private GuestForm guestForm;
+        private HomeForm homeForm;
+
+        private BookingController bookingController;
+        private GuestController guestController;
+
+
+
 
         #endregion
         public MDIParent()
         {
             InitializeComponent();
+            bookingController = new BookingController();
+            guestController = new GuestController();
 
-
+          
             CreateHomeForm();
 
             homeForm.Show();
@@ -37,7 +45,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         #region Nav bar elements
         private void homeNavLabel_Click(object sender, EventArgs e)
         {
-            if(homeForm == null)
+            if (homeForm == null)
             {
                 CreateHomeForm();
             }
@@ -65,16 +73,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void CreateHomeForm()
         {
             closeMDIS();
-            homeForm = new HomeForm();
+            homeForm = new HomeForm(guestController , bookingController);
             homeForm.MdiParent = this;
 
-        
-            homeForm.Location = new Point(300 ,0);
+
+            homeForm.Location = new Point(300, 0);
         }
         private void CreateBookingForm()
         {
             closeMDIS();
-            bookingsForm = new BookingsForm();
+            bookingsForm = new BookingsForm(bookingController);
             bookingsForm.MdiParent = this;
             bookingsForm.Location = new Point(300, 0);
         }
@@ -85,11 +93,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             roomsForm.MdiParent = this;
             roomsForm.Location = new Point(300, 0);
 
-        }   
+        }
         private void CreateGuestForm()
         {
             closeMDIS();
-            guestForm = new GuestForm();
+            guestForm = new GuestForm(guestController);
             guestForm.MdiParent = this;
             guestForm.Location = new Point(300, 0);
         }
@@ -102,8 +110,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void bookingNavLabel_Click(object sender, EventArgs e)
         {
-           
-            if (bookingsForm== null)
+
+            if (bookingsForm == null)
             {
                 CreateBookingForm();
             }
@@ -116,7 +124,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void guestNavLabel_Click(object sender, EventArgs e)
         {
-            if(guestForm== null)
+            if (guestForm == null)
             {
                 CreateGuestForm();
             }
@@ -129,7 +137,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void roomNavLabel_Click(object sender, EventArgs e)
         {
-            if(roomsForm== null)
+            if (roomsForm == null)
             {
                 CreateRoomsForm();
             }

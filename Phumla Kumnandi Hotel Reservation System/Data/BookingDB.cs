@@ -47,8 +47,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     booking = new Booking();
-                    booking.Id = Convert.ToInt32(myRow["id"]);
-                    booking.GuestId = Convert.ToInt32(myRow["guestId"]);
+                    booking.GuestId = Convert.ToString(myRow["guestId"]);
                     booking.NumberOfRooms = Convert.ToInt32(myRow["numberOfRooms"]);
                     booking.BookingStatusId = Convert.ToInt32(myRow["bookingStatusId"]);
                     booking.CheckInDate = Convert.ToDateTime(myRow["checkInlDate"]);

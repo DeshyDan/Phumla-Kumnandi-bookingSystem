@@ -10,7 +10,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
     public class Guest
     {
         #region DataMembers
-        private int _GuestId;
+     
         private string _IdNumber;
         private string _FirstName;
         private string _LastName;
@@ -27,11 +27,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
             get { return _IdNumber; }
             set { _IdNumber = value; }
         }
-        public int Id
-        {
-            get { return _GuestId; }
-            set { _GuestId = value; }
-        }
+     
         public string FirstName
         {
             get { return _FirstName; }
@@ -70,9 +66,9 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #endregion
         #region constructor
-        public Guest(int guestID, string idNumber, string firstName, string lastName, string telephone, string email, string title, string address)
+        public Guest( string idNumber, string firstName, string lastName, string telephone, string email, string title, string address)
         {
-            Id = guestID;
+           
             IdNumber = idNumber;
             FirstName = firstName;
             LastName = lastName;

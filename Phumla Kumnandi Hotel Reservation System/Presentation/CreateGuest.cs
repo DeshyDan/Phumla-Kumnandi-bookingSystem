@@ -15,11 +15,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private Booking booking;
         private Guest guest;
         private GuestController guestController;
-        public CreateGuest(Booking booking, GuestController guestController)
+        private BookingController bookingController;
+        public CreateGuest(Booking booking, GuestController guestController, BookingController bookingController)
         {
             InitializeComponent();
             this.booking = booking;
             this.guestController = guestController;
+            this.bookingController = bookingController;
         }
         public CreateGuest(Booking booking)
         {
@@ -38,7 +40,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             guest.Address = addressInput.Text;
 
 
-            //  guest = guestController.findGuest(guest);
+            guest = guestController.findGuest(guest);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -121,11 +123,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             if (string.IsNullOrEmpty(missingFieldsMessage))
             {
                 PopulateObject();
-                // guestController.FinalizeChanges(guest);
+                guestController.FinalizeChanges(guest);
+
                 this.Close();
 
-
-                ConfirmBooking confirmBooking = new ConfirmBooking(booking, guest);
+                booking.GuestId = guest.IdNumber;
+                ConfirmBooking confirmBooking = new ConfirmBooking(guest, booking, bookingController);
                 confirmBooking.ShowDialog();
             }
             else
@@ -133,8 +136,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
                 MessageBox.Show("The following fields are missing or invalid:\n\n" + missingFieldsMessage);
             }
         }
-        
-    #endregion
 
-}
+        #endregion
+
+    }
 }

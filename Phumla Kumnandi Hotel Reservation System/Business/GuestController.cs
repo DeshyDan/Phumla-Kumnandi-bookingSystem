@@ -78,16 +78,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         #endregion
         #region Searching through a collection
-     
+
         public Guest Find(String ID)
         {
             int index = 0;
-            bool found = (guests[index].Id.Equals(ID));
+            bool found = (guests[index].IdNumber.Equals(ID));
             int count = guests.Count;
             while (!(found) && (index < guests.Count - 1))
             {
                 index = index + 1;
-                found = (guests[index].Id.Equals(ID));
+                found = (guests[index].IdNumber.Equals(ID));
             }
             return guests[index];
 
@@ -95,11 +95,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public int FindIndex(Guest aGuest)
         {
             int counter = 0;
-            bool found = (aGuest.Id.Equals(aGuest.Id));
+            bool found = (aGuest.IdNumber.Equals(aGuest.IdNumber));
             while (!(found) && counter < guests.Count - 1)
             {
                 counter++;
-                found = (aGuest.Id == aGuest.Id);
+                found = (aGuest.IdNumber == aGuest.IdNumber);
 
             }
             if (found)

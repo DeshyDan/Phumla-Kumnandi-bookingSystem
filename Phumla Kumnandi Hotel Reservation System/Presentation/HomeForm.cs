@@ -25,11 +25,13 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
 
         #endregion
-        public HomeForm()
+        public HomeForm(GuestController guestController , BookingController bookingController)
         {
             InitializeComponent();
             this.dataLanel.Text = DateTime.Now.Date.ToString("dddd, MMMM dd, yyyy");
             this.notAvailableLabel.Visible = false;
+            this.guestController = guestController; 
+            this.bookingController = bookingController;
           
         }
         #region utility methods
@@ -106,33 +108,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void checkAvailabilityButton_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
+            RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking, guestController , bookingController);
             roomAvailableBox.ShowDialog();
 
         }
 
-        private void bookingNavLabel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            BookingsForm bookingsForm = new BookingsForm();
-            bookingsForm.ShowDialog();
-            
-        }
-
-        private void guestNavLabel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            GuestForm guestForm = new GuestForm();
-            guestForm.ShowDialog();
-        }
-
-        private void roomNavLabel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RoomsForm roomForms = new RoomsForm();
-            roomForms.ShowDialog();
-
-        }
 
         private void logoutButton_Click(object sender, EventArgs e)
         {

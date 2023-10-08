@@ -13,14 +13,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     public partial class RoomAvailableBox : Form
     {
         private Booking booking;
-        public RoomAvailableBox(Booking booking)
+        private GuestController guestController;
+        private BookingController bookingController;
+        public RoomAvailableBox(Booking booking, GuestController guestController, BookingController bookingController)
         {
             InitializeComponent();
             this.booking = booking;
-            bookingPriceLabel.Text = booking.totalAmount.ToString();
+            bookingPriceLabel.Text = booking.TotalAmount.ToString();
         }
 
-        
+
 
         private void RoomAvailableBox_Load(object sender, EventArgs e)
         {
@@ -28,12 +30,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         }
 
         private void createBookingButton_Click(object sender, EventArgs e)
-        {   
+        {
             this.Close();
-     
-            CreateGuest createGuest = new CreateGuest(booking);
+
+            CreateGuest createGuest = new CreateGuest(booking, guestController, bookingController);
             createGuest.ShowDialog();
-            
+
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
