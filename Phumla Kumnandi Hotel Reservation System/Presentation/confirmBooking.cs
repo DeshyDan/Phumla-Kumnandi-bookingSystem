@@ -105,7 +105,9 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
             // Create a new MailMessage
             // Create a new MailMessage
-            MailMessage mail = new MailMessage(senderEmail, recipientEmail);
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(senderEmail);
+            mail.To.Add(recipientEmail);
             mail.Subject = "Hello, World!";
             mail.Body = $"Dear {guest.Title}  {guest.LastName},\n\n" +
                     $"We are thrilled to confirm your booking with us for the upcoming stay on {booking.CheckInDate} to at Phumla Kumnandi Hotel. We look forward to welcoming you and ensuring that your stay is comfortable and enjoyable.\n\n" +
@@ -134,6 +136,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             // Create a new SmtpClient
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
             smtpClient.Port = 587;
+            smtpClient.UseDefaultCredentials = false;
             smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
             smtpClient.EnableSsl = true;
 
@@ -141,7 +144,6 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
                 // Send the email
                 smtpClient.Send(mail);
-                MessageBox.Show("sent sucefully");
             }
             catch (Exception ex)
             {

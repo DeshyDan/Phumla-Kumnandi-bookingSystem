@@ -42,6 +42,7 @@
             this.bookingListView.Size = new System.Drawing.Size(1149, 634);
             this.bookingListView.TabIndex = 14;
             this.bookingListView.UseCompatibleStateImageBehavior = false;
+            this.bookingListView.SelectedIndexChanged += new System.EventHandler(this.bookingListView_SelectedIndexChanged_1);
             this.bookingListView.Click += new System.EventHandler(this.bookingListView_SelectedIndexChanged);
             // 
             // dataLanel

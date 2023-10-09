@@ -55,13 +55,15 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
                 
                 booking.Deposit = newDeposit;
-                bookingController.DataMaintenance(booking, Data.DB.DBOperation.Edit);
-                bookingController.FinalizeChanges(booking);
+               
             }
             else
             {
+                booking.Deposit = booking.TotalAmount;
                 MessageBox.Show("Depost has fully been paid");
             }
+            bookingController.DataMaintenance(booking, Data.DB.DBOperation.Edit);
+            bookingController.FinalizeChanges(booking);
             this.Close();
         }
 
