@@ -8,30 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Phumla_Kumnandi_Hotel_Reservation_System.Business;
+using Phumla_Kumnandi_Hotel_Reservation_System.Data;
+
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class CreateGuest : Form
     {
         private Booking booking;
-        private Guest guest;
+        private Guest guest = new Guest();
         private GuestController guestController;
         private BookingController bookingController;
-        public CreateGuest(Booking booking, GuestController guestController, BookingController bookingController)
-        {
-            InitializeComponent();
-            this.booking = booking;
-            this.guestController = guestController;
-            this.bookingController = bookingController;
-        }
         public CreateGuest(Booking booking)
         {
             InitializeComponent();
             this.booking = booking;
+            this.guestController = MDIParent.GetGuestController();
+            this.bookingController = MDIParent.GetBookingController();
+
+
         }
+
         private void PopulateObject()
         {
-            guest = new Guest();
-        
+
             guest.Title = titlePicker.Text;
             guest.FirstName = firstNameInput.Text;
             guest.LastName = LastNameInput.Text;
@@ -41,8 +40,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             guest.Address = addressInput.Text;
 
 
+            MessageBox.Show(guest.LastName);
+
             guest = guestController.findGuest(guest);
+
         }
+        #region buttons
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
@@ -55,23 +58,21 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
 
         }
-
+        #endregion
         #region input Validators
         private bool IsValidEmail(string email)
         {
-            // You can implement a more robust email validation logic if needed
+
             return email.Contains("@") && email.Contains(".");
         }
 
         private bool IsValidPhoneNumber(string phoneNumber)
         {
-            // Check if the phone number contains 10 digits (assuming no other characters are allowed)
             return phoneNumber.Length == 10 && long.TryParse(phoneNumber, out _);
         }
 
         private bool IsValidIdNumber(string idNumber)
         {
-            // Check if the ID number contains 13 digits (assuming no other characters are allowed)
             return idNumber.Length == 13 && long.TryParse(idNumber, out _);
         }
 
@@ -116,20 +117,26 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
             return missingFields;
         }
-
+        #endregion
         private void CheckFormFields()
         {
             string missingFieldsMessage = GetMissingFieldsMessage();
 
             if (string.IsNullOrEmpty(missingFieldsMessage))
             {
+
                 PopulateObject();
-                guestController.FinalizeChanges(guest);
+                if (guestController.FindIndex(guest) == -1)
+                {
+                    guestController.DataMaintenacne(guest, DB.DBOperation.Add);
+                    guestController.FinalizeChanges(guest);
+                }
+
 
                 this.Close();
 
                 booking.GuestId = guest.IdNumber;
-                ConfirmBooking confirmBooking = new ConfirmBooking(guest, booking, bookingController);
+                ConfirmBooking confirmBooking = new ConfirmBooking(guest, booking);
                 confirmBooking.ShowDialog();
             }
             else
@@ -138,7 +145,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             }
         }
 
-        #endregion
+
 
     }
 }

@@ -20,7 +20,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         #endregion
         #region constructor
-        public ConfirmBooking(Guest guest, Booking booking, BookingController bookingController)
+        public ConfirmBooking(Guest guest, Booking booking)
         {
             InitializeComponent();
             this.booking = booking;
@@ -34,12 +34,21 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             checkInDateTimePicker.Enabled = false;
             checkOutDateTimePicker.Enabled = false;
             numberOfGuestPicker.Enabled = false;
+        
+            this.bookingController = MDIParent.GetBookingController();
 
         }
         #endregion
         private void PopulateObject()
-        {
-            booking.SpecialRequest = specialRequestInput.Text;
+        {   if(specialRequestInput.Text == String.Empty)
+            {
+                booking.SpecialRequest = "none";
+            }
+            else
+            {
+                booking.SpecialRequest = specialRequestInput.Text;
+
+            }
             booking.Id = GenerateUniqueId();
         }
 
@@ -71,6 +80,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void confirmbutton_Click(object sender, EventArgs e)
         {
             PopulateObject();
+            bookingController.DataMaintenance(booking, Data.DB.DBOperation.Add);
             bookingController.FinalizeChanges(booking);
             MessageBox.Show("Booking has been sucessfully made");
             this.Close();

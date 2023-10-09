@@ -42,11 +42,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
 
         #region Constructor
-        public BookingsForm(GuestController guestController, BookingController bookingController)
+        public BookingsForm()
         {
             InitializeComponent();
-             this.guestController = guestController;
-             this.bookingController = bookingController; 
+            this.guestController = MDIParent.GetGuestController();
+            this.bookingController = MDIParent.GetBookingController();
 
             state = FormState.View;
         }

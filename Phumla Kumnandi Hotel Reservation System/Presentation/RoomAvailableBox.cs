@@ -15,10 +15,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private Booking booking;
         private GuestController guestController;
         private BookingController bookingController;
-        public RoomAvailableBox(Booking booking, GuestController guestController, BookingController bookingController)
+        public RoomAvailableBox(Booking booking)
         {
             InitializeComponent();
             this.booking = booking;
+            this.guestController = MDIParent.GetGuestController();
+            this.bookingController = MDIParent.GetBookingController();
             bookingPriceLabel.Text = booking.TotalAmount.ToString();
         }
 
@@ -33,7 +35,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             this.Close();
 
-            CreateGuest createGuest = new CreateGuest(booking, guestController, bookingController);
+            CreateGuest createGuest = new CreateGuest(booking);
             createGuest.ShowDialog();
 
         }

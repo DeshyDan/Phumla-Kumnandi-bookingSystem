@@ -73,7 +73,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
             }
             row["title"] = guest.Title;
             row["firstName"] = guest.FirstName;
-            row["LastName"] = guest.LastName;
+            row["lastName"] = guest.LastName;
             row["email"] = guest.Email;
             row["telephone"] = guest.Telephone;
             row["address"] = guest.Address;
@@ -135,7 +135,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         private void Create_INSERT_Parameters(Guest guest)
         {
             dataAdapter.InsertCommand = new SqlCommand(
-                "INSERT INTO guests (idNumber,title firstName, lastName, email, telephone , address) values(@idNumber,@title,  @firstName, @lastName ,@email, @telephone, @address)"
+                "INSERT INTO guests (idNumber,title, firstName, lastName, email, telephone , address) values(@idNumber,@title,  @firstName, @lastName ,@email, @telephone, @address)", connection
                 );
 
             Build_INSERT_Parameters(guest);

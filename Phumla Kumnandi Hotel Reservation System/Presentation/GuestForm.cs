@@ -8,36 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Phumla_Kumnandi_Hotel_Reservation_System.bookingSystemTestDataSetTableAdapters;
 using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 using Phumla_Kumnandi_Hotel_Reservation_System.Data;
+using static Phumla_Kumnandi_Hotel_Reservation_System.Presentation.BookingsForm;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class GuestForm : Form
     {
-        private BindingList<Guest> guest;
+        #region instance variables
         public bool listFormClosed;
+        private Collection<Booking> bookings;
+        private Collection<Guest> guests;
+        private BookingController bookingController;
         private GuestController guestController;
-        public GuestForm(GuestController guestController)
+        private FormState state;
+        private Booking booking;
+        private Guest guest;
+
+        #endregion
+
+        public GuestForm()
         {
             InitializeComponent();
-            guest = new BindingList<Guest>();
-            GuestDB db = new GuestDB();
-            this.guestController = guestController;
-            dataGridView1.DataSource = guest;
+            this.guestController = MDIParent.GetGuestController();
+            this.bookingController = MDIParent.GetBookingController();
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -47,81 +47,76 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void Guest_Load(object sender, EventArgs e)
         {
-            PopulateGuest();
+            guestListView.View = View.Details;
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+     
+
+
+
+
+#region settign up he list view
+        public void setUpGuestListView()
         {
+            ListViewItem guestDetails;
+            guestListView.Clear();
+            bookings = bookingController.AllBookings;
+            guests = guestController.AllGuests;
+            guestListView.Columns.Insert(0, "Id Number", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(1, "Title", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(2, "First Name", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(3, "LastName", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(4, "email", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(5, "telephone", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(6, "address", 120, HorizontalAlignment.Left);
+          //  guestListView.Columns.Insert(6, "#Edit", 70, HorizontalAlignment.Left);
+          //  guestListView.Columns.Insert(7, "#Delete", 70, HorizontalAlignment.Left);
+           // guestListView.Columns.Insert(8, "#Pay", 70, HorizontalAlignment.Left);
+
+            foreach (Guest guest in guests)
+            {
+                guestDetails = new ListViewItem();
+                guestDetails.SubItems.Add(guest.IdNumber.ToString());
+                guestDetails.SubItems.Add(guest.Title.ToString());
+                guestDetails.SubItems.Add(guest.FirstName.ToString());
+                guestDetails.SubItems.Add(guest.LastName.ToString());
+                guestDetails.SubItems.Add(guest.Email.ToString());
+                guestDetails.SubItems.Add(guest.Telephone.ToString());
+                guestDetails.SubItems.Add(guest.Address.ToString());
+              //  guestDetails.SubItems.Add("Edit");
+           ////     guestDetails.SubItems.Add("Delete");
+          //      guestDetails.SubItems.Add("Pay");
+                guestListView.Items.Add(guestDetails);
+            }
+            guestListView.Refresh();
+            guestListView.GridLines = true;
 
         }
 
-
-
-        private void Filter_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string guestID = searchBox.Text;
-                GuestController guestcontroller = new GuestController();
-                Guest aGuest = guestcontroller.Find(guestID);
-
-                if (string.IsNullOrEmpty(guestID))
-                {
-                    MessageBox.Show("Please enter a GuestID to searc", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else if (aGuest == null)
-                {
-                    MessageBox.Show("Guest does not exist in our system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Rows.Add(guestID, aGuest.Title, aGuest.IdNumber, aGuest.FirstName, aGuest.LastName, aGuest.Email, aGuest.Telephone, aGuest.Address);
-
-                }
-
-
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Please make sure all fields are correctly flled in before proceeding", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-        }
-        private void PopulateGuest()
-        {
-            try
-            {
-                GuestController guestcontroller = new GuestController();
-                Collection<Guest> allGuests = guestcontroller.AllGuest;
-                dataGridView1.Rows.Clear();
-
-                foreach (Guest guest in allGuests)
-                {
-                    dataGridView1.Rows.Add(
-                        guest.Title
-                        , guest.IdNumber
-                        , guest.FirstName
-                        , guest.LastName
-                        , guest.Email
-                        , guest.Telephone
-                        , guest.Address
-                        );
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An Error occured while listing all guests{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+#endregion
 
         private void GuestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             listFormClosed = true;
+        }
+
+        private void guestListView_ItemActivate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuestForm_Activated(object sender, EventArgs e)
+        {
+            guestListView.View = View.Details;
+            setUpGuestListView();
+        }
+
+      
+
+        private void guestListView_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

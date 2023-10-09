@@ -363,7 +363,7 @@
             this.checkOutDateTimePicker.Name = "checkOutDateTimePicker";
             this.checkOutDateTimePicker.Size = new System.Drawing.Size(450, 39);
             this.checkOutDateTimePicker.TabIndex = 5;
-            this.checkOutDateTimePicker.Value = new System.DateTime(2023, 12, 1, 0, 0, 0, 0);
+            this.checkOutDateTimePicker.Value = new System.DateTime(2023, 12, 2, 0, 0, 0, 0);
             // 
             // label18
             // 

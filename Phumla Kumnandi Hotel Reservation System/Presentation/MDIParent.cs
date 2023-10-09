@@ -22,15 +22,36 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private BookingController bookingController;
         private GuestController guestController;
 
+        #endregion
 
+        #region Singletons for controllers
+        private static GuestController guestControllerInstance;
+        public static GuestController GetGuestController()
+        {
+            if (guestControllerInstance == null)
+            {
+                guestControllerInstance = new GuestController();
+            }
+            return guestControllerInstance;
+        }
+        private static BookingController bookingControllerInstance;
+
+        public static BookingController GetBookingController()
+        {
+            if (bookingControllerInstance == null)
+            {
+                bookingControllerInstance = new BookingController();
+            }
+            return bookingControllerInstance;
+        }
 
 
         #endregion
         public MDIParent()
         {
             InitializeComponent();
-            bookingController = new BookingController();
-            guestController = new GuestController();
+            bookingController = GetBookingController();
+            guestController = GetGuestController();
 
           
             CreateHomeForm();
@@ -73,7 +94,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void CreateHomeForm()
         {
             closeMDIS();
-            homeForm = new HomeForm(guestController , bookingController);
+            homeForm = new HomeForm();
             homeForm.MdiParent = this;
 
 
@@ -82,7 +103,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void CreateBookingForm()
         {
             closeMDIS();
-            bookingsForm = new BookingsForm(guestController , bookingController);
+            bookingsForm = new BookingsForm();
             bookingsForm.MdiParent = this;
             bookingsForm.Location = new Point(300, 0);
         }
@@ -97,7 +118,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void CreateGuestForm()
         {
             closeMDIS();
-            guestForm = new GuestForm(guestController);
+            guestForm = new GuestForm();
             guestForm.MdiParent = this;
             guestForm.Location = new Point(300, 0);
         }
@@ -131,8 +152,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             }
             if (guestForm.listFormClosed)
             {
-                CreateBookingForm();
+                CreateGuestForm();
             }
+            guestForm.setUpGuestListView();
+
             guestForm.Show();
         }
 

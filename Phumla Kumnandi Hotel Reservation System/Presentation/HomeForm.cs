@@ -14,7 +14,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
     public partial class HomeForm : Form
     {
-        
+
         #region data members
         private Guest guest;
         private Booking booking;
@@ -25,14 +25,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
 
         #endregion
-        public HomeForm(GuestController guestController , BookingController bookingController)
+        public HomeForm()
         {
             InitializeComponent();
             this.dataLanel.Text = DateTime.Now.Date.ToString("dddd, MMMM dd, yyyy");
             this.notAvailableLabel.Visible = false;
-            this.guestController = guestController; 
-            this.bookingController = bookingController;
-          
+            this.guestController = MDIParent.GetGuestController();
+            this.bookingController = MDIParent.GetBookingController();
+
         }
         #region utility methods
 
@@ -108,7 +108,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void checkAvailabilityButton_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking, guestController , bookingController);
+            RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
             roomAvailableBox.ShowDialog();
 
         }

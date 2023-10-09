@@ -16,7 +16,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         Collection<Guest> guests;
         #endregion
         #region properties
-        public Collection<Guest> AllGuest
+        public Collection<Guest> AllGuests
         {
             get { return guests; }
 
