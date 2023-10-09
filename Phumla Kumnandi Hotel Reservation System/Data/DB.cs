@@ -26,7 +26,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Data
         #endregion 
         #region instance variables 
 
-        private string connString ="DSf";
+        private string connString = Settings.Default.bookingSystemConnectionStringTest;
         protected SqlConnection connection;
         protected DataSet dataSet;
         protected SqlDataAdapter dataAdapter;

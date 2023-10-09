@@ -66,14 +66,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         public Booking Find(string ID)
         {
             int index = 0;
-            bool found = (bookings[index].Id == Convert.ToInt32(ID));
+            bool found = (bookings[index].Id == (ID));
             int count = bookings.Count;
             while (!(found) && (index < bookings.Count - 1))
             {
 
                 index = index + 1;
                
-                found = (bookings[index].Id == Convert.ToInt32(ID));
+                found = (bookings[index].Id == (ID));
             }
             return bookings[index];
         }

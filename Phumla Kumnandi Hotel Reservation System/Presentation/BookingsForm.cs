@@ -45,15 +45,12 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         public BookingsForm(GuestController guestController, BookingController bookingController)
         {
             InitializeComponent();
-            // this.guestController = guestController;
-            // this.bookingController = bookingController; 
+             this.guestController = guestController;
+             this.bookingController = bookingController; 
 
             state = FormState.View;
         }
-        public BookingsForm()
-        {
-            InitializeComponent();
-        }
+      
         #endregion 
 
         private void Filter_Click(object sender, EventArgs e)
@@ -84,16 +81,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             ListViewItem bookingDetails;
             bookingListView.Clear();
-
-            bookingListView.Columns.Insert(0, "Booking ID", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(1, "CheckIn Date", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(2, "CheckOut Date", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(3, "Number Of Guests", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(4, "Total Amount", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(5, "Deposit Paid", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(6, "#Edit", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(7, "#Delete", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(8, "#Pay", 120, HorizontalAlignment.Left);
+            bookings = bookingController.AllBookings;
+            bookingListView.Columns.Insert(0, "Booking ID", 100, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(1, "Check In Date", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(2, "Check Out Date", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(3, "No. Of Guest", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(4, "Total Amount", 100, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(5, "Deposit Paid", 100, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(6, "#Edit", 70, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(7, "#Delete", 70, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(8, "#Pay", 70, HorizontalAlignment.Left);
 
             foreach (Booking booking in bookings)
             {
