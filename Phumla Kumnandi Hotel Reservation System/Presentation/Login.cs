@@ -21,5 +21,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bookingSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookingSystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bookingSystemTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +82,12 @@
     <Compile Include="Data\DB.cs" />
     <Compile Include="Data\GuestDB.cs" />
     <Compile Include="Data\RoomDB.cs" />
+    <Compile Include="Presentation\bookingFunctions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\bookingFunctions.Designer.cs">
+      <DependentUpon>bookingFunctions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +168,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\bookingFunctions.resx">
+      <DependentUpon>bookingFunctions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +219,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bookingSystemDataSet.xsc">
+      <DependentUpon>bookingSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bookingSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookingSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bookingSystemDataSet.xss">
+      <DependentUpon>bookingSystemDataSet.xsd</DependentUpon>
+    </None>
     <None Include="bookingSystemTestDataSet.xsc">
       <DependentUpon>bookingSystemTestDataSet.xsd</DependentUpon>
     </None>

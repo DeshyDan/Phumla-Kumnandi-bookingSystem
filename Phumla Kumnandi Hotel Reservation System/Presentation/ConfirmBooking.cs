@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+using System.Diagnostics;
 using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
@@ -16,6 +19,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         #region instance variables
 
         private Booking booking;
+        private Guest guest;
         private BookingController bookingController;
 
         #endregion
@@ -24,6 +28,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             InitializeComponent();
             this.booking = booking;
+            this.guest = guest;
             firstNameInput.Text = guest.FirstName;
             LastNameInput.Text = guest.LastName;
             checkInDateTimePicker.Value = booking.CheckInDate;
@@ -34,13 +39,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             checkInDateTimePicker.Enabled = false;
             checkOutDateTimePicker.Enabled = false;
             numberOfGuestPicker.Enabled = false;
-        
+
             this.bookingController = MDIParent.GetBookingController();
 
         }
         #endregion
         private void PopulateObject()
-        {   if(specialRequestInput.Text == String.Empty)
+        {
+            if (specialRequestInput.Text == String.Empty)
             {
                 booking.SpecialRequest = "none";
             }
@@ -82,15 +88,81 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             PopulateObject();
             bookingController.DataMaintenance(booking, Data.DB.DBOperation.Add);
             bookingController.FinalizeChanges(booking);
+           
             MessageBox.Show("Booking has been sucessfully made");
             this.Close();
+            EmailGuest();
 
 
         }
+        private void EmailGuest()
+        {
+            string senderEmail = "phumla056@gmail.com";
+            string senderPassword = "thisisphumla";
 
+            // Recipient's email address
+            string recipientEmail = guest.Email;
+
+            // Create a new MailMessage
+            // Create a new MailMessage
+            MailMessage mail = new MailMessage(senderEmail, recipientEmail);
+            mail.Subject = "Hello, World!";
+            mail.Body = $"Dear {guest.Title}  {guest.LastName},\n\n" +
+                    $"We are thrilled to confirm your booking with us for the upcoming stay on {booking.CheckInDate} to at Phumla Kumnandi Hotel. We look forward to welcoming you and ensuring that your stay is comfortable and enjoyable.\n\n" +
+                    "Booking Details:\n" +
+                    $"- Check-in Date: {booking.CheckInDate} \n" +
+                    $"- Check-out Date: {booking.CheckOutDate} \n\n" +
+                    $"To secure your reservation, we kindly request a deposit payment within the next 14 days. The deposit amount is {booking.TotalAmount} and can be paid through the following methods:\n\n" +
+                    "Bank Transfer Details:\n" +
+                    "Bank Name: Phumla Bank\n" +
+                    "Account Holder: Phumla Kumnandi Hotels\n" +
+                    "Account Number:123654 12365 98\n" +
+                    "IBAN: 456\n" +
+                    "SWIFT/BIC Code: 123\n\n" +
+                    $"Please include your reservation reference number, {booking.Id}, in the payment reference to ensure that we correctly associate the deposit with your booking.\n\n" +
+
+                    "Once we receive your deposit payment, we will send you a confirmation email along with any additional details you may need for your stay.\n\n" +
+                    "Thank you for choosing Phumla Hotels. We are excited to host you, and we are confident that your stay with us will be a memorable one. If you have any special requests or preferences, please let us know in advance so that we can make arrangements to enhance your experience.\n\n" +
+                    "We appreciate your trust in us and look forward to providing you with exceptional service.\n\n" +
+                    "Warm regards,\n" +
+                    "Receptionist\n" +
+      
+                    "Phumla Kumndandi Hotels\n" +
+                    "phumla@co.za\n" +
+                    "123456789";
+
+            // Create a new SmtpClient
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+            smtpClient.Port = 587;
+            smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
+            smtpClient.EnableSsl = true;
+
+            try
+            {
+                // Send the email
+                smtpClient.Send(mail);
+                MessageBox.Show("sent sucefully");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+
+            }
+            finally
+            {
+                // Clean up resources
+                mail.Dispose();
+                smtpClient.Dispose();
+            }
+        }
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void specialRequestInput_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

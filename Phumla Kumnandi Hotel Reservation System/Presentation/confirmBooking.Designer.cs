@@ -55,7 +55,7 @@
             this.cancelButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Black;
             this.cancelButton.Location = new System.Drawing.Point(619, 660);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(236, 54);
             this.cancelButton.TabIndex = 18;
@@ -71,7 +71,7 @@
             this.confirmbutton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmbutton.ForeColor = System.Drawing.Color.White;
             this.confirmbutton.Location = new System.Drawing.Point(869, 660);
-            this.confirmbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.confirmbutton.Margin = new System.Windows.Forms.Padding(4);
             this.confirmbutton.Name = "confirmbutton";
             this.confirmbutton.Size = new System.Drawing.Size(236, 54);
             this.confirmbutton.TabIndex = 19;
@@ -84,7 +84,7 @@
             this.numberOfGuestPicker.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfGuestPicker.Location = new System.Drawing.Point(428, 347);
-            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 25;
@@ -177,11 +177,12 @@
             // 
             this.specialRequestInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.specialRequestInput.Location = new System.Drawing.Point(24, 517);
-            this.specialRequestInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.specialRequestInput.Margin = new System.Windows.Forms.Padding(4);
             this.specialRequestInput.Name = "specialRequestInput";
             this.specialRequestInput.Size = new System.Drawing.Size(1081, 118);
             this.specialRequestInput.TabIndex = 30;
             this.specialRequestInput.Text = "";
+            this.specialRequestInput.TextChanged += new System.EventHandler(this.specialRequestInput_TextChanged);
             // 
             // label1
             // 
@@ -251,7 +252,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmbutton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConfirmBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "confirmBooking";

@@ -15,11 +15,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     {
         private Booking booking;
         private BookingController bookingController;
-        public DeleteBooking(Booking booking, BookingController bookingController)
+        public DeleteBooking(Booking booking)
         {
             InitializeComponent();
             this.booking = booking;
-            this.bookingController = bookingController;
+            this.bookingController = MDIParent.GetBookingController();
             nameLabel.Text = booking.GuestId;
             bookingDateLabel.Text = booking.CheckInDate.ToString("yyyy-MM-dd") + " to " + booking.CheckOutDate.ToString("yyyy-MM-dd");
             totalPriceLabel.Text = booking.TotalAmount.ToString();

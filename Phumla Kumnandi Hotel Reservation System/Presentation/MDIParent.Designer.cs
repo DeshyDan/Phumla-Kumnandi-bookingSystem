@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoutButton = new System.Windows.Forms.Button();
-            this.roomNavLabel = new System.Windows.Forms.Label();
             this.guestNavLabel = new System.Windows.Forms.Label();
             this.bookingNavLabel = new System.Windows.Forms.Label();
             this.homeNavLabel = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.panel1.Controls.Add(this.logoutButton);
-            this.panel1.Controls.Add(this.roomNavLabel);
             this.panel1.Controls.Add(this.guestNavLabel);
             this.panel1.Controls.Add(this.bookingNavLabel);
             this.panel1.Controls.Add(this.homeNavLabel);
@@ -66,19 +64,6 @@
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // roomNavLabel
-            // 
-            this.roomNavLabel.AutoSize = true;
-            this.roomNavLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomNavLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.roomNavLabel.Location = new System.Drawing.Point(117, 444);
-            this.roomNavLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.roomNavLabel.Name = "roomNavLabel";
-            this.roomNavLabel.Size = new System.Drawing.Size(171, 53);
-            this.roomNavLabel.TabIndex = 0;
-            this.roomNavLabel.Text = "Rooms";
-            this.roomNavLabel.Click += new System.EventHandler(this.roomNavLabel_Click);
             // 
             // guestNavLabel
             // 
@@ -142,7 +127,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button logoutButton;
-        private System.Windows.Forms.Label roomNavLabel;
         private System.Windows.Forms.Label guestNavLabel;
         private System.Windows.Forms.Label bookingNavLabel;
         private System.Windows.Forms.Label homeNavLabel;

@@ -40,8 +40,6 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             guest.Address = addressInput.Text;
 
 
-            MessageBox.Show(guest.LastName);
-
             guest = guestController.findGuest(guest);
 
         }
@@ -126,7 +124,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
 
                 PopulateObject();
-                if (guestController.FindIndex(guest) == -1)
+                if (!(guestController.FindIndex(guest) == -1))
                 {
                     guestController.DataMaintenacne(guest, DB.DBOperation.Add);
                     guestController.FinalizeChanges(guest);

@@ -15,11 +15,11 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
     {
         private Booking booking; 
         private BookingController bookingController;
-        public EditBooking(Booking booking , BookingController bookingController)
+        public EditBooking(Booking booking )
         {
             InitializeComponent();
              this.booking = booking;
-            this.bookingController = bookingController;
+            this.bookingController = MDIParent.GetBookingController();
             nameLabel.Text = booking.GuestId;
             bookingIdLabel.Text = booking.Id.ToString();
             specialRequestInput.Text = booking.SpecialRequest;

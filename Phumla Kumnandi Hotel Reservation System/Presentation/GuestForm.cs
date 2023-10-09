@@ -70,23 +70,18 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             guestListView.Columns.Insert(4, "email", 120, HorizontalAlignment.Left);
             guestListView.Columns.Insert(5, "telephone", 120, HorizontalAlignment.Left);
             guestListView.Columns.Insert(6, "address", 120, HorizontalAlignment.Left);
-          //  guestListView.Columns.Insert(6, "#Edit", 70, HorizontalAlignment.Left);
-          //  guestListView.Columns.Insert(7, "#Delete", 70, HorizontalAlignment.Left);
-           // guestListView.Columns.Insert(8, "#Pay", 70, HorizontalAlignment.Left);
+         
 
             foreach (Guest guest in guests)
             {
-                guestDetails = new ListViewItem();
-                guestDetails.SubItems.Add(guest.IdNumber.ToString());
+                guestDetails = new ListViewItem(guest.IdNumber.ToString());
                 guestDetails.SubItems.Add(guest.Title.ToString());
                 guestDetails.SubItems.Add(guest.FirstName.ToString());
                 guestDetails.SubItems.Add(guest.LastName.ToString());
                 guestDetails.SubItems.Add(guest.Email.ToString());
                 guestDetails.SubItems.Add(guest.Telephone.ToString());
                 guestDetails.SubItems.Add(guest.Address.ToString());
-              //  guestDetails.SubItems.Add("Edit");
-           ////     guestDetails.SubItems.Add("Delete");
-          //      guestDetails.SubItems.Add("Pay");
+
                 guestListView.Items.Add(guestDetails);
             }
             guestListView.Refresh();

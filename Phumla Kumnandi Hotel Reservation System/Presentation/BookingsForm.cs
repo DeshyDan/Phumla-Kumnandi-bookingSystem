@@ -11,7 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.ListViewItem;
+
+
+
 
 namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
@@ -94,50 +97,30 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
             foreach (Booking booking in bookings)
             {
-                bookingDetails = new ListViewItem();
-                bookingDetails.SubItems.Add(booking.Id.ToString());
+                bookingDetails = new ListViewItem(booking.Id.ToString());
+
                 bookingDetails.SubItems.Add(booking.CheckInDate.ToString());
                 bookingDetails.SubItems.Add(booking.CheckOutDate.ToString());
                 bookingDetails.SubItems.Add(booking.NumberOfGuests.ToString());
                 bookingDetails.SubItems.Add(booking.TotalAmount.ToString());
                 bookingDetails.SubItems.Add(booking.Deposit.ToString());
-                bookingDetails.SubItems.Add("Edit");
-                bookingDetails.SubItems.Add("Delete");
-                bookingDetails.SubItems.Add("Pay");
+             
                 bookingListView.Items.Add(bookingDetails);
             }
             bookingListView.Refresh();
             bookingListView.GridLines = true;
 
         }
-
+      
         #endregion
 
         private void bookingListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (bookingListView.SelectedItems.Count == 1)
+            if (bookingListView.SelectedItems.Count >0)
             {
                 ListViewItem selectedItem = bookingListView.SelectedItems[0];
                 booking = bookingController.Find(selectedItem.Text);
-               
-
-                int columnIndex = selectedItem.SubItems.IndexOf(selectedItem.SubItems[0]);
-
-
-                if (columnIndex == 6) // Edit
-                {
-                    EditBooking editBooking = new EditBooking(booking, bookingController);
-                    editBooking.ShowDialog();
-                }
-                else if (columnIndex == 7) // Delete
-                {
-                    DeleteBooking deleteBooking = new DeleteBooking(booking, bookingController);
-                    deleteBooking.ShowDialog();
-                }
-                else if (columnIndex == 8) // Pay
-                {
-
-                }
+                
                 setUpBookingListView();
 
             }
