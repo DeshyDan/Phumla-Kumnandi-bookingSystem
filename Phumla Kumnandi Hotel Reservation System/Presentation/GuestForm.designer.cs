@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guestListView = new System.Windows.Forms.ListView();
+            this.dataLanel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // guestListView
@@ -41,12 +42,26 @@
             this.guestListView.UseCompatibleStateImageBehavior = false;
             this.guestListView.SelectedIndexChanged += new System.EventHandler(this.guestListView_SelectedIndexChanged_1);
             // 
+            // dataLanel
+            // 
+            this.dataLanel.AutoSize = true;
+            this.dataLanel.BackColor = System.Drawing.Color.Transparent;
+            this.dataLanel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataLanel.ForeColor = System.Drawing.Color.Black;
+            this.dataLanel.Location = new System.Drawing.Point(17, 46);
+            this.dataLanel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dataLanel.Name = "dataLanel";
+            this.dataLanel.Size = new System.Drawing.Size(184, 55);
+            this.dataLanel.TabIndex = 7;
+            this.dataLanel.Text = "Guests";
+            // 
             // GuestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1202, 860);
+            this.Controls.Add(this.dataLanel);
             this.Controls.Add(this.guestListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -57,11 +72,13 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GuestForm_FormClosed);
             this.Load += new System.EventHandler(this.Guest_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ListView guestListView;
+        private System.Windows.Forms.Label dataLanel;
     }
 }
 

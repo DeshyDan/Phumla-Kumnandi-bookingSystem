@@ -40,7 +40,6 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private GuestController guestController;
         private FormState state;
         private Booking booking;
-
         #endregion
 
 
@@ -89,21 +88,19 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             bookingListView.Columns.Insert(1, "Check In Date", 120, HorizontalAlignment.Left);
             bookingListView.Columns.Insert(2, "Check Out Date", 120, HorizontalAlignment.Left);
             bookingListView.Columns.Insert(3, "No. Of Guest", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(4, "Total Amount", 100, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(5, "Deposit Paid", 100, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(6, "#Edit", 70, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(7, "#Delete", 70, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(8, "#Pay", 70, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(4, "Total Amount", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(5, "Deposit Paid", 120, HorizontalAlignment.Left);
+         
 
-            foreach (Booking booking in bookings)
+            foreach (Booking abooking in bookings)
             {
-                bookingDetails = new ListViewItem(booking.Id.ToString());
+                bookingDetails = new ListViewItem(abooking.Id.ToString());
 
-                bookingDetails.SubItems.Add(booking.CheckInDate.ToString());
-                bookingDetails.SubItems.Add(booking.CheckOutDate.ToString());
-                bookingDetails.SubItems.Add(booking.NumberOfGuests.ToString());
-                bookingDetails.SubItems.Add(booking.TotalAmount.ToString());
-                bookingDetails.SubItems.Add(booking.Deposit.ToString());
+                bookingDetails.SubItems.Add(abooking.CheckInDate.ToString());
+                bookingDetails.SubItems.Add(abooking.CheckOutDate.ToString());
+                bookingDetails.SubItems.Add(abooking.NumberOfGuests.ToString());
+                bookingDetails.SubItems.Add(abooking.TotalAmount.ToString());
+                bookingDetails.SubItems.Add(abooking.Deposit.ToString());
              
                 bookingListView.Items.Add(bookingDetails);
             }
@@ -116,14 +113,19 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void bookingListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+        
             if (bookingListView.SelectedItems.Count >0)
             {
-                ListViewItem selectedItem = bookingListView.SelectedItems[0];
-                booking = bookingController.Find(selectedItem.Text);
+               
+                booking = bookingController.Find(bookingListView.SelectedItems[0].Text);
                 
-                setUpBookingListView();
+               BookingFunctions bookingFunctions = new BookingFunctions(booking);
+                bookingFunctions.ShowDialog(); 
+              
 
             }
+            
+            setUpBookingListView();
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)

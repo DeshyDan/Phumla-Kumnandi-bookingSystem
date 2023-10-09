@@ -32,13 +32,8 @@
             this.dataLanel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.totalInHotelLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.occupiedRoomLabel = new System.Windows.Forms.Label();
             this.availableRoomLabel = new System.Windows.Forms.Label();
@@ -56,6 +51,7 @@
             this.numberOfGuestPicker = new System.Windows.Forms.NumericUpDown();
             this.checkAvailabilityButton = new System.Windows.Forms.Button();
             this.notAvailableLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).BeginInit();
@@ -88,13 +84,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.totalInHotelLabel);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.occupiedRoomLabel);
             this.panel3.Controls.Add(this.availableRoomLabel);
@@ -116,23 +108,11 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label20.Location = new System.Drawing.Point(927, 94);
+            this.label20.Location = new System.Drawing.Point(906, 97);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(129, 19);
             this.label20.TabIndex = 0;
             this.label20.Text = "Occupied room";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label15.Location = new System.Drawing.Point(681, 94);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(148, 24);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Available room";
             // 
             // label11
             // 
@@ -140,7 +120,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label11.Location = new System.Drawing.Point(927, 65);
+            this.label11.Location = new System.Drawing.Point(906, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 19);
             this.label11.TabIndex = 0;
@@ -152,55 +132,11 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label14.Location = new System.Drawing.Point(683, 60);
+            this.label14.Location = new System.Drawing.Point(507, 65);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 19);
             this.label14.TabIndex = 0;
             this.label14.Text = "Total";
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(177, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 18);
-            this.label12.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label9.Location = new System.Drawing.Point(456, 87);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 32);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "in hotel";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label8.Location = new System.Drawing.Point(459, 60);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 19);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Total";
-            // 
-            // totalInHotelLabel
-            // 
-            this.totalInHotelLabel.AutoSize = true;
-            this.totalInHotelLabel.BackColor = System.Drawing.Color.Transparent;
-            this.totalInHotelLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalInHotelLabel.ForeColor = System.Drawing.Color.Black;
-            this.totalInHotelLabel.Location = new System.Drawing.Point(573, 69);
-            this.totalInHotelLabel.Name = "totalInHotelLabel";
-            this.totalInHotelLabel.Size = new System.Drawing.Size(64, 46);
-            this.totalInHotelLabel.TabIndex = 0;
-            this.totalInHotelLabel.Text = "12";
             // 
             // label6
             // 
@@ -208,7 +144,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label6.Location = new System.Drawing.Point(219, 90);
+            this.label6.Location = new System.Drawing.Point(253, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 32);
             this.label6.TabIndex = 0;
@@ -220,7 +156,7 @@
             this.occupiedRoomLabel.BackColor = System.Drawing.Color.Transparent;
             this.occupiedRoomLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.occupiedRoomLabel.ForeColor = System.Drawing.Color.Black;
-            this.occupiedRoomLabel.Location = new System.Drawing.Point(1073, 65);
+            this.occupiedRoomLabel.Location = new System.Drawing.Point(1052, 68);
             this.occupiedRoomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.occupiedRoomLabel.Name = "occupiedRoomLabel";
             this.occupiedRoomLabel.Size = new System.Drawing.Size(64, 46);
@@ -233,7 +169,7 @@
             this.availableRoomLabel.BackColor = System.Drawing.Color.Transparent;
             this.availableRoomLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.availableRoomLabel.ForeColor = System.Drawing.Color.Black;
-            this.availableRoomLabel.Location = new System.Drawing.Point(837, 69);
+            this.availableRoomLabel.Location = new System.Drawing.Point(744, 71);
             this.availableRoomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.availableRoomLabel.Name = "availableRoomLabel";
             this.availableRoomLabel.Size = new System.Drawing.Size(64, 46);
@@ -250,9 +186,9 @@
             this.label21.Location = new System.Drawing.Point(4, 14);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(167, 40);
+            this.label21.Size = new System.Drawing.Size(378, 50);
             this.label21.TabIndex = 0;
-            this.label21.Text = "Overview";
+            this.label21.Text = "Today\'s Overview";
             // 
             // label5
             // 
@@ -260,7 +196,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label5.Location = new System.Drawing.Point(220, 65);
+            this.label5.Location = new System.Drawing.Point(254, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 0;
@@ -296,7 +232,7 @@
             this.checkOutLabel.BackColor = System.Drawing.Color.Transparent;
             this.checkOutLabel.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOutLabel.ForeColor = System.Drawing.Color.Black;
-            this.checkOutLabel.Location = new System.Drawing.Point(375, 76);
+            this.checkOutLabel.Location = new System.Drawing.Point(409, 76);
             this.checkOutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.checkOutLabel.Name = "checkOutLabel";
             this.checkOutLabel.Size = new System.Drawing.Size(64, 46);
@@ -419,6 +355,18 @@
             this.notAvailableLabel.TabIndex = 0;
             this.notAvailableLabel.Text = "Room is not available";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label1.Location = new System.Drawing.Point(501, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Available Rooms";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,13 +406,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label checkInLabel;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label availableRoomLabel;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label totalInHotelLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label checkOutLabel;
@@ -480,5 +423,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label occupiedRoomLabel;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label1;
     }
 }

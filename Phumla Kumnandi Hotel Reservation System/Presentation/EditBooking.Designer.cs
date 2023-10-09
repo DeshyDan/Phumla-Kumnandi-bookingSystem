@@ -242,6 +242,7 @@
             this.Controls.Add(this.saveButton);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EditBooking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditBooking";
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).EndInit();
             this.ResumeLayout(false);

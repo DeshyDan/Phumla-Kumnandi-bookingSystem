@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Phumla_Kumnandi_Hotel_Reservation_System.bookingSystemTestDataSetTableAdapters;
+using Phumla_Kumnandi_Hotel_Reservation_System.bookingSystemDataSetTableAdapters;
 using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 using Phumla_Kumnandi_Hotel_Reservation_System.Data;
 using static Phumla_Kumnandi_Hotel_Reservation_System.Presentation.BookingsForm;
@@ -64,24 +64,25 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             bookings = bookingController.AllBookings;
             guests = guestController.AllGuests;
             guestListView.Columns.Insert(0, "Id Number", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(1, "Title", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(2, "First Name", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(3, "LastName", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(4, "email", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(5, "telephone", 120, HorizontalAlignment.Left);
-            guestListView.Columns.Insert(6, "address", 120, HorizontalAlignment.Left);
-         
+    
+            guestListView.Columns.Insert(1, "First Name", 120, HorizontalAlignment.Left);
+        
+            guestListView.Columns.Insert(2, "Email", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(3, "Telephone", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(4, "Address", 120, HorizontalAlignment.Left);
+            guestListView.Columns.Insert(5, "Credit", 120, HorizontalAlignment.Left);
+
 
             foreach (Guest guest in guests)
             {
                 guestDetails = new ListViewItem(guest.IdNumber.ToString());
-                guestDetails.SubItems.Add(guest.Title.ToString());
+              
                 guestDetails.SubItems.Add(guest.FirstName.ToString());
-                guestDetails.SubItems.Add(guest.LastName.ToString());
+              
                 guestDetails.SubItems.Add(guest.Email.ToString());
                 guestDetails.SubItems.Add(guest.Telephone.ToString());
                 guestDetails.SubItems.Add(guest.Address.ToString());
-
+                guestDetails.SubItems.Add(CalculateUnpaidAmountForGuest(guest.IdNumber , bookings).ToString());
                 guestListView.Items.Add(guestDetails);
             }
             guestListView.Refresh();
@@ -89,8 +90,24 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         }
 
-#endregion
+        #endregion
+        #region calculate credit
+        private int CalculateUnpaidAmountForGuest(string guestId, Collection<Booking> bookings)
+        {
+            int totalUnpaidAmount = 0;
 
+            foreach (var booking in bookings)
+            {
+                if (booking.GuestId == guestId)
+                {
+                    int unpaidAmount = booking.TotalAmount - booking.Deposit;
+                    totalUnpaidAmount += unpaidAmount;
+                }
+            }
+
+            return totalUnpaidAmount;
+        }
+        #endregion
         private void GuestForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             listFormClosed = true;

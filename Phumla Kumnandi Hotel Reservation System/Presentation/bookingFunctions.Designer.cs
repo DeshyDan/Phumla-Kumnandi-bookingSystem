@@ -1,6 +1,6 @@
 ﻿namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 {
-    partial class bookingFunctions
+    partial class BookingFunctions
     {
         /// <summary>
         /// Required designer variable.
@@ -112,18 +112,19 @@
             this.payButton.UseVisualStyleBackColor = false;
             this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
-            // bookingFunctions
+            // BookingFunctions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 360);
+            this.ClientSize = new System.Drawing.Size(552, 360);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.payButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.deleteButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "bookingFunctions";
+            this.Name = "BookingFunctions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "bookingFunctions";
             this.Load += new System.EventHandler(this.bookingFunctions_Load);
             this.Click += new System.EventHandler(this.bookingFunctions_Click);

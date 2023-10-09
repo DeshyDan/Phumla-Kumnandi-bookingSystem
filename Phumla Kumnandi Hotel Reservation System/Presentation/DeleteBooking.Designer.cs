@@ -63,7 +63,7 @@
             this.label2.Location = new System.Drawing.Point(41, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 49);
+            this.label2.Size = new System.Drawing.Size(142, 39);
             this.label2.TabIndex = 20;
             this.label2.Text = "Guest Id";
             // 
@@ -107,7 +107,7 @@
             // 
             this.cancellationInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cancellationInput.Location = new System.Drawing.Point(21, 517);
-            this.cancellationInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancellationInput.Margin = new System.Windows.Forms.Padding(4);
             this.cancellationInput.Name = "cancellationInput";
             this.cancellationInput.Size = new System.Drawing.Size(1081, 118);
             this.cancellationInput.TabIndex = 46;
@@ -136,7 +136,7 @@
             this.cancelButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Black;
             this.cancelButton.Location = new System.Drawing.Point(616, 660);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(236, 54);
             this.cancelButton.TabIndex = 47;
@@ -152,7 +152,7 @@
             this.saveButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.White;
             this.saveButton.Location = new System.Drawing.Point(867, 660);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(236, 54);
             this.saveButton.TabIndex = 48;
@@ -203,7 +203,7 @@
             this.roomTypeLabel.Location = new System.Drawing.Point(391, 293);
             this.roomTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.roomTypeLabel.Name = "roomTypeLabel";
-            this.roomTypeLabel.Size = new System.Drawing.Size(481, 49);
+            this.roomTypeLabel.Size = new System.Drawing.Size(385, 39);
             this.roomTypeLabel.TabIndex = 20;
             this.roomTypeLabel.Text = "Delux Suite Single Room";
             // 
@@ -225,7 +225,7 @@
             this.label8.Location = new System.Drawing.Point(391, 370);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 49);
+            this.label8.Size = new System.Drawing.Size(42, 39);
             this.label8.TabIndex = 20;
             this.label8.Text = "R";
             // 
@@ -251,6 +251,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DeleteBooking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteBooking";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -126,7 +126,9 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void bookingNavLabel_Click(object sender, EventArgs e)

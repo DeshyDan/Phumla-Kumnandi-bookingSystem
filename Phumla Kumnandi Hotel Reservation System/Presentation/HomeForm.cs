@@ -1,6 +1,7 @@
 ﻿using Phumla_Kumnandi_Hotel_Reservation_System.Business;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -21,6 +22,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private GuestController guestController;
         private BookingController bookingController;
         public bool listFormClosed;
+        private Collection<Booking> bookings;
 
 
 
@@ -32,10 +34,17 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             this.notAvailableLabel.Visible = false;
             this.guestController = MDIParent.GetGuestController();
             this.bookingController = MDIParent.GetBookingController();
-
+            bookings = bookingController.AllBookings;
+            setOverview();
         }
         #region utility methods
-
+        private void setOverview()
+        {
+            checkInLabel.Text = checkIn().ToString();
+            checkOutLabel.Text = checkOut().ToString();
+            availableRoomLabel.Text = numberOFAvalRooms().ToString();
+            occupiedRoomLabel.Text = occupied().ToString();
+        }
         private void ClearAll()
         {
             checkInDateTimePicker.Text = string.Empty;
@@ -46,6 +55,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         }
         private void PopulateObject()
         {
+            notAvailableLabel.Visible = false;
             booking = new Booking();
             booking.CheckInDate = checkInDateTimePicker.Value;
             booking.CheckOutDate = checkOutDateTimePicker.Value;
@@ -102,18 +112,129 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         #endregion
 
+        #region overview function
+        private int checkIn()
+        {
+            int numberOfBookings = 0;
+            DateTime currentDate = DateTime.Now.Date;
 
+            foreach (var booking in bookings)
+            {
+                if (currentDate >= booking.CheckInDate.Date && currentDate < booking.CheckOutDate.Date)
+                {
+                    numberOfBookings++;
+                }
+            }
+            return numberOfBookings;
+
+        }
+        private int checkOut()
+        {
+            DateTime currentDate = DateTime.Now.Date;
+
+            // Loop through the bookings and count the ones checking out on the current date
+            int numberOfCheckouts = 0;
+            foreach (var booking in bookings)
+            {
+                if (currentDate == booking.CheckOutDate.Date)
+                {
+                    numberOfCheckouts++;
+                }
+            }
+            return numberOfCheckouts;
+        }
+        private int numberOFAvalRooms()
+        {
+            int maxRooms = 5;
+
+            
+            DateTime currentDate = DateTime.Now.Date;
+
+            
+            int availableRooms = maxRooms;
+            foreach (var booking in bookings)
+            {
+                if (currentDate >= booking.CheckInDate.Date && currentDate < booking.CheckOutDate.Date)
+                {
+                    availableRooms--;
+                }
+            }
+            return availableRooms;
+        }
+        private int occupied()
+        {
+           
+
+            DateTime currentDate = DateTime.Now.Date;
+
+            int occupiedRooms = 0;
+            foreach (var booking in bookings)
+            {
+                if (currentDate >= booking.CheckInDate.Date && currentDate < booking.CheckOutDate.Date)
+                {
+                    occupiedRooms++;
+                }
+            }
+
+            return occupiedRooms;
+        }
+        #endregion
 
 
         private void checkAvailabilityButton_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
-            roomAvailableBox.ShowDialog();
+            List<Booking> existingBookings = GetExistingBookings();
+            if (IsBookingValid(booking, existingBookings))
+            {
+                RoomAvailableBox roomAvailableBox = new RoomAvailableBox(booking);
+                roomAvailableBox.ShowDialog();
+            }
+            else
+            {
+                notAvailableLabel.Visible = true;
+            }
+            setOverview();
+
 
         }
 
+        #region validating booking
+        private List<Booking> GetExistingBookings()
+        {
+            List<Booking> existingBookings = new List<Booking>();
+            foreach (Booking abooking in bookings)
+            {
+                existingBookings.Add(abooking);
+            }
+            return existingBookings;
+        }
 
+
+
+
+
+        static bool IsBookingValid(Booking incomingBooking, List<Booking> existingBookings)
+        {
+            int availableRooms = 5;
+
+            foreach (var existingBooking in existingBookings)
+            {
+                if (incomingBooking.CheckInDate < existingBooking.CheckOutDate &&
+                    incomingBooking.CheckOutDate > existingBooking.CheckInDate)
+                {
+
+                    availableRooms -= existingBooking.NumberOfRooms;
+                }
+            }
+
+
+            int numberOfDays = (int)(incomingBooking.CheckOutDate - incomingBooking.CheckInDate).TotalDays;
+
+
+            return incomingBooking.NumberOfRooms <= availableRooms && numberOfDays > 0;
+        }
+        #endregion
         private void logoutButton_Click(object sender, EventArgs e)
         {
             this.Hide();
