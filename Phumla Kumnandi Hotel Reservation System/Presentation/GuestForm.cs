@@ -130,5 +130,47 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
 
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchTerm = searchInput.Text.Trim().ToLower(); // Convert to lowercase for case-insensitive search
+
+            // Check if the input is empty
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return;
+            }
+
+            // Clear the ListView
+            guestListView.Items.Clear();
+
+            // Filter guests based on search criteria
+            foreach (Guest guest in guests)
+            {
+                if (guest.FirstName.ToLower().Contains(searchTerm) ||
+                    guest.Email.ToLower().Contains(searchTerm) ||
+                    guest.Telephone.ToLower().Contains(searchTerm))
+                {
+                    ListViewItem guestDetails = new ListViewItem(guest.IdNumber.ToString());
+                    guestDetails.SubItems.Add(guest.FirstName.ToString());
+                    guestDetails.SubItems.Add(guest.Email.ToString());
+                    guestDetails.SubItems.Add(guest.Telephone.ToString());
+                    guestDetails.SubItems.Add(guest.Address.ToString());
+                    guestDetails.SubItems.Add(CalculateUnpaidAmountForGuest(guest.IdNumber, bookings).ToString());
+                    guestListView.Items.Add(guestDetails);
+                }
+            }
+        }
+
+        private void searchInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showAllButton_Click(object sender, EventArgs e)
+        {
+            setUpGuestListView();
+        }
     }
 }

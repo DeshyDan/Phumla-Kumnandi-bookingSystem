@@ -90,15 +90,16 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             bookingController.FinalizeChanges(booking);
            
             MessageBox.Show("Booking has been sucessfully made");
+  EmailGuest();
             this.Close();
-            EmailGuest();
+          
 
 
         }
         private void EmailGuest()
         {
             string senderEmail = "phumla056@gmail.com";
-            string senderPassword = "thisisphumla";
+            string senderPassword = "rhni jiwt mrvi ewln";
 
             // Recipient's email address
             string recipientEmail = guest.Email;
@@ -108,30 +109,30 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(senderEmail);
             mail.To.Add(recipientEmail);
-            mail.Subject = "Hello, World!";
-            mail.Body = $"Dear {guest.Title}  {guest.LastName},\n\n" +
-                    $"We are thrilled to confirm your booking with us for the upcoming stay on {booking.CheckInDate} to at Phumla Kumnandi Hotel. We look forward to welcoming you and ensuring that your stay is comfortable and enjoyable.\n\n" +
-                    "Booking Details:\n" +
-                    $"- Check-in Date: {booking.CheckInDate} \n" +
-                    $"- Check-out Date: {booking.CheckOutDate} \n\n" +
-                    $"To secure your reservation, we kindly request a deposit payment within the next 14 days. The deposit amount is {booking.TotalAmount} and can be paid through the following methods:\n\n" +
-                    "Bank Transfer Details:\n" +
-                    "Bank Name: Phumla Bank\n" +
-                    "Account Holder: Phumla Kumnandi Hotels\n" +
-                    "Account Number:123654 12365 98\n" +
-                    "IBAN: 456\n" +
-                    "SWIFT/BIC Code: 123\n\n" +
-                    $"Please include your reservation reference number, {booking.Id}, in the payment reference to ensure that we correctly associate the deposit with your booking.\n\n" +
+            mail.Subject = "Phumla Hotels: Booking Confirmed";
+            mail.Body = $"Dear {guest.Title} {guest.LastName},\n\n" +
+            $"We are thrilled to confirm your booking with us for the upcoming stay from {booking.CheckInDate:yyyy-MM-dd} to {booking.CheckOutDate:yyyy-MM-dd} at Phumla Kumnandi Hotel. We look forward to welcoming you and ensuring that your stay is comfortable and enjoyable.\n\n" +
+            "Booking Details:\n" +
+            $"- Check-in Date: {booking.CheckInDate:yyyy-MM-dd}\n" +
+            $"- Check-out Date: {booking.CheckOutDate:yyyy-MM-dd}\n\n" +
+            $"To secure your reservation, we kindly request a deposit payment within the next 14 days. The deposit amount is {booking.TotalAmount:C2} and can be paid through the following methods:\n\n" +
+            "Bank Transfer Details:\n" +
+            "Bank Name: Phumla Bank\n" +
+            "Account Holder: Phumla Kumnandi Hotels\n" +
+            "Account Number: 123654 12365 98\n" +
+            "IBAN: 456\n" +
+            "SWIFT/BIC Code: 123\n\n" +
+            $"Please include your reservation reference number, {booking.Id}, in the payment reference to ensure that we correctly associate the deposit with your booking.\n\n" +
 
-                    "Once we receive your deposit payment, we will send you a confirmation email along with any additional details you may need for your stay.\n\n" +
-                    "Thank you for choosing Phumla Hotels. We are excited to host you, and we are confident that your stay with us will be a memorable one. If you have any special requests or preferences, please let us know in advance so that we can make arrangements to enhance your experience.\n\n" +
-                    "We appreciate your trust in us and look forward to providing you with exceptional service.\n\n" +
-                    "Warm regards,\n" +
-                    "Receptionist\n" +
-      
-                    "Phumla Kumndandi Hotels\n" +
-                    "phumla@co.za\n" +
-                    "123456789";
+            "Once we receive your deposit payment, we will send you a confirmation email along with any additional details you may need for your stay.\n\n" +
+            "Thank you for choosing Phumla Hotels. We are excited to host you, and we are confident that your stay with us will be a memorable one. If you have any special requests or preferences, please let us know in advance so that we can make arrangements to enhance your experience.\n\n" +
+            "We appreciate your trust in us and look forward to providing you with exceptional service.\n\n" +
+            "Warm regards,\n" +
+            "Receptionist\n" +
+
+            "Phumla Kumndandi Hotels\n" +
+            "phumla@co.za\n" +
+            "123456789";
 
             // Create a new SmtpClient
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");

@@ -34,6 +34,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.occupiedRoomLabel = new System.Windows.Forms.Label();
             this.availableRoomLabel = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.numberOfGuestPicker = new System.Windows.Forms.NumericUpDown();
             this.checkAvailabilityButton = new System.Windows.Forms.Button();
             this.notAvailableLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberOfGuestPicker)).BeginInit();
@@ -138,6 +138,18 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Total";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label1.Location = new System.Drawing.Point(501, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Available Rooms";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -186,7 +198,7 @@
             this.label21.Location = new System.Drawing.Point(4, 14);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(378, 50);
+            this.label21.Size = new System.Drawing.Size(302, 40);
             this.label21.TabIndex = 0;
             this.label21.Text = "Today\'s Overview";
             // 
@@ -321,9 +333,19 @@
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfGuestPicker.Location = new System.Drawing.Point(516, 620);
             this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
+            this.numberOfGuestPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 6;
+            this.numberOfGuestPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // checkAvailabilityButton
             // 
@@ -355,22 +377,11 @@
             this.notAvailableLabel.TabIndex = 0;
             this.notAvailableLabel.Text = "Room is not available";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label1.Location = new System.Drawing.Point(501, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Available Rooms";
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1202, 860);
             this.Controls.Add(this.checkAvailabilityButton);
             this.Controls.Add(this.numberOfGuestPicker);

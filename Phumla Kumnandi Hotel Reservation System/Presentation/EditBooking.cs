@@ -35,7 +35,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         {
             booking.CheckInDate = checkInDateTimePicker.Value;
             booking.CheckOutDate = checkOutDateTimePicker.Value;
-            booking.NumberOfGuests = (int)numberOfGuestPicker.Value + 1;
+            booking.NumberOfGuests = (int)numberOfGuestPicker.Value ;
             booking.NumberOfRooms = calcNumberOfRooms(booking.NumberOfGuests);
             booking.TotalAmount = booking.NumberOfRooms * calcBookingPrice(booking);
         }
@@ -86,6 +86,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            PopulateObject();
             List<Booking> existingBookings = GetExistingBookings();
             if (IsBookingValid(booking, existingBookings))
             {
@@ -114,7 +115,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
 
 
 
-        static bool IsBookingValid(Booking incomingBooking, List<Booking> existingBookings)
+        public bool IsBookingValid(Booking incomingBooking, List<Booking> existingBookings)
         {
             int availableRooms = 5;
 

@@ -36,7 +36,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             guest.LastName = LastNameInput.Text;
             guest.Email = emailInput.Text;
             guest.Telephone = telephoneInput.Text;
-            guest.IdNumber = idNumberInput.Text;
+            guest.IdNumber = idNumberInput.Text.Trim();
             guest.Address = addressInput.Text;
 
 
@@ -124,7 +124,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             {
 
                 PopulateObject();
-                if (!(guestController.FindIndex(guest) == -1))
+                int guestIndex = guestController.FindIndex(guest);
+                if ((guestController.FindIndex(guest) == -1))
                 {
                     guestController.DataMaintenacne(guest, DB.DBOperation.Add);
                     guestController.FinalizeChanges(guest);

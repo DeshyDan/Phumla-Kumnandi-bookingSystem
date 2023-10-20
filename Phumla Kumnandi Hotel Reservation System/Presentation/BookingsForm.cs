@@ -49,6 +49,8 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             InitializeComponent();
             this.guestController = MDIParent.GetGuestController();
             this.bookingController = MDIParent.GetBookingController();
+            bookings =bookingController.AllBookings;
+            guests = guestController.AllGuests;
 
             state = FormState.View;
         }
@@ -85,19 +87,21 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             bookingListView.Clear();
             bookings = bookingController.AllBookings;
             bookingListView.Columns.Insert(0, "Booking ID", 100, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(1, "Check In Date", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(2, "Check Out Date", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(3, "No. Of Guest", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(4, "Total Amount", 120, HorizontalAlignment.Left);
-            bookingListView.Columns.Insert(5, "Deposit Paid", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(1, "Guest  ID", 100, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(2, "Check In Date", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(3, "Check Out Date", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(4, "No. Of Guest", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(5, "Total Amount", 120, HorizontalAlignment.Left);
+            bookingListView.Columns.Insert(6, "Deposit Paid", 120, HorizontalAlignment.Left);
          
 
             foreach (Booking abooking in bookings)
             {
+                Guest guest = guests.FirstOrDefault(g => g.IdNumber == abooking.GuestId);
                 bookingDetails = new ListViewItem(abooking.Id.ToString());
-
-                bookingDetails.SubItems.Add(abooking.CheckInDate.ToString());
-                bookingDetails.SubItems.Add(abooking.CheckOutDate.ToString());
+                bookingDetails.SubItems.Add(guest.FirstName);
+                bookingDetails.SubItems.Add(abooking.CheckInDate.ToString("yyyy-MM-dd"));
+                bookingDetails.SubItems.Add(abooking.CheckOutDate.ToString("yyyy-MM-dd"));
                 bookingDetails.SubItems.Add(abooking.NumberOfGuests.ToString());
                 bookingDetails.SubItems.Add(abooking.TotalAmount.ToString());
                 bookingDetails.SubItems.Add(abooking.Deposit.ToString());
@@ -136,6 +140,53 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void bookingListView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchGuestName = searchInput.Text.Trim().ToLower(); // Convert to lowercase for case-insensitive search
+
+            if (string.IsNullOrWhiteSpace(searchGuestName))
+            {
+                MessageBox.Show("Please enter a guest name to search bookings.");
+                return;
+            }
+
+            bookingListView.Items.Clear();
+
+            // Create a list to store matching guest IDs
+            List<String> matchingGuestIds = guests
+                .Where(guest => guest.FirstName.ToLower().Contains(searchGuestName))
+                .Select(guest => guest.IdNumber)
+                .ToList();
+
+            foreach (Booking abooking in bookings)
+            {
+                if (matchingGuestIds.Contains(abooking.GuestId))
+                {
+                    Guest guest = guests.FirstOrDefault(g => g.IdNumber == abooking.GuestId);
+                    ListViewItem bookingDetails = new ListViewItem(abooking.Id.ToString());
+                    bookingDetails.SubItems.Add(guest.FirstName);
+                    bookingDetails.SubItems.Add(abooking.CheckInDate.ToString("yyyy-MM-dd"));
+                    bookingDetails.SubItems.Add(abooking.CheckOutDate.ToString("yyyy-MM-dd"));
+                    bookingDetails.SubItems.Add(abooking.NumberOfGuests.ToString());
+                    bookingDetails.SubItems.Add(abooking.TotalAmount.ToString());
+                    bookingDetails.SubItems.Add(abooking.Deposit.ToString());
+
+                    bookingListView.Items.Add(bookingDetails);
+                }
+            }
+
+            if (bookingListView.Items.Count == 0)
+            {
+                MessageBox.Show("No bookings found for the specified guest name.");
+            }
+
+        }
+
+        private void showAllButton_Click(object sender, EventArgs e)
+        {
+            setUpBookingListView();
         }
     }
 

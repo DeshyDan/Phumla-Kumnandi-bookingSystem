@@ -94,22 +94,14 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Business
         }
         public int FindIndex(Guest aGuest)
         {
-            int counter = 0;
-            bool found = (aGuest.IdNumber.Equals(aGuest.IdNumber));
-            while (!(found) && counter < guests.Count - 1)
+            for (int i = 0; i < guests.Count; i++)
             {
-                counter++;
-                found = (aGuest.IdNumber == aGuest.IdNumber);
-
+                if (guests[i].IdNumber == aGuest.IdNumber)
+                {
+                    return i;
+                }
             }
-            if (found)
-            {
-                return counter;
-            }
-            else
-            {
-                return -1;
-            }
+            return -1;
         }
         #endregion
 

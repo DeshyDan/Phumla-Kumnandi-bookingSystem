@@ -59,7 +59,7 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
             booking = new Booking();
             booking.CheckInDate = checkInDateTimePicker.Value;
             booking.CheckOutDate = checkOutDateTimePicker.Value;
-            booking.NumberOfGuests = (int)numberOfGuestPicker.Value + 1;
+            booking.NumberOfGuests = (int)numberOfGuestPicker.Value ;
             booking.NumberOfRooms = calcNumberOfRooms(booking.NumberOfGuests);
             booking.TotalAmount = booking.NumberOfRooms * calcBookingPrice(booking);
             booking.BookingStatusId = 0;

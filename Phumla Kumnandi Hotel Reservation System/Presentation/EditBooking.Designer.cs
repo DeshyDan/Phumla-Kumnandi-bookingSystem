@@ -61,9 +61,19 @@
             this.numberOfGuestPicker.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfGuestPicker.Location = new System.Drawing.Point(431, 304);
             this.numberOfGuestPicker.Margin = new System.Windows.Forms.Padding(4);
+            this.numberOfGuestPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numberOfGuestPicker.Name = "numberOfGuestPicker";
             this.numberOfGuestPicker.Size = new System.Drawing.Size(107, 54);
             this.numberOfGuestPicker.TabIndex = 39;
+            this.numberOfGuestPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label17
             // 
@@ -224,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 729);
             this.Controls.Add(this.bookingIdLabel);
             this.Controls.Add(this.nameLabel);
