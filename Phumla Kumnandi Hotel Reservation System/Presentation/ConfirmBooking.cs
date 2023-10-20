@@ -98,10 +98,10 @@ namespace Phumla_Kumnandi_Hotel_Reservation_System.Presentation
         private void EmailGuest()
         {
             string senderEmail = "phumla056@gmail.com";
-            string senderPassword = "thisisphumla";
+            string senderPassword = "rhni jiwt mrvi ewln";
 
             // Recipient's email address
-            string recipientEmail = guest.Email;
+            string recipientEmail = guest.Email;4
 
             // Create a new MailMessage
             // Create a new MailMessage
